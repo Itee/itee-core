@@ -53,6 +53,13 @@ function _computeBanner ( name, format ) {
 
 }
 
+function _computeIntro () {
+
+    return '' +
+        'if( iteeValidators === undefined ) { console.error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
+        'if( crypto === undefined ) { throw new Error(\'Itee.Core need crypto to be defined first !\') }' + '\n'
+
+}
 /**
  * Will create an appropriate configuration object for rollup, related to the given arguments.
  *
@@ -86,7 +93,12 @@ function CreateRollupConfigs ( options ) {
 
             configs.push( {
                 input:     input,
-                external:  ( format !== 'iife' ) ? ['crypto'] : [],
+                external:  ( format !== 'iife' ) ? [
+                    'itee-validators',
+                    'crypto'
+                ] : [
+                    'itee-validators'
+                ],
                 plugins:   [
                     alias( {
                         entries: ( format === 'iife' ) ? [
@@ -139,14 +151,17 @@ function CreateRollupConfigs ( options ) {
                     format:  format,
                     name:    name,
                     globals: ( format !== 'iife' ) ? {
-                        'crypto': 'crypto'
-                    } : {},
+                        'itee-validators': 'Itee.Validators',
+                        'crypto': 'crypto',
+                    } : {
+                        'itee-validators': 'Itee.Validators'
+                    },
 
                     // advanced options
                     paths:     {},
-                    banner:    ( isProd ) ? '' : _computeBanner( name, format ),
+                    banner:    isProd ? '' : _computeBanner( name, format ),
                     footer:    '',
-                    intro:     ( format === 'iife' && !isProd ) ? 'if( crypto === undefined ) { throw new Error(\'Itee.Core need crypto to be defined first !\') }' : '',
+                    intro:     ( !isProd && format === 'iife' ) ? _computeIntro() : '',
                     outro:     '',
                     sourcemap: !isProd,
                     interop:   true,
