@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Itee Test</title>
+  <title>Itee Core Test</title>
 </head>
 <body>
-  <ApplicationRoot></ApplicationRoot>
-  <script src="../builds/my_app_name.iife.js"></script>
+  <script src="../builds/itee-core.iife.js"></script>
+  <script>
+    const obj = new Itee.Core.TAbstractObject()
+    console.log(obj.uuid)
+  </script>
 </body>
 </html>

@@ -16,6 +16,7 @@
 const packageInfos = require( '../package' )
 const commonjs     = require( 'rollup-plugin-commonjs' )
 const path         = require( 'path' )
+const alias        = require( '@rollup/plugin-alias' )
 const replace      = require( 'rollup-plugin-re' )
 const resolve      = require( 'rollup-plugin-node-resolve' )
 const terser       = require( 'rollup-plugin-terser' ).terser
@@ -84,9 +85,22 @@ function CreateRollupConfigs ( options ) {
             const outputPath = ( isProd ) ? path.join( output, `${ fileName }.${ format }.min.js` ) : path.join( output, `${ fileName }.${ format }.js` )
 
             configs.push( {
-                input:    input,
-                external: [],
-                plugins: [
+                input:     input,
+                external:  ( format !== 'iife' ) ? ['crypto'] : [],
+                plugins:   [
+                    alias( {
+                        entries: ( format === 'iife' ) ? [
+                            {
+                                find:        'uuid',
+                                replacement: 'uuid/dist/esm-browser'
+                            }
+                        ] : [
+                            {
+                                find:        'uuid',
+                                replacement: 'uuid/dist/esm-node'
+                            }
+                        ]
+                    } ),
                     replace( {
                         defines: {
                             IS_REMOVE_ON_BUILD:  false,
@@ -101,7 +115,7 @@ function CreateRollupConfigs ( options ) {
                     } ),
                     isProd && terser()
                 ],
-                onwarn: ( {
+                onwarn:    ( {
                     loc,
                     frame,
                     message
@@ -124,13 +138,15 @@ function CreateRollupConfigs ( options ) {
                     file:    outputPath,
                     format:  format,
                     name:    name,
-                    globals: {},
+                    globals: ( format !== 'iife' ) ? {
+                        'crypto': 'crypto'
+                    } : {},
 
                     // advanced options
                     paths:     {},
                     banner:    ( isProd ) ? '' : _computeBanner( name, format ),
                     footer:    '',
-                    intro:     '',
+                    intro:     ( format === 'iife' && !isProd ) ? 'if( crypto === undefined ) { throw new Error(\'Itee.Core need crypto to be defined first !\') }' : '',
                     outro:     '',
                     sourcemap: !isProd,
                     interop:   true,

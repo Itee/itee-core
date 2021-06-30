@@ -1,10 +1,9 @@
 /**
  * @author [Tristan Valcke]{@link https://github.com/Itee}
  * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
- *
- * @module sources/itee-core
- * @file The main entry point for Itee-Core, it contains all exports of the library
  */
 
-export * from './roots/_roots'
+const { TAbstractObject } = require('../builds/itee-core.cjs')
 
+const obj = new TAbstractObject()
+console.log(obj.uuid)
