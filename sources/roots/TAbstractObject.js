@@ -31,7 +31,7 @@ class TAbstractObject {
     }
 
     getUuid ( target ) {
-        target = this.uuid
+        target.uuid = this.uuid
         return this
     }
 
