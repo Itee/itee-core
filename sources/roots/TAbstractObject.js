@@ -87,20 +87,41 @@ class TAbstractObject {
 
 }
 
+/*
+class SubClass extends TAbstractObject {
+
     constructor ( parameters = {} ) {
 
         const _parameters = {
             ...{
-                uuid: uuidv4()
+                logger: JL().setOptions( {
+                    level:     JL.getDebugLevel(),
+                    appenders: [
+                        JL.createConsoleAppender( 'consoleAppender' )
+                    ]
+                } )
             },
             ...parameters
         }
 
-        this.uuid = _parameters.uuid
-
+        super( _parameters )
     }
 
+    throwMe () {
+        throw new Error( 'Oups !' )
+    }
+
+    debugMe () { this.logger.debug( 'I\'m debuging !' ) }
+
+    infoMe () { this.logger.info( 'I\'m infoing !' ) }
+
+    warnMe () { this.logger.warn( 'I\'m warning !' ) }
+
+    errorMe () { this.logger.error( 'I\'m erroring !' ) }
+
+    fatalMe () { this.logger.fatal( 'I\'m fataling !' ) }
 }
+*/
 
 export { TAbstractObject }
 
