@@ -95,9 +95,11 @@ function CreateRollupConfigs ( options ) {
                 input:     input,
                 external:  ( format !== 'iife' ) ? [
                     'itee-validators',
+                    'itee-utils',
                     'crypto'
                 ] : [
-                    'itee-validators'
+                    'itee-validators',
+                    'itee-utils'
                 ],
                 plugins:   [
                     alias( {
@@ -151,9 +153,11 @@ function CreateRollupConfigs ( options ) {
                     format:  format,
                     name:    name,
                     globals: ( format !== 'iife' ) ? {
+                        'itee-utils': 'Itee.Utils',
                         'itee-validators': 'Itee.Validators',
                         'crypto': 'crypto',
                     } : {
+                        'itee-utils': 'Itee.Utils',
                         'itee-validators': 'Itee.Validators'
                     },
 

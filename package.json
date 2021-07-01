@@ -59,6 +59,7 @@
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
+    "itee-utils": "^5.2.0",
     "itee-validators": "^5.2.0"
   },
   "devDependencies": {
