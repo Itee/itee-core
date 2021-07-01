@@ -6,5 +6,5 @@
  * @file The main entry point for Itee-Core, it contains all exports of the library
  */
 
-const Core = 42
-export { Core }
+export * from './roots/_roots'
+export * from './loggers/_loggers'

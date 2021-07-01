@@ -16,6 +16,7 @@
 const packageInfos = require( '../package' )
 const commonjs     = require( 'rollup-plugin-commonjs' )
 const path         = require( 'path' )
+const alias        = require( '@rollup/plugin-alias' )
 const replace      = require( 'rollup-plugin-re' )
 const resolve      = require( 'rollup-plugin-node-resolve' )
 const terser       = require( 'rollup-plugin-terser' ).terser
@@ -52,6 +53,13 @@ function _computeBanner ( name, format ) {
 
 }
 
+function _computeIntro () {
+
+    return '' +
+        'if( iteeValidators === undefined ) { console.error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
+        'if( crypto === undefined ) { throw new Error(\'Itee.Core need crypto to be defined first !\') }' + '\n'
+
+}
 /**
  * Will create an appropriate configuration object for rollup, related to the given arguments.
  *
@@ -84,9 +92,29 @@ function CreateRollupConfigs ( options ) {
             const outputPath = ( isProd ) ? path.join( output, `${ fileName }.${ format }.min.js` ) : path.join( output, `${ fileName }.${ format }.js` )
 
             configs.push( {
-                input:    input,
-                external: [],
-                plugins: [
+                input:     input,
+                external:  ( format !== 'iife' ) ? [
+                    'itee-validators',
+                    'itee-utils',
+                    'crypto'
+                ] : [
+                    'itee-validators',
+                    'itee-utils'
+                ],
+                plugins:   [
+                    alias( {
+                        entries: ( format === 'iife' ) ? [
+                            {
+                                find:        'uuid',
+                                replacement: 'uuid/dist/esm-browser'
+                            }
+                        ] : [
+                            {
+                                find:        'uuid',
+                                replacement: 'uuid/dist/esm-node'
+                            }
+                        ]
+                    } ),
                     replace( {
                         defines: {
                             IS_REMOVE_ON_BUILD:  false,
@@ -101,7 +129,7 @@ function CreateRollupConfigs ( options ) {
                     } ),
                     isProd && terser()
                 ],
-                onwarn: ( {
+                onwarn:    ( {
                     loc,
                     frame,
                     message
@@ -124,13 +152,20 @@ function CreateRollupConfigs ( options ) {
                     file:    outputPath,
                     format:  format,
                     name:    name,
-                    globals: {},
+                    globals: ( format !== 'iife' ) ? {
+                        'itee-utils': 'Itee.Utils',
+                        'itee-validators': 'Itee.Validators',
+                        'crypto': 'crypto',
+                    } : {
+                        'itee-utils': 'Itee.Utils',
+                        'itee-validators': 'Itee.Validators'
+                    },
 
                     // advanced options
                     paths:     {},
-                    banner:    ( isProd ) ? '' : _computeBanner( name, format ),
+                    banner:    isProd ? '' : _computeBanner( name, format ),
                     footer:    '',
-                    intro:     '',
+                    intro:     ( !isProd && format === 'iife' ) ? _computeIntro() : '',
                     outro:     '',
                     sourcemap: !isProd,
                     interop:   true,
