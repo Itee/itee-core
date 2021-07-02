@@ -38,7 +38,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     env:
-      MOZ_HEADLESS: 1
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -50,6 +51,3 @@ jobs:
         run: npm ci
       - name: Semantic Release
         run: npm run clean && npm run lint && npm run doc && npm run build && npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
