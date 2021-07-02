@@ -13,7 +13,6 @@ import {
     validate,
     version
 }             from 'uuid'
-import { JL } from 'jsnlog'
 
 class TAbstractObject {
 
@@ -52,7 +51,7 @@ class TAbstractObject {
 
         if ( isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
         if ( isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
-        if ( !validate( value ) || version( value ) !== 4 ) { throw new Error( `Unable to set invalid uuid [${ uuid }] ! ${ expect }` ) }
+        if ( !validate( value ) || version( value ) !== 4 ) { throw new Error( `Unable to set invalid uuid [${ value }] ! ${ expect }` ) }
 
         this._uuid = value
     }
@@ -86,42 +85,6 @@ class TAbstractObject {
     }
 
 }
-
-/*
-class SubClass extends TAbstractObject {
-
-    constructor ( parameters = {} ) {
-
-        const _parameters = {
-            ...{
-                logger: JL().setOptions( {
-                    level:     JL.getDebugLevel(),
-                    appenders: [
-                        JL.createConsoleAppender( 'consoleAppender' )
-                    ]
-                } )
-            },
-            ...parameters
-        }
-
-        super( _parameters )
-    }
-
-    throwMe () {
-        throw new Error( 'Oups !' )
-    }
-
-    debugMe () { this.logger.debug( 'I\'m debuging !' ) }
-
-    infoMe () { this.logger.info( 'I\'m infoing !' ) }
-
-    warnMe () { this.logger.warn( 'I\'m warning !' ) }
-
-    errorMe () { this.logger.error( 'I\'m erroring !' ) }
-
-    fatalMe () { this.logger.fatal( 'I\'m fataling !' ) }
-}
-*/
 
 export { TAbstractObject }
 

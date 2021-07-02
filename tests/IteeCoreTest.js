@@ -6,4 +6,6 @@
 const { TAbstractObject } = require('../builds/itee-core.cjs')
 
 const obj = new TAbstractObject()
+
+// eslint-disable-next-line no-console
 console.log(obj.uuid)
