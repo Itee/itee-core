@@ -28,10 +28,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Setup firefox
-        uses: browser-actions/setup-firefox@latest
-        with:
-          firefox-version: ${{ matrix.firefox }}
-          - run: firefox --version
+    uses: browser-actions/setup-firefox@latest
+    with:
+      firefox-version: ${{ matrix.firefox }}
+    - run: firefox --version
     - run: npm ci
     - run: npm run release --if-present
-    - run: npm test
