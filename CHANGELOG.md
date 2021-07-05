@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Itee/itee-core/compare/v1.0.0...v1.0.1) (2021-07-05)
+
+
+### Bug Fixes
+
+* **package:** update all dependencies to their latest version ([5eaf9d3](https://github.com/Itee/itee-core/commit/5eaf9d3425494e07597b75004927765b90630af0))
+
 # 1.0.0 (2021-07-02)
 
 
