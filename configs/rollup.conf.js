@@ -13,13 +13,13 @@
  * @requires {@link module: [rollup-plugin-terser]{@link https://github.com/TrySound/rollup-plugin-terser}}
  */
 
-const packageInfos = require( '../package' )
-const commonjs     = require( 'rollup-plugin-commonjs' )
-const path         = require( 'path' )
-const alias        = require( '@rollup/plugin-alias' )
-const replace      = require( 'rollup-plugin-re' )
-const resolve      = require( 'rollup-plugin-node-resolve' )
-const terser       = require( 'rollup-plugin-terser' ).terser
+const packageInfos    = require( '../package' )
+const path            = require( 'path' )
+const commonjs        = require( '@rollup/plugin-commonjs' )
+const alias           = require( '@rollup/plugin-alias' )
+const { nodeResolve } = require( '@rollup/plugin-node-resolve' )
+const replace         = require( 'rollup-plugin-re' )
+const terser          = require( 'rollup-plugin-terser' ).terser
 
 function _computeBanner ( name, format ) {
 
@@ -60,6 +60,7 @@ function _computeIntro () {
         'if( crypto === undefined ) { throw new Error(\'Itee.Core need crypto to be defined first !\') }' + '\n'
 
 }
+
 /**
  * Will create an appropriate configuration object for rollup, related to the given arguments.
  *
@@ -92,8 +93,8 @@ function CreateRollupConfigs ( options ) {
             const outputPath = ( isProd ) ? path.join( output, `${ fileName }.${ format }.min.js` ) : path.join( output, `${ fileName }.${ format }.js` )
 
             configs.push( {
-                input:    input,
-                external: ( format !== 'iife' ) ? [
+                input:     input,
+                external:  ( format !== 'iife' ) ? [
                     'itee-validators',
                     'itee-utils',
                     'crypto'
@@ -101,7 +102,7 @@ function CreateRollupConfigs ( options ) {
                     'itee-validators',
                     'itee-utils'
                 ],
-                plugins: [
+                plugins:   [
                     alias( {
                         entries: ( format === 'iife' ) ? [
                             {
@@ -124,12 +125,12 @@ function CreateRollupConfigs ( options ) {
                     commonjs( {
                         include: 'node_modules/**'
                     } ),
-                    resolve( {
+                    nodeResolve( {
                         preferBuiltins: true
                     } ),
                     isProd && terser()
                 ],
-                onwarn: ( {
+                onwarn:    ( {
                     loc,
                     frame,
                     message
@@ -155,7 +156,7 @@ function CreateRollupConfigs ( options ) {
                     globals: ( format !== 'iife' ) ? {
                         'itee-utils':      'Itee.Utils',
                         'itee-validators': 'Itee.Validators',
-                        'crypto':          'crypto',
+                        'crypto':          'crypto'
                     } : {
                         'itee-utils':      'Itee.Utils',
                         'itee-validators': 'Itee.Validators'
