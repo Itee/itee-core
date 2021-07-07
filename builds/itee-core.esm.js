@@ -1,4 +1,4 @@
-console.log('Itee.Core v1.0.1 - EsModule')
+console.log('Itee.Core v1.0.2 - EsModule')
 import { isNull, isUndefined, isNotString, isString, isObject, isArrayOfString, isArrayOfObject } from 'itee-validators';
 import crypto from 'crypto';
 import { toEnum } from 'itee-utils';

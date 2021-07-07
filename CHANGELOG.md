@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/Itee/itee-core/compare/v1.0.1...v1.0.2) (2021-07-07)
+
+
+### Bug Fixes
+
+* **package:** apply fix from dependencies ([fc1b4d8](https://github.com/Itee/itee-core/commit/fc1b4d83af60503913df43a234f9ecc1cc117e71))
+* **releaserc:** fix missing dev maps ([54975d7](https://github.com/Itee/itee-core/commit/54975d709d480ea9ecfc075f360df5ff1c1785ce))
+
 ## [1.0.1](https://github.com/Itee/itee-core/compare/v1.0.0...v1.0.1) (2021-07-05)
 
 
