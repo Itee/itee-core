@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/Itee/itee-core/compare/v1.0.2...v1.0.3) (2021-07-07)
+
+
+### Bug Fixes
+
+* **package:** apply dependencies fix ([232b155](https://github.com/Itee/itee-core/commit/232b1552363e61041f36b33dad210df3ae6d0c5a))
+* **rollupconfig:** fix alias replacement string for uuid package ([2c43b27](https://github.com/Itee/itee-core/commit/2c43b27864777b3f100eb9b51393b0a5f82328d0))
+
 ## [1.0.2](https://github.com/Itee/itee-core/compare/v1.0.1...v1.0.2) (2021-07-07)
 
 
