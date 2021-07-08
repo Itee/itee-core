@@ -5,33 +5,13 @@
 		<title>Itee Core Test</title>
 	</head>
 	<body>
-		<script src="../node_modules/itee-validators/builds/itee-validators.iife.js"></script>
-		<script src="../node_modules/itee-utils/builds/itee-utils.iife.js"></script>
-		<script src="../builds/itee-core.iife.js"></script>
-		<script src="../node_modules/uuid/dist/umd/uuidv4.min.js"></script>
+		<script src="./node_modules/itee-validators/builds/itee-validators.iife.js"></script>
+		<script src="./node_modules/itee-utils/builds/itee-utils.iife.js"></script>
+		<script src="./builds/itee-core.iife.js"></script>
+		<script src="./node_modules/uuid/dist/umd/uuidv4.min.js"></script>
 		<script>
-            //            const obj = new Itee.Core.TAbstractObject()
-            const sub = new Itee.Core.SubClass()
-            sub.debugMe()
-            sub.infoMe()
-            sub.warnMe()
-            sub.errorMe()
-            sub.fatalMe()
-            sub.throwMe()
-
-            //                (async () => {
-            //                    const rawResponse = await fetch('https://httpbin.org/post', {
-            //                        method: 'POST',
-            //                        headers: {
-            //                            'Accept': 'application/json',
-            //                            'Content-Type': 'application/json'
-            //                        },
-            //                        body: JSON.stringify({a: 1, b: 'Textual content'})
-            //                    });
-            //                    const content = await rawResponse.json();
-            //
-            //                    console.log(content);
-            //                })();
+            const obj = new Itee.Core.TAbstractObject()
+            console.log( obj.uuid )
 		</script>
 	</body>
 </html>
