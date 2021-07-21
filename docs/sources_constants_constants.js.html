@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Itee-Core Index</title>
+	<title>Itee-Core Source: sources/constants/constants.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,145 +74,223 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-	<h1 class="page-title">Index</h1>
+		<h1 class="page-title">Source: sources/constants/constants.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * A freezed javascript object used like an enum.
+ * @typedef {object} Enum
+ * @constant
+ * @example
+ * var Meal = toEnum( {
+ *     Food: 'Tartiflette',
+ *     Drink: 'Saint-Emilion',
+ *     Dessert: 'Mousse au chocolat'
+ * } )
+ *
+ * if( Foo.includes('Tartiflette') {
+ *     // Happy
+ * }
+ *
+ * var myDrink = 'coke'
+ * if( myDrink === Meal.Drink ) {
+ *
+ * } else {
+ *     // Your life is a pain
+ * }
+ *
+ * var MealTypes = Meal.types
+ * // ['Tartiflette', 'Saint-Emilion', 'Mousse au chocolat' ]
+ *
+ */
 
-<header>
-    
-        <h2>
-        sources/itee-core.js
-        </h2>
-        
-    
-</header>
+// Maths
+const Zero               = 0
+const One                = 1
+const Two                = 2
+const Three              = 3
+const Four               = 4
+const Five               = 5
+const Six                = 6
+const Seven              = 7
+const Height             = 8
+const Nine               = 9
+const Ten                = 10
+const Eleven             = 11
+const Twelve             = 12
+const Thirteen           = 13
+const Fourteen           = 14
+const Fifteen            = 15
+const Sixteen            = 16
+const Seventeen          = 17
+const Heighteen          = 18
+const Nineteen           = 19
+const Twenty             = 20
+const Thirty             = 30
+const Fourty             = 40
+const Fifty              = 50
+const Sixty              = 60
+const Seventy            = 70
+const Heighty            = 80
+const Ninety             = 90
+const OneHundred         = 100
+const FiveHundred        = 500
+const OneThousand        = 1000
+const TenThousand        = 10000
+const OneHundredThousand = 100000
+const OneMillion         = 1000000
 
+const OneHalf     = 1 / 2
+const OneThird    = 1 / 3
+const TwoThird    = 2 / 3
+const OneFourth   = 1 / 4
+const TwoFourth   = 2 / 4
+const ThreeFourth = 3 / 4
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">The main entry point for Itee-Core, it contains all exports of the library</div>
-        
+const SquareRootOfTwo    = Math.sqrt( Two )
+const SquareRootOfThree  = Math.sqrt( Three )
+const SquareRootOfFour   = Math.sqrt( Four )
+const SquareRootOfFive   = Math.sqrt( Five )
+const SquareRootOfSix    = Math.sqrt( Six )
+const SquareRootOfSeven  = Math.sqrt( Seven )
+const SquareRootOfHeight = Math.sqrt( Height )
+const SquareRootOfNine   = Math.sqrt( Nine )
+const SquareRootOfTen    = Math.sqrt( Ten )
 
-        
-<dl class="details">
-    
+const CubeRootOfTwo    = Math.cbrt( Two )
+const CubeRootOfThree  = Math.cbrt( Three )
+const CubeRootOfFour   = Math.cbrt( Four )
+const CubeRootOfFive   = Math.cbrt( Five )
+const CubeRootOfSix    = Math.cbrt( Six )
+const CubeRootOfSeven  = Math.cbrt( Seven )
+const CubeRootOfHeight = Math.cbrt( Height )
+const CubeRootOfNine   = Math.cbrt( Nine )
+const CubeRootOfTen    = Math.cbrt( Ten )
 
-	
+const Pi       = Math.PI
+const TwoPi    = Two * Pi
+const ThreePi  = Three * Pi
+const FourPi   = Four * Pi
+const FivePi   = Five * Pi
+const SixPi    = Six * Pi
+const SevenPi  = Seven * Pi
+const HeightPi = Height * Pi
+const NinePi   = Nine * Pi
+const TenPi    = Ten * Pi
 
-	
+const PiOnTwo    = Pi / Two
+const PiOnThree  = Pi / Three
+const PiOnFour   = Pi / Four
+const PiOnFive   = Pi / Five
+const PiOnSix    = Pi / Six
+const PiOnSeven  = Pi / Seven
+const PiOnHeight = Pi / Height
+const PiOnNine   = Pi / Nine
+const PiOnTen    = Pi / Ten
 
-	
+// Trigonometri
+const SquareRootOfTwoOnTwo   = SquareRootOfTwo / Two
+const SquareRootOfThreeOnTwo = SquareRootOfThree / Two
 
-    
+export {
+    Zero,
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Height,
+    Nine,
+    Ten,
+    Eleven,
+    Twelve,
+    Thirteen,
+    Fourteen,
+    Fifteen,
+    Sixteen,
+    Seventeen,
+    Heighteen,
+    Nineteen,
+    Twenty,
+    Thirty,
+    Fourty,
+    Fifty,
+    Sixty,
+    Seventy,
+    Heighty,
+    Ninety,
+    OneHundred,
+    FiveHundred,
+    OneThousand,
+    TenThousand,
+    OneHundredThousand,
+    OneMillion,
 
-    
+    OneHalf,
+    OneThird,
+    TwoThird,
+    OneFourth,
+    TwoFourth,
+    ThreeFourth,
 
-    
+    SquareRootOfTwo,
+    SquareRootOfThree,
+    SquareRootOfFour,
+    SquareRootOfFive,
+    SquareRootOfSix,
+    SquareRootOfSeven,
+    SquareRootOfHeight,
+    SquareRootOfNine,
+    SquareRootOfTen,
 
-    
+    CubeRootOfTwo,
+    CubeRootOfThree,
+    CubeRootOfFour,
+    CubeRootOfFive,
+    CubeRootOfSix,
+    CubeRootOfSeven,
+    CubeRootOfHeight,
+    CubeRootOfNine,
+    CubeRootOfTen,
 
-	
+    Pi,
+    TwoPi,
+    ThreePi,
+    FourPi,
+    FivePi,
+    SixPi,
+    SevenPi,
+    HeightPi,
+    NinePi,
+    TenPi,
 
-	
-	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
-	<dd class="tag-author">
-		<ul>
-			<li><a href="https://github.com/Itee">Tristan Valcke</a></li>
-			</ul>
-	</dd>
-	
+    PiOnTwo,
+    PiOnThree,
+    PiOnFour,
+    PiOnFive,
+    PiOnSix,
+    PiOnSeven,
+    PiOnHeight,
+    PiOnNine,
+    PiOnTen,
 
-	
+    SquareRootOfTwoOnTwo,
+    SquareRootOfThreeOnTwo
+}
 
-	
-	<dt class="tag-license method-doc-label method-doc-details-label">License:</dt>
-	<dd class="tag-license">
-		<ul class="dummy">
-			<li><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></li>
-		</ul>
-	</dd>
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="sources_itee-core.js.html">sources/itee-core.js</a>,
-				 <a href="sources_itee-core.js.html#sunlight-1-line-1">line 1</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -222,10 +300,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

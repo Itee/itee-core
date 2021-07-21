@@ -1,3 +1,20 @@
+# [1.1.0](https://github.com/Itee/itee-core/compare/v1.0.3...v1.1.0) (2021-07-21)
+
+
+### Bug Fixes
+
+* **global:** fix eslint errors ([ca97e63](https://github.com/Itee/itee-core/commit/ca97e6394b9303f57cc0409b41c4e1a4ebae5b47))
+* **rollupconfig:** fix missing external dependencies declaration ([13c39d3](https://github.com/Itee/itee-core/commit/13c39d34f3c3a8fd265895a750c1c7d05e55f70f))
+
+
+### Features
+
+* **colors:** add colors maps ([199c067](https://github.com/Itee/itee-core/commit/199c06710584e69d9c80bfbe3bcf3c0948352ad1))
+* **constants:** export common numerical constants ([dfd33ca](https://github.com/Itee/itee-core/commit/dfd33ca29a48dfa3bcc7a448241604a231cfb66d))
+* **datamaps:** export datamaps ([739b34f](https://github.com/Itee/itee-core/commit/739b34fea15ea0cc7aa71540b489ab04c427f8e4))
+* **directions:** add directions maps ([0bff6b9](https://github.com/Itee/itee-core/commit/0bff6b94485939360313c26bb793b549c77b007b))
+* **enums:** add enums ([e86ffed](https://github.com/Itee/itee-core/commit/e86ffedb4447a14bfd2eb40860e9d571847e34b1))
+
 ## [1.0.3](https://github.com/Itee/itee-core/compare/v1.0.2...v1.0.3) (2021-07-07)
 
 
