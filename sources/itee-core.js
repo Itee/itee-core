@@ -8,5 +8,6 @@
 
 export * from './constants/constants'
 export * from './datamaps/_datamaps'
+export * from './enums/_enums'
 export * from './loggers/_loggers'
 export * from './roots/_roots'
