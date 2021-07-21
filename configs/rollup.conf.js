@@ -57,6 +57,8 @@ function _computeIntro () {
 
     return '' +
         'if( iteeValidators === undefined ) { console.error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
+        'if( iteeUtils === undefined ) { console.error(\'Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.\') }' + '\n' +
+        'if( threeFull === undefined ) { console.error(\'Itee.Core need Three to be defined first. Please check your scripts loading order.\') }' + '\n' +
         'if( crypto === undefined ) { throw new Error(\'Itee.Core need crypto to be defined first !\') }' + '\n'
 
 }
@@ -97,10 +99,12 @@ function CreateRollupConfigs ( options ) {
                 external: ( format !== 'iife' ) ? [
                     'itee-validators',
                     'itee-utils',
+                    'three-full',
                     'crypto'
                 ] : [
                     'itee-validators',
-                    'itee-utils'
+                    'itee-utils',
+                    'three-full'
                 ],
                 plugins: [
                     alias( {
@@ -156,10 +160,12 @@ function CreateRollupConfigs ( options ) {
                     globals: ( format !== 'iife' ) ? {
                         'itee-utils':      'Itee.Utils',
                         'itee-validators': 'Itee.Validators',
+                        'three-full':      'Three',
                         'crypto':          'crypto'
                     } : {
                         'itee-utils':      'Itee.Utils',
-                        'itee-validators': 'Itee.Validators'
+                        'itee-validators': 'Itee.Validators',
+                        'three-full':      'Three'
                     },
 
                     // advanced options
