@@ -56,21 +56,21 @@ const Right_Up_Front   = new Vector3( +1, +1, +1 ).normalize()
  */
 const Cardinales = {
     North:            Back,
-    North_North_East: new Vector3( OneHalf, 0, -(SquareRootOfThreeOnTwo) ).normalize(),
-    North_East:       Right_Back,
-    East_North_East:  new Vector3( SquareRootOfThreeOnTwo, 0, -(OneHalf) ).normalize(),
+    North_North_East: new Vector3( OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize(),
+    North_East:       new Vector3( SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
+    East_North_East:  new Vector3( SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
     East:             Right,
-    East_South_East:  new Vector3( SquareRootOfThreeOnTwo, 0, -(-OneHalf) ).normalize(),
-    South_East:       Right_Front,
-    South_South_East: new Vector3( OneHalf, 0, -(-SquareRootOfThreeOnTwo) ).normalize(),
+    East_South_East:  new Vector3( SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
+    South_East:       new Vector3( SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
+    South_South_East: new Vector3( OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
     South:            Front,
-    South_South_West: new Vector3( -OneHalf, 0, -(-SquareRootOfThreeOnTwo) ).normalize(),
-    South_West:       Left_Front,
-    West_South_West:  new Vector3( -SquareRootOfThreeOnTwo, 0, -(-OneHalf) ).normalize(),
+    South_South_West: new Vector3( -OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
+    South_West:       new Vector3( -SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
+    West_South_West:  new Vector3( -SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
     West:             Left,
-    West_North_West:  new Vector3( -SquareRootOfThreeOnTwo, 0, -(OneHalf) ).normalize(),
-    North_West:       Left_Back,
-    North_North_West: new Vector3( -OneHalf, 0, -(SquareRootOfThreeOnTwo) ).normalize()
+    West_North_West:  new Vector3( -SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
+    North_West:       new Vector3( -SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
+    North_North_West: new Vector3( -OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize()
 }
 
 const Directions = {

@@ -72,39 +72,6 @@ const LogLevel = toEnum( {
 class TLogger {
 
     /**
-     * @param level
-     * @return {string}
-     * @private
-     */
-    static _levelToString ( level ) {
-
-        let levelString = ''
-
-        switch ( level ) {
-
-            case LogLevel.Info:
-                levelString = 'info'
-                break
-
-            case LogLevel.Warning:
-                levelString = 'warning'
-                break
-
-            case LogLevel.Error:
-                levelString = 'error'
-                break
-
-            default:
-                levelString = 'unknownLogLevel'
-                break
-
-        }
-
-        return levelString
-
-    }
-
-    /**
      * @constructor
      * @param {string} level - String who represent the gravity level of message between "error | warn (for warning) | other (will display like info message)"
      * @param {string} message - the to display
@@ -141,8 +108,8 @@ class TLogger {
         const memberName = 'OutputLevel'
         const expect     = 'Expect a value from LogLevel enum.'
 
-        if ( isNull( value ) ) { throw new Error( `${memberName} cannot be null ! ${expect}` ) }
-        if ( isUndefined( value ) ) { throw new Error( `${memberName} cannot be undefined ! ${expect}` ) }
+        if ( isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
         //        if ( !Object.keys( LogLevel ).includes( value ) ) { throw new Error( `${memberName} cannot be an instance of ${value.constructor.name}. ${expect}` ) }
 
         this._outputLevel = value
@@ -162,11 +129,44 @@ class TLogger {
         const memberName = 'Output'
         const expect     = 'Expect a value from LogOutput enum.'
 
-        if ( isNull( value ) ) { throw new Error( `${memberName} cannot be null ! ${expect}` ) }
-        if ( isUndefined( value ) ) { throw new Error( `${memberName} cannot be undefined ! ${expect}` ) }
+        if ( isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
         //        if ( !Object.keys( LogOutput ).includes( value ) ) { throw new Error( `${memberName} cannot be an instance of ${value.constructor.name}. ${expect}` ) }
 
         this._outputs = value
+
+    }
+
+    /**
+     * @param level
+     * @return {string}
+     * @private
+     */
+    static _levelToString ( level ) {
+
+        let levelString = ''
+
+        switch ( level ) {
+
+            case LogLevel.Info:
+                levelString = 'info'
+                break
+
+            case LogLevel.Warning:
+                levelString = 'warning'
+                break
+
+            case LogLevel.Error:
+                levelString = 'error'
+                break
+
+            default:
+                levelString = 'unknownLogLevel'
+                break
+
+        }
+
+        return levelString
 
     }
 
@@ -180,7 +180,7 @@ class TLogger {
     _formatTrace ( level, datas ) {
 
         const levelString = TLogger._levelToString( level )
-        const tmpLevel    = `${levelString}_${this._counterTrace}`
+        const tmpLevel    = `${ levelString }_${ this._counterTrace }`
 
         if ( isString( datas ) ) {
 
@@ -236,7 +236,7 @@ class TLogger {
                 break
 
             default:
-                throw new RangeError( `Invalid switch parameter: ${type}` )
+                throw new RangeError( `Invalid switch parameter: ${ type }` )
 
         }
 
@@ -281,7 +281,7 @@ class TLogger {
 
             // For "Debug" output, don't store trace like this !
             default:
-                throw new RangeError( `Invalid switch parameter: ${level}` )
+                throw new RangeError( `Invalid switch parameter: ${ level }` )
 
         }
 
@@ -486,7 +486,7 @@ class TLogger {
 
             // For "Debug" output, don't store trace like this !
             default:
-                throw new RangeError( `Invalid progress level parameter: ${level}` )
+                throw new RangeError( `Invalid progress level parameter: ${ level }` )
 
         }
 
@@ -663,7 +663,7 @@ class TLogger {
             const loaded      = progress.loaded
             const total       = progress.total
             const advancement = Math.round( ( loaded / total ) * 10000 ) / 100
-            const message     = `${type}: ${advancement}% [${loaded}/${total}]`
+            const message     = `${ type }: ${ advancement }% [${ loaded }/${ total }]`
 
             this.dispatch( {
                 type:    LogType.Progress,
@@ -692,7 +692,7 @@ class TLogger {
     stopChronoFor ( key ) {
 
         const deltaTime = ( new Date().getTime() - this._timers[ key ] )
-        const message   = `${key} take ${deltaTime}ms.`
+        const message   = `${ key } take ${ deltaTime }ms.`
 
         this.dispatch( {
             type:    LogType.Time,

@@ -4,67 +4,17 @@
  */
 
 import {
+    isNotString,
     isNull,
-    isUndefined,
-    isNotString
-}             from 'itee-validators'
+    isUndefined
+} from 'itee-validators'
 import {
     v4 as uuidv4,
     validate,
     version
-}             from 'uuid'
+} from 'uuid'
 
 class TAbstractObject {
-
-    get name () {
-        return this._name
-    }
-
-    set name ( value ) {
-        const memberName = 'name'
-        const expect     = 'Expect a String'
-
-        if ( isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
-        if ( isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
-        if ( isNotString( value ) ) { throw new ReferenceError( 'TAbstractObject.name: Value cannot be null or undefined. Expect an  !' ) }
-
-        this._name = value
-    }
-
-    getName ( target ) {
-        target.name = this.name
-        return this
-    }
-
-    setName ( value ) {
-        this.name = value
-        return this
-    }
-
-    get uuid () {
-        return this._uuid
-    }
-
-    set uuid ( value ) {
-        const memberName = 'uuid'
-        const expect     = 'Expect an uuid v4.'
-
-        if ( isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
-        if ( isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
-        if ( !validate( value ) || version( value ) !== 4 ) { throw new Error( `Unable to set invalid uuid [${ value }] ! ${ expect }` ) }
-
-        this._uuid = value
-    }
-
-    getUuid ( target ) {
-        target.uuid = this.uuid
-        return this
-    }
-
-    setUuid ( value ) {
-        this.uuid = value
-        return this
-    }
 
     constructor ( parameters = {} ) {
 
@@ -82,6 +32,56 @@ class TAbstractObject {
         this.uuid   = _parameters.uuid
         this.name   = _parameters.name
         this.logger = _parameters.logger
+    }
+
+    get name () {
+        return this._name
+    }
+
+    set name ( value ) {
+        const memberName = 'name'
+        const expect     = 'Expect a String'
+
+        if ( isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
+        if ( isNotString( value ) ) { throw new ReferenceError( 'TAbstractObject.name: Value cannot be null or undefined. Expect an  !' ) }
+
+        this._name = value
+    }
+
+    get uuid () {
+        return this._uuid
+    }
+
+    set uuid ( value ) {
+        const memberName = 'uuid'
+        const expect     = 'Expect an uuid v4.'
+
+        if ( isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
+        if ( !validate( value ) || version( value ) !== 4 ) { throw new Error( `Unable to set invalid uuid [${ value }] ! ${ expect }` ) }
+
+        this._uuid = value
+    }
+
+    getName ( target ) {
+        target.name = this.name
+        return this
+    }
+
+    setName ( value ) {
+        this.name = value
+        return this
+    }
+
+    getUuid ( target ) {
+        target.uuid = this.uuid
+        return this
+    }
+
+    setUuid ( value ) {
+        this.uuid = value
+        return this
     }
 
 }
