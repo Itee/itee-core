@@ -1,0 +1,121 @@
+/**
+ * @author [Tristan Valcke]{@link https://github.com/Itee}
+ * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
+ */
+
+import { toEnum } from 'itee-utils'
+
+/**
+ * @typedef {Enum} Keys
+ * @property {Number} BACKSPACE=8 - The backspace key code
+ * @property {Number} TAB=9 - The tab key code
+ * @property {Number} ENTER=13 - The enter key code
+ * @property {Number} Etc...=* - All the rest
+ *
+ * @constant
+ * @type {Keys}
+ * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
+ */
+const Keys = toEnum( {
+    BACKSPACE:            { value: 8 },
+    TAB:                  { value: 9 },
+    ENTER:                { value: 13 },
+    SHIFT:                { value: 16 },
+    CTRL:                 { value: 17 },
+    ALT:                  { value: 18 },
+    PAUSE:                { value: 19 },
+    CAPS_LOCK:            { value: 20 },
+    ESCAPE:               { value: 27 },
+    SPACE:                { value: 32 },
+    PAGE_UP:              { value: 33 },
+    PAGE_DOWN:            { value: 34 },
+    END:                  { value: 35 },
+    HOME:                 { value: 36 },
+    LEFT_ARROW:           { value: 37 },
+    UP_ARROW:             { value: 38 },
+    RIGHT_ARROW:          { value: 39 },
+    DOWN_ARROW:           { value: 40 },
+    INSERT:               { value: 45 },
+    DELETE:               { value: 46 },
+    ZERO:                 { value: 48 },
+    ONE:                  { value: 49 },
+    TWO:                  { value: 50 },
+    THREE:                { value: 51 },
+    FOUR:                 { value: 52 },
+    FIVE:                 { value: 53 },
+    SIX:                  { value: 54 },
+    SEVEN:                { value: 55 },
+    HEIGHT:               { value: 56 },
+    NINE:                 { value: 57 },
+    A:                    { value: 65 },
+    B:                    { value: 66 },
+    C:                    { value: 67 },
+    D:                    { value: 68 },
+    E:                    { value: 69 },
+    F:                    { value: 70 },
+    G:                    { value: 71 },
+    H:                    { value: 72 },
+    I:                    { value: 73 },
+    J:                    { value: 74 },
+    K:                    { value: 75 },
+    L:                    { value: 76 },
+    M:                    { value: 77 },
+    N:                    { value: 78 },
+    O:                    { value: 79 },
+    P:                    { value: 80 },
+    Q:                    { value: 81 },
+    R:                    { value: 82 },
+    S:                    { value: 83 },
+    T:                    { value: 84 },
+    U:                    { value: 85 },
+    V:                    { value: 86 },
+    W:                    { value: 87 },
+    X:                    { value: 88 },
+    Y:                    { value: 89 },
+    Z:                    { value: 90 },
+    LEFT_WINDOW_KEY:      { value: 91 },
+    RIGHT_WINDOW_KEY:     { value: 92 },
+    SELECT_KEY:           { value: 93 },
+    NUMPAD_0:             { value: 96 },
+    NUMPAD_1:             { value: 97 },
+    NUMPAD_2:             { value: 98 },
+    NUMPAD_3:             { value: 99 },
+    NUMPAD_4:             { value: 100 },
+    NUMPAD_5:             { value: 101 },
+    NUMPAD_6:             { value: 102 },
+    NUMPAD_7:             { value: 103 },
+    NUMPAD_8:             { value: 104 },
+    NUMPAD_9:             { value: 105 },
+    MULTIPLY:             { value: 106 },
+    ADD:                  { value: 107 },
+    SUBSTRACT:            { value: 109 },
+    DECIMAL_POINT:        { value: 110 },
+    DIVIDE:               { value: 111 },
+    F1:                   { value: 112 },
+    F2:                   { value: 113 },
+    F3:                   { value: 114 },
+    F4:                   { value: 115 },
+    F5:                   { value: 116 },
+    F6:                   { value: 117 },
+    F7:                   { value: 118 },
+    F8:                   { value: 119 },
+    F9:                   { value: 120 },
+    F10:                  { value: 121 },
+    F11:                  { value: 122 },
+    F12:                  { value: 123 },
+    NUM_LOCK:             { value: 144 },
+    SCROLL_LOCK:          { value: 145 },
+    SEMICOLON:            { value: 186 },
+    EQUAL:                { value: 187 },
+    COMMA:                { value: 188 },
+    DASH:                 { value: 189 },
+    PERIODE:              { value: 190 },
+    SLASH:                { value: 191 },
+    GRAVE_ACCENT:         { value: 192 },
+    OPEN_SQUARE_BRACKET:  { value: 219 },
+    BACKSLASH:            { value: 220 },
+    CLOSE_SQUARE_BRACKET: { value: 221 },
+    SINGLE_QUOTE:         { value: 222 }
+} )
+
+export { Keys }

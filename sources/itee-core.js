@@ -6,5 +6,8 @@
  * @file The main entry point for Itee-Core, it contains all exports of the library
  */
 
-export * from './roots/_roots'
+export * from './constants/constants'
+export * from './datamaps/_datamaps'
+export * from './enums/_enums'
 export * from './loggers/_loggers'
+export * from './roots/_roots'
