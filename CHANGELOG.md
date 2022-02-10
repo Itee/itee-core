@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/Itee/itee-core/compare/v1.1.0...v1.2.0) (2022-02-10)
+
+
+### Bug Fixes
+
+* **logger:** export all logger stuff ([b7ff3c8](https://github.com/Itee/itee-core/commit/b7ff3c8597aa5e41943d19d85bffddd86fb6b835))
+* **package:** update deps to latest version ([c25f7a5](https://github.com/Itee/itee-core/commit/c25f7a577bfb70b31493a5497ae5c10641cc98fd))
+
+
+### Features
+
+* **constants:** add twenty-n values and two power of n ([7bc1545](https://github.com/Itee/itee-core/commit/7bc1545db0e2e0fdfdf6d9bacc08fcd8e3497e49))
+
 # [1.1.0](https://github.com/Itee/itee-core/compare/v1.0.3...v1.1.0) (2021-07-21)
 
 
