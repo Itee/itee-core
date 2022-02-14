@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Itee/itee-core/compare/v1.2.0...v1.2.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **package:** update deps to latest version ([18ab70a](https://github.com/Itee/itee-core/commit/18ab70a14e652581f4f725768e5a5423bbc6179e))
+
 # [1.2.0](https://github.com/Itee/itee-core/compare/v1.1.0...v1.2.0) (2022-02-10)
 
 
