@@ -56,11 +56,11 @@
     "postversion": "gulp build"
   },
   "dependencies": {
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "itee-utils": "^5.3.2",
+    "itee-validators": "^5.3.5"
   },
   "peerDependencies": {
-    "itee-utils": "^5.3.2",
-    "itee-validators": "^5.3.5",
     "three-full": "^28.0.2"
   },
   "devDependencies": {
