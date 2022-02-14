@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Itee/itee-core/compare/v1.2.1...v1.2.2) (2022-02-14)
+
+
+### Bug Fixes
+
+* **package:** move itee peer as dev deps ([b8294ea](https://github.com/Itee/itee-core/commit/b8294ea7280729fe857d48b0a658e23deab25ca6))
+
 ## [1.2.1](https://github.com/Itee/itee-core/compare/v1.2.0...v1.2.1) (2022-02-14)
 
 

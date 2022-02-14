@@ -1,6 +1,6 @@
 {
   "name": "itee-core",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "The Itee Core package contains all base class and shared common stuff for the Itee environment.",
   "keywords": [
     "itee",
