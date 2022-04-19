@@ -1,4 +1,4 @@
-console.log('Itee.Core v1.2.2 - Standalone')
+console.log('Itee.Core v1.3.0 - Standalone')
 this.Itee = this.Itee || {};
 this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	'use strict';
@@ -6,7 +6,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	if( iteeValidators === undefined ) { console.error('Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.') }
 	if( iteeUtils === undefined ) { console.error('Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.') }
 	if( threeFull === undefined ) { console.error('Itee.Core need Three to be defined first. Please check your scripts loading order.') }
-	if( crypto === undefined ) { throw new Error('Itee.Core need crypto to be defined first !') }
+	if( crypto === undefined ) { console.error('Itee.Core need crypto to be defined first !') }
 
 
 	/**
@@ -36,7 +36,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 *
 	 */
 
-	// Maths
+	    // Maths
 	const Zero               = 0;
 	const One                = 1;
 	const Two                = 2;
@@ -45,7 +45,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	const Five               = 5;
 	const Six                = 6;
 	const Seven              = 7;
-	const Height             = 8;
+	const Eight              = 8;
 	const Nine               = 9;
 	const Ten                = 10;
 	const Eleven             = 11;
@@ -55,7 +55,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	const Fifteen            = 15;
 	const Sixteen            = 16;
 	const Seventeen          = 17;
-	const Heighteen          = 18;
+	const Eighteen           = 18;
 	const Nineteen           = 19;
 	const Twenty             = 20;
 	const TwentyOne          = 21;
@@ -65,14 +65,14 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	const TwentyFive         = 25;
 	const TwentySix          = 26;
 	const TwentySeven        = 27;
-	const TwentyHeight       = 28;
+	const TwentyEight        = 28;
 	const TwentyNine         = 29;
 	const Thirty             = 30;
 	const Fourty             = 40;
 	const Fifty              = 50;
 	const Sixty              = 60;
 	const Seventy            = 70;
-	const Heighty            = 80;
+	const Eighty             = 80;
 	const Ninety             = 90;
 	const OneHundred         = 100;
 	const FiveHundred        = 500;
@@ -88,233 +88,233 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	const TwoFourth   = 2 / 4;
 	const ThreeFourth = 3 / 4;
 
-	const SquareRootOfTwo    = Math.sqrt( Two );
-	const SquareRootOfThree  = Math.sqrt( Three );
-	const SquareRootOfFour   = Math.sqrt( Four );
-	const SquareRootOfFive   = Math.sqrt( Five );
-	const SquareRootOfSix    = Math.sqrt( Six );
-	const SquareRootOfSeven  = Math.sqrt( Seven );
-	const SquareRootOfHeight = Math.sqrt( Height );
-	const SquareRootOfNine   = Math.sqrt( Nine );
-	const SquareRootOfTen    = Math.sqrt( Ten );
+	const SquareRootOfTwo   = Math.sqrt( Two );
+	const SquareRootOfThree = Math.sqrt( Three );
+	const SquareRootOfFour  = Math.sqrt( Four );
+	const SquareRootOfFive  = Math.sqrt( Five );
+	const SquareRootOfSix   = Math.sqrt( Six );
+	const SquareRootOfSeven = Math.sqrt( Seven );
+	const SquareRootOfEight = Math.sqrt( Eight );
+	const SquareRootOfNine  = Math.sqrt( Nine );
+	const SquareRootOfTen   = Math.sqrt( Ten );
 
-	const CubeRootOfTwo    = Math.cbrt( Two );
-	const CubeRootOfThree  = Math.cbrt( Three );
-	const CubeRootOfFour   = Math.cbrt( Four );
-	const CubeRootOfFive   = Math.cbrt( Five );
-	const CubeRootOfSix    = Math.cbrt( Six );
-	const CubeRootOfSeven  = Math.cbrt( Seven );
-	const CubeRootOfHeight = Math.cbrt( Height );
-	const CubeRootOfNine   = Math.cbrt( Nine );
-	const CubeRootOfTen    = Math.cbrt( Ten );
+	const CubeRootOfTwo   = Math.cbrt( Two );
+	const CubeRootOfThree = Math.cbrt( Three );
+	const CubeRootOfFour  = Math.cbrt( Four );
+	const CubeRootOfFive  = Math.cbrt( Five );
+	const CubeRootOfSix   = Math.cbrt( Six );
+	const CubeRootOfSeven = Math.cbrt( Seven );
+	const CubeRootOfEight = Math.cbrt( Eight );
+	const CubeRootOfNine  = Math.cbrt( Nine );
+	const CubeRootOfTen   = Math.cbrt( Ten );
 
 	/**
 	 * Two power of two equal 4
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwo          = Math.pow( Two, Two );
+	const TwoPowTwo         = Math.pow( Two, Two );
 	/**
 	 * Two power of three equal 8
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThree        = Math.pow( Two, Three );
+	const TwoPowThree       = Math.pow( Two, Three );
 	/**
 	 * Two power of four equal 16
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFour         = Math.pow( Two, Four );
+	const TwoPowFour        = Math.pow( Two, Four );
 	/**
 	 * Two power of five equal 32
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFive         = Math.pow( Two, Five );
+	const TwoPowFive        = Math.pow( Two, Five );
 	/**
 	 * Two power of six equal 64
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSix          = Math.pow( Two, Six );
+	const TwoPowSix         = Math.pow( Two, Six );
 	/**
 	 * Two power of seven equal 128
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSeven        = Math.pow( Two, Seven );
+	const TwoPowSeven       = Math.pow( Two, Seven );
 	/**
 	 * Two power of height equal 256
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowHeight       = Math.pow( Two, Height );
+	const TwoPowEight       = Math.pow( Two, Eight );
 	/**
 	 * Two power of nine equal 512
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowNine         = Math.pow( Two, Nine );
+	const TwoPowNine        = Math.pow( Two, Nine );
 	/**
 	 * Two power of ten equal 1.024
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTen          = Math.pow( Two, Ten );
+	const TwoPowTen         = Math.pow( Two, Ten );
 	/**
 	 * Two power of eleven equal 2.048
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowEleven       = Math.pow( Two, Eleven );
+	const TwoPowEleven      = Math.pow( Two, Eleven );
 	/**
 	 * Two power of twelve equal 4.096
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwelve       = Math.pow( Two, Twelve );
+	const TwoPowTwelve      = Math.pow( Two, Twelve );
 	/**
 	 * Two power of thirteen equal 8.192
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirteen     = Math.pow( Two, Thirteen );
+	const TwoPowThirteen    = Math.pow( Two, Thirteen );
 	/**
 	 * Two power of fourteen equal 16.384
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFourteen     = Math.pow( Two, Fourteen );
+	const TwoPowFourteen    = Math.pow( Two, Fourteen );
 	/**
 	 * Two power of fifteen equal 32.768
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFifteen      = Math.pow( Two, Fifteen );
+	const TwoPowFifteen     = Math.pow( Two, Fifteen );
 	/**
 	 * Two power of sixteen equal 65.536
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSixteen      = Math.pow( Two, Sixteen );
+	const TwoPowSixteen     = Math.pow( Two, Sixteen );
 	/**
 	 * Two power of seventeen equal 131.072
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSeventeen    = Math.pow( Two, Seventeen );
+	const TwoPowSeventeen   = Math.pow( Two, Seventeen );
 	/**
 	 * Two power of heighteen equal 262.144
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowHeighteen    = Math.pow( Two, Heighteen );
+	const TwoPowEighteen    = Math.pow( Two, Eighteen );
 	/**
 	 * Two power of nineteen equal 524.288
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowNineteen     = Math.pow( Two, Nineteen );
+	const TwoPowNineteen    = Math.pow( Two, Nineteen );
 	/**
 	 * Two power of twenty equal 1.048.576
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwenty       = Math.pow( Two, Twenty );
+	const TwoPowTwenty      = Math.pow( Two, Twenty );
 	/**
 	 * Two power of twenty-one equal 2.097.152
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyOne    = Math.pow( Two, TwentyOne );
+	const TwoPowTwentyOne   = Math.pow( Two, TwentyOne );
 	/**
 	 * Two power of twenty-two equal 4.194.304
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyTwo    = Math.pow( Two, TwentyTwo );
+	const TwoPowTwentyTwo   = Math.pow( Two, TwentyTwo );
 	/**
 	 * Two power of twenty-three equal 8.388.608
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyThree  = Math.pow( Two, TwentyThree );
+	const TwoPowTwentyThree = Math.pow( Two, TwentyThree );
 	/**
 	 * Two power of twenty-four equal 16.777.216
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyFour   = Math.pow( Two, TwentyFour );
+	const TwoPowTwentyFour  = Math.pow( Two, TwentyFour );
 	/**
 	 * Two power of twenty-five equal 33.554.432
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyFive   = Math.pow( Two, TwentyFive );
+	const TwoPowTwentyFive  = Math.pow( Two, TwentyFive );
 	/**
 	 * Two power of twenty-six equal 67.108.864
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentySix    = Math.pow( Two, TwentySix );
+	const TwoPowTwentySix   = Math.pow( Two, TwentySix );
 	/**
 	 * Two power of twenty-seven equal 134.217.728
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentySeven  = Math.pow( Two, TwentySeven );
+	const TwoPowTwentySeven = Math.pow( Two, TwentySeven );
 	/**
 	 * Two power of twenty-height equal 268.435.456
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyHeight = Math.pow( Two, TwentyHeight );
+	const TwoPowTwentyEight = Math.pow( Two, TwentyEight );
 	/**
 	 * Two power of twenty-nine equal 536.870.912
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyNine   = Math.pow( Two, TwentyNine );
+	const TwoPowTwentyNine  = Math.pow( Two, TwentyNine );
 	/**
 	 * Two power of thirty equal 1.073.741.824
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirty       = Math.pow( Two, Thirty );
+	const TwoPowThirty      = Math.pow( Two, Thirty );
 	/**
 	 * Two power of thirty-one equal 2.147.483.648
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirtyOne    = Math.pow( Two, 31 );
+	const TwoPowThirtyOne   = Math.pow( Two, 31 );
 	/**
 	 * Two power of thirty-two equal 4.294.967.296
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirtyTwo    = Math.pow( Two, 32 );
+	const TwoPowThirtyTwo   = Math.pow( Two, 32 );
 
-	const Pi       = Math.PI;
-	const TwoPi    = Two * Pi;
-	const ThreePi  = Three * Pi;
-	const FourPi   = Four * Pi;
-	const FivePi   = Five * Pi;
-	const SixPi    = Six * Pi;
-	const SevenPi  = Seven * Pi;
-	const HeightPi = Height * Pi;
-	const NinePi   = Nine * Pi;
-	const TenPi    = Ten * Pi;
+	const Pi      = Math.PI;
+	const TwoPi   = Two * Pi;
+	const ThreePi = Three * Pi;
+	const FourPi  = Four * Pi;
+	const FivePi  = Five * Pi;
+	const SixPi   = Six * Pi;
+	const SevenPi = Seven * Pi;
+	const EightPi = Eight * Pi;
+	const NinePi  = Nine * Pi;
+	const TenPi   = Ten * Pi;
 
-	const PiOnTwo    = Pi / Two;
-	const PiOnThree  = Pi / Three;
-	const PiOnFour   = Pi / Four;
-	const PiOnFive   = Pi / Five;
-	const PiOnSix    = Pi / Six;
-	const PiOnSeven  = Pi / Seven;
-	const PiOnHeight = Pi / Height;
-	const PiOnNine   = Pi / Nine;
-	const PiOnTen    = Pi / Ten;
+	const PiOnTwo   = Pi / Two;
+	const PiOnThree = Pi / Three;
+	const PiOnFour  = Pi / Four;
+	const PiOnFive  = Pi / Five;
+	const PiOnSix   = Pi / Six;
+	const PiOnSeven = Pi / Seven;
+	const PiOnEight = Pi / Eight;
+	const PiOnNine  = Pi / Nine;
+	const PiOnTen   = Pi / Ten;
 
 	// Trigonometri
 	const SquareRootOfTwoOnTwo   = SquareRootOfTwo / Two;
@@ -1831,9 +1831,9 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	}
 
 	exports.Colors = Colors;
+	exports.CubeRootOfEight = CubeRootOfEight;
 	exports.CubeRootOfFive = CubeRootOfFive;
 	exports.CubeRootOfFour = CubeRootOfFour;
-	exports.CubeRootOfHeight = CubeRootOfHeight;
 	exports.CubeRootOfNine = CubeRootOfNine;
 	exports.CubeRootOfSeven = CubeRootOfSeven;
 	exports.CubeRootOfSix = CubeRootOfSix;
@@ -1842,6 +1842,10 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	exports.CubeRootOfTwo = CubeRootOfTwo;
 	exports.DefaultLogger = DefaultLogger;
 	exports.Directions = Directions;
+	exports.Eight = Eight;
+	exports.EightPi = EightPi;
+	exports.Eighteen = Eighteen;
+	exports.Eighty = Eighty;
 	exports.Eleven = Eleven;
 	exports.Fifteen = Fifteen;
 	exports.Fifty = Fifty;
@@ -1853,10 +1857,6 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	exports.FourPi = FourPi;
 	exports.Fourteen = Fourteen;
 	exports.Fourty = Fourty;
-	exports.Height = Height;
-	exports.HeightPi = HeightPi;
-	exports.Heighteen = Heighteen;
-	exports.Heighty = Heighty;
 	exports.HttpStatusCode = HttpStatusCode;
 	exports.HttpVerb = HttpVerb;
 	exports.Keys = Keys;
@@ -1878,9 +1878,9 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	exports.OneThird = OneThird;
 	exports.OneThousand = OneThousand;
 	exports.Pi = Pi;
+	exports.PiOnEight = PiOnEight;
 	exports.PiOnFive = PiOnFive;
 	exports.PiOnFour = PiOnFour;
-	exports.PiOnHeight = PiOnHeight;
 	exports.PiOnNine = PiOnNine;
 	exports.PiOnSeven = PiOnSeven;
 	exports.PiOnSix = PiOnSix;
@@ -1896,9 +1896,9 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	exports.SixPi = SixPi;
 	exports.Sixteen = Sixteen;
 	exports.Sixty = Sixty;
+	exports.SquareRootOfEight = SquareRootOfEight;
 	exports.SquareRootOfFive = SquareRootOfFive;
 	exports.SquareRootOfFour = SquareRootOfFour;
-	exports.SquareRootOfHeight = SquareRootOfHeight;
 	exports.SquareRootOfNine = SquareRootOfNine;
 	exports.SquareRootOfSeven = SquareRootOfSeven;
 	exports.SquareRootOfSix = SquareRootOfSix;
@@ -1919,9 +1919,9 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	exports.ThreePi = ThreePi;
 	exports.Twelve = Twelve;
 	exports.Twenty = Twenty;
+	exports.TwentyEight = TwentyEight;
 	exports.TwentyFive = TwentyFive;
 	exports.TwentyFour = TwentyFour;
-	exports.TwentyHeight = TwentyHeight;
 	exports.TwentyNine = TwentyNine;
 	exports.TwentyOne = TwentyOne;
 	exports.TwentySeven = TwentySeven;
@@ -1931,13 +1931,13 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	exports.Two = Two;
 	exports.TwoFourth = TwoFourth;
 	exports.TwoPi = TwoPi;
+	exports.TwoPowEight = TwoPowEight;
+	exports.TwoPowEighteen = TwoPowEighteen;
 	exports.TwoPowEleven = TwoPowEleven;
 	exports.TwoPowFifteen = TwoPowFifteen;
 	exports.TwoPowFive = TwoPowFive;
 	exports.TwoPowFour = TwoPowFour;
 	exports.TwoPowFourteen = TwoPowFourteen;
-	exports.TwoPowHeight = TwoPowHeight;
-	exports.TwoPowHeighteen = TwoPowHeighteen;
 	exports.TwoPowNine = TwoPowNine;
 	exports.TwoPowNineteen = TwoPowNineteen;
 	exports.TwoPowSeven = TwoPowSeven;
@@ -1952,9 +1952,9 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	exports.TwoPowThree = TwoPowThree;
 	exports.TwoPowTwelve = TwoPowTwelve;
 	exports.TwoPowTwenty = TwoPowTwenty;
+	exports.TwoPowTwentyEight = TwoPowTwentyEight;
 	exports.TwoPowTwentyFive = TwoPowTwentyFive;
 	exports.TwoPowTwentyFour = TwoPowTwentyFour;
-	exports.TwoPowTwentyHeight = TwoPowTwentyHeight;
 	exports.TwoPowTwentyNine = TwoPowTwentyNine;
 	exports.TwoPowTwentyOne = TwoPowTwentyOne;
 	exports.TwoPowTwentySeven = TwoPowTwentySeven;
