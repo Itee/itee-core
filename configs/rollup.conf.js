@@ -59,7 +59,7 @@ function _computeIntro () {
         'if( iteeValidators === undefined ) { console.error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
         'if( iteeUtils === undefined ) { console.error(\'Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.\') }' + '\n' +
         'if( threeFull === undefined ) { console.error(\'Itee.Core need Three to be defined first. Please check your scripts loading order.\') }' + '\n' +
-        'if( crypto === undefined ) { throw new Error(\'Itee.Core need crypto to be defined first !\') }' + '\n'
+        'if( crypto === undefined ) { console.error(\'Itee.Core need crypto to be defined first !\') }' + '\n'
 
 }
 
