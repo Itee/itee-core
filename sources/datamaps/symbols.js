@@ -4,7 +4,7 @@
  */
 
 const Symbols = {
-    ChessPieces:   {
+    ChessPieces:     {
         Black: {
             King:   '♚',
             Queen:  '♛',
@@ -22,7 +22,7 @@ const Symbols = {
             Pawn:   '♙'
         }
     },
-    MahjongTiles:  {
+    MahjongTiles:    {
         Winds:      {
             East:  '🀀',
             South: '🀁',
@@ -82,7 +82,7 @@ const Symbols = {
         Joker:      '🀪',
         Back:       '🀫'
     },
-    DominoTiles:   {
+    DominoTiles:     {
         Horizontal: {
             Back: '🀰',
 
@@ -202,7 +202,7 @@ const Symbols = {
             Six_Six:   '🂓'
         }
     },
-    PlayingCards:  {
+    PlayingCards:    {
         Back:     '🂠',
         Spades:   {
             Ace:    '🂡',
@@ -298,12 +298,1636 @@ const Symbols = {
             Collective:   '🃵'
         }
     },
-    Miscellaneous: {},
-    Emoticons:     {
-
+    Miscellaneous:   {
+        WeatherLandscapeAndSkys:  {
+            Cyclone:             '🌀',
+            Foggy:               '🌁',
+            ClosedUmbrella:      '🌂',
+            NightWithStars:      '🌃',
+            SunriseOverMountain: '🌄',
+            Sunrise:             '🌅',
+            CityscapeAtDust:     '🌆',
+            SunsetOverBuildings: '🌇',
+            Rainbow:             '🌈',
+            BridgeAtNight:       '🌉',
+            WaterWave:           '🌊',
+            Volcano:             '🌋',
+            MilkyWay:            '🌌'
+        },
+        Globes:                   {
+            EuropeAfrica:  '🌍',
+            Americas:      '🌎',
+            AsiaAustralia: '🌏',
+            Meridians:     '🌐'
+        },
+        MoonSunAndStars:          {
+            NewMoon:                  '🌑',
+            WaxingCrescentMoon:       '🌒',
+            FirstQuarterMoon:         '🌓',
+            WaxingGibbousMoon:        '🌔',
+            FullMoon:                 '🌕',
+            WaningGibbousMoon:        '🌖',
+            LastQuarterMoon:          '🌗',
+            WaningCrescentMoon:       '🌘',
+            CrescentMoon:             '🌙',
+            NewMoonWithFace:          '🌚',
+            FirstQuarterMoonWithFace: '🌛',
+            LastQuarterMoonWithFace:  '🌜',
+            FullMoonWithFace:         '🌝',
+            SunWithFace:              '🌞',
+            GlowingStar:              '🌟',
+            ShootingStar:             '🌠'
+        },
+        Weathers:                 {
+            Thermometer:                 '🌡',
+            BlackDroplet:                '🌢',
+            WhiteSun:                    '🌣',
+            WhiteSunWithSmallCloud:      '🌤',
+            WhiteSunBehindCloud:         '🌥',
+            WhiteSunBehindCloudWithRain: '🌦',
+            CloudWithRain:               '🌧',
+            CloudWithSnow:               '🌨',
+            CloudWithLightning:          '🌩',
+            CloudWithTornado:            '🌪',
+            Fog:                         '🌫',
+            WindBlowingFace:             '🌬'
+        },
+        Foods:                    {
+            HotDog:  '🌭',
+            Taco:    '🌮',
+            Burrito: '🌯'
+        },
+        Plants:                   {
+            Chesnut:              '🌰',
+            Seedling:             '🌱',
+            EvergreenTree:        '🌲',
+            DeciduousTree:        '🌳',
+            PalmTree:             '🌴',
+            Cactus:               '🌵',
+            HotPepper:            '🌶',
+            Tulip:                '🌷',
+            CherryBlossom:        '🌸',
+            Rose:                 '🌹',
+            Hibiscus:             '🌺',
+            SunFlower:            '🌻',
+            Blossoom:             '🌼',
+            EarOfMaize:           '🌽',
+            EarOfRice:            '🌾',
+            Herb:                 '🌿',
+            FourLeafClover:       '🍀',
+            MapleLeaf:            '🍁',
+            FallenLeaf:           '🍂',
+            LeafFlutteringInWind: '🍃',
+            Mushroom:             '🍄'
+        },
+        FruitAndVegetables:       {
+            Tomato:     '🍅',
+            Aubergine:  '🍆',
+            Grapes:     '🍇',
+            Melon:      '🍈',
+            WaterMelon: '🍉',
+            Tangerine:  '🍊',
+            Lemon:      '🍋',
+            Banana:     '🍌',
+            Pineapple:  '🍍',
+            RedApple:   '🍎',
+            GreenApple: '🍏',
+            Pear:       '🍐',
+            Peach:      '🍑',
+            Cherries:   '🍒',
+            Strawberry: '🍓'
+        },
+        Food:                     {
+            Hamburger:               '🍔',
+            SliceOfPizza:            '🍕',
+            MeatOnBone:              '🍖',
+            PoultryLeg:              '🍗',
+            RiceCracker:             '🍘',
+            RiceBall:                '🍙',
+            CookedRice:              '🍚',
+            CurryAndRice:            '🍛',
+            SteamingBowl:            '🍜',
+            Spaghetti:               '🍝',
+            Bread:                   '🍞',
+            FrenchFries:             '🍟',
+            RoastedSweetPotato:      '🍠',
+            Dango:                   '🍡',
+            Oden:                    '🍢',
+            Sushi:                   '🍣',
+            FriedShrimp:             '🍤',
+            FishCakeWithSwirlDesign: '🍥',
+            SoftIceCream:            '🍦',
+            ShavedIce:               '🍧',
+            IceCream:                '🍨',
+            Doughnut:                '🍩',
+            Cookie:                  '🍪',
+            ChocolateBar:            '🍫',
+            Candy:                   '🍬',
+            Lollipop:                '🍭',
+            Custard:                 '🍮',
+            HoneyPot:                '🍯',
+            ShortCake:               '🍰',
+            BentoBox:                '🍱',
+            PotOfFood:               '🍲',
+            Cooking:                 '🍳',
+            ForkAndKnife:            '🍴'
+        },
+        Beverages:                {
+            TeacupWithoutHandle: '🍵',
+            SakeBottleAndCup:    '🍶',
+            WineGlass:           '🍷',
+            CocktailGlass:       '🍸',
+            TropicalDrink:       '🍹',
+            BeerMug:             '🍺',
+            ClinkingBeerMugs:    '🍻',
+            BabyBottle:          '🍼'
+        },
+        Accomodations:            {
+            ForkAndKnifeWithPlate: '🍽'
+        },
+        BeverageAndFoods:         {
+            BottleWithPoppingCork: '🍾',
+            PopCorn:               '🍿'
+        },
+        Celebrations:             {
+            Ribbon:                '🎀',
+            WrappedPresent:        '🎁',
+            BirthdayCake:          '🎂',
+            JackOLantern:          '🎃',
+            ChristmasTree:         '🎄',
+            FatherChristmas:       '🎅',
+            Firework:              '🎆',
+            FireworkSparkler:      '🎇',
+            Balloon:               '🎈',
+            PartyPopper:           '🎉',
+            ConfettiBall:          '🎊',
+            TanabataTree:          '🎋',
+            CrossedFlags:          '🎌',
+            PineDecoration:        '🎍',
+            JapaneseDolls:         '🎎',
+            CarpStreamer:          '🎏',
+            WindChime:             '🎐',
+            MoonViewingCeremony:   '🎑',
+            SchoolSatchel:         '🎒',
+            GraduationCap:         '🎓',
+            HeartWithTipOnTheLeft: '🎔',
+            BouquetOfFlowers:      '🎕',
+            MilitaryMedal:         '🎖',
+            ReminderRibbon:        '🎗'
+        },
+        Musicals:                 {
+            MusicalKeyboardWithJacks:     '🎘',
+            StudioMicrophone:             '🎙',
+            LevelSlider:                  '🎚',
+            ControlKnobs:                 '🎛',
+            BeamedAscendingMusicalNotes:  '🎜',
+            BeamedDescendingMusicalNotes: '🎝',
+            MusicalNote:                  '🎵',
+            MultipleMusicalNote:          '🎶',
+            Saxophone:                    '🎷',
+            Guitar:                       '🎸',
+            MusicalKeyboard:              '🎹',
+            Trumpet:                      '🎺',
+            Violin:                       '🎻',
+            MusicalScore:                 '🎼'
+        },
+        Entertainments:           {
+            FilmFrames:         '🎞',
+            AdmissionTickets:   '🎟',
+            CarouselHorse:      '🎠',
+            FerrisWheel:        '🎡',
+            RollerCoaster:      '🎢',
+            FishingPoleAndFish: '🎣',
+            Microphone:         '🎤',
+            MovieCamera:        '🎥',
+            Cinema:             '🎦',
+            HeadPhone:          '🎧',
+            ArtistPalette:      '🎨',
+            TopHat:             '🎩',
+            CircusTent:         '🎪',
+            Ticket:             '🎫',
+            ClapperBoard:       '🎬',
+            PerformingArts:     '🎭'
+        },
+        Games:                    {
+            VideoGame:          '🎮',
+            DirectHit:          '🎯',
+            SlotMachine:        '🎰',
+            Billiards:          '🎱',
+            GameDie:            '🎲',
+            Bowling:            '🎳',
+            FlowerPlayingCards: '🎴',
+            Joystick:           '🕹'
+        },
+        Sports:                   {
+            RunningShirtWithSash:           '🎽',
+            TennisRacquetAndBall:           '🎾',
+            SkiAndSkiBoot:                  '🎿',
+            BasketBallAndHoop:              '🏀',
+            ChequeredFlag:                  '🏁',
+            Snowboarder:                    '🏂',
+            Runner:                         '🏃',
+            Surfer:                         '🏄',
+            SportsMedal:                    '🏅',
+            Trophy:                         '🏆',
+            HorseRacing:                    '🏇',
+            AmericanFootball:               '🏈',
+            RugbyFootball:                  '🏉',
+            Swimmer:                        '🏊',
+            WeightLifter:                   '🏋',
+            Golfer:                         '🏌',
+            RacingMotorcycle:               '🏍',
+            RacingCar:                      '🏎',
+            CricketBatAndBall:              '🏏',
+            VolleyBall:                     '🏐',
+            FieldHockeyStickAndBall:        '🏑',
+            IceHockeyStickAndPuck:          '🏒',
+            TableTennisPaddleAndBall:       '🏓',
+            BadmintonRacquetAndShuttleCock: '🏸',
+            BowAndArrow:                    '🏹'
+        },
+        BuildingAndMaps:          {
+            SnowCappedMoutain:      '🏔',
+            Camping:                '🏕',
+            BeachWithUmbrella:      '🏖',
+            BuildingConstruction:   '🏗',
+            HouseBuildings:         '🏘',
+            CityScape:              '🏙',
+            DerelictHouseBuilding:  '🏚',
+            ClassicalBuilding:      '🏛',
+            Desert:                 '🏜',
+            DesertIsland:           '🏝',
+            NationalPark:           '🏞',
+            Stadium:                '🏟',
+            HouseBuilding:          '🏠',
+            HouseWithGarden:        '🏡',
+            OfficeBuilding:         '🏢',
+            JapanesePostOffice:     '🏣',
+            EuropeanPostOffice:     '🏤',
+            Hospital:               '🏥',
+            Bank:                   '🏦',
+            AutomatedTellerMachine: '🏧',
+            Hotel:                  '🏨',
+            LoveHotel:              '🏩',
+            ConvenienceStore:       '🏪',
+            School:                 '🏫',
+            DepartmentStore:        '🏬',
+            Factory:                '🏭',
+            IzakayaLantern:         '🏮',
+            JapaneseCastle:         '🏯',
+            EuropeanCastle:         '🏰'
+        },
+        Flags:                    {
+            WhitePennant:    '🏱',
+            BlackPennant:    '🏲',
+            WavingWhiteFlag: '🏳',
+            WavingBlackFlag: '🏴'
+        },
+        Rosettes:                 {
+            Rosette:      '🏵',
+            BlackRosette: '🏶'
+        },
+        Miscellaneous:            {
+            Label:                       '🏷',
+            Amphora:                     '🏺',
+            RolledUpNewsPaper:           '🗞',
+            PageWithCircledText:         '🗟',
+            StockChart:                  '🗠',
+            SixPointedStarWithMiddleDot: '🔯',
+            JapaneseSymbolForBeginner:   '🔰',
+            TridentEmblem:               '🔱',
+            BowlOfHygieia:               '🕏',
+            RingingBell:                 '🕭',
+            Book:                        '🕮',
+            Candle:                      '🕯',
+            MantelPieceClock:            '🕰',
+            BlackSkullAndCrossBones:     '🕱',
+            NoPiracy:                    '🕲',
+            Hole:                        '🕳',
+            ManInBusinessSuitLevitating: '🕴',
+            SleuthOrSpy:                 '🕵',
+            DarkSunglasses:              '🕶'
+        },
+        EmojiModifiers:           {
+            FitzPatrickType_1: '🏻',
+            FitzPatrickType_2: '🏻',
+            FitzPatrickType_3: '🏼',
+            FitzPatrickType_4: '🏽',
+            FitzPatrickType_5: '🏾',
+            FitzPatrickType_6: '🏿'
+        },
+        Animals:                  {
+            Rat:                  '🐀',
+            Mouse:                '🐁',
+            Ox:                   '🐂',
+            WaterBuffalo:         '🐃',
+            Cow:                  '🐄',
+            Tiger:                '🐅',
+            Leopard:              '🐆',
+            Rabbit:               '🐇',
+            Cat:                  '🐈',
+            Dragon:               '🐉',
+            Crocodile:            '🐊',
+            Whale:                '🐋',
+            Snail:                '🐌',
+            Snake:                '🐍',
+            Horse:                '🐎',
+            Ram:                  '🐏',
+            Goat:                 '🐐',
+            Sheep:                '🐑',
+            Monkey:               '🐒',
+            Rooster:              '🐓',
+            Chicken:              '🐔',
+            Dog:                  '🐕',
+            Pig:                  '🐖',
+            Boar:                 '🐗',
+            Elephant:             '🐘',
+            Octopus:              '🐙',
+            SpiralShell:          '🐚',
+            Bug:                  '🐛',
+            Ant:                  '🐜',
+            HoneyBee:             '🐝',
+            LadyBeetle:           '🐞',
+            Fish:                 '🐟',
+            TropicalFish:         '🐠',
+            BlowFish:             '🐡',
+            Turtle:               '🐢',
+            HatchingChick:        '🐣',
+            BabyChick:            '🐤',
+            FrontFacingBabyChick: '🐥',
+            Bird:                 '🐦',
+            Penguin:              '🐧',
+            Koala:                '🐨',
+            Poodle:               '🐩',
+            DromedaryCamel:       '🐪',
+            BactrianCamel:        '🐫',
+            Dolphin:              '🐬',
+            Spider:               '🕷',
+            SpiderWeb:            '🕸',
+            Faces:                {
+                Mouse:         '🐭',
+                Cow:           '🐮',
+                Tiger:         '🐯',
+                Rabbit:        '🐰',
+                Cat:           '🐱',
+                Dragon:        '🐲',
+                SpoutingWhale: '🐳',
+                Horse:         '🐴',
+                Monkey:        '🐵',
+                Dog:           '🐶',
+                Pig:           '🐷',
+                Frog:          '🐸',
+                Hamster:       '🐹',
+                Wolf:          '🐺',
+                Bear:          '🐻',
+                Panda:         '🐼',
+                PigNose:       '🐽'
+            },
+            Symbols:              {
+                PawPrints: '🐾',
+                Chipmunk:  '🐿'
+            }
+        },
+        FacialParts:              {
+            Eyes:   '👀',
+            Eye:    '👁',
+            Ear:    '👂',
+            Nose:   '👃',
+            Mouth:  '👄',
+            Tongue: '👅'
+        },
+        Hands:                    {
+            WhiteUpPointingBackhand:                   '👆',
+            WhiteDownPointingBackhand:                 '👇',
+            WhiteLeftPointingBackhand:                 '👈',
+            WhiteRightPointingBackhand:                '👉',
+            Fisted:                                    '👊',
+            Waving:                                    '👋',
+            Ok:                                        '👌',
+            ThumbsUp:                                  '👍',
+            ThumbsDown:                                '👎',
+            Clapping:                                  '👏',
+            Open:                                      '👐',
+            LeftWriting:                               '🖎',
+            TurnedOk:                                  '🖏',
+            RaisedWithFingersSplayed:                  '🖐',
+            ReversedRaisedWithFingersSplayed:          '🖑',
+            ReversedThumbsUp:                          '🖒',
+            ReversedThumbsDown:                        '🖓',
+            ReversedVictory:                           '🖔',
+            ReversedWithMiddleFingerExtended:          '🖕',
+            RaisedWithPartBetweenMiddleAndRingFingers: '🖖',
+            WhiteDownPointingLeftIndex:                '🖗',
+            SidewaysWhiteLeftPointingIndex:            '🖘',
+            SidewaysWhiteRightPointingIndex:           '🖙',
+            SidewaysBlackLeftPointingIndex:            '🖚',
+            SidewaysBlackRightPointingIndex:           '🖛',
+            BlackLeftPointingBackhandIndex:            '🖜',
+            BlackRightPointingBackhandIndex:           '🖝',
+            SidewaysWhiteUpPointingIndex:              '🖞',
+            SidewaysWhiteDownPointingIndex:            '🖟',
+            SidewaysBlackUpPointingIndex:              '🖠',
+            SidewaysBlackDownPointingIndex:            '🖡',
+            BlackUpPointingBackhandIndex:              '🖢',
+            BlackDownPointingBackhandIndex:            '🖣'
+        },
+        ClothingAndAccessories:   {
+            Crown:          '👑',
+            WomansHat:      '👒',
+            EyeGlasses:     '👓',
+            Necktie:        '👔',
+            TShirt:         '👕',
+            Jeans:          '👖',
+            Dress:          '👗',
+            Kimono:         '👘',
+            Bikini:         '👙',
+            WomansClothes:  '👚',
+            Purse:          '👛',
+            HandBag:        '👜',
+            Pouch:          '👝',
+            MansShoe:       '👞',
+            AthleticShoe:   '👟',
+            HighHeeledShoe: '👠',
+            WomansSandal:   '👡',
+            WomansBoots:    '👢',
+            Footprints:     '👣'
+        },
+        PortraitAndRoles:         {
+            BustInSilhouette:        '👤',
+            BustsInSilhouette:       '👥',
+            Boy:                     '👦',
+            Girl:                    '👧',
+            Man:                     '👨',
+            Woman:                   '👩',
+            Family:                  '👪',
+            ManAndWomanHoldingHands: '👫',
+            TwoMenHoldingHands:      '👬',
+            TwoWomenHoldingHands:    '👭',
+            PoliceOfficer:           '👮',
+            WomanWithBunnyEars:      '👯',
+            BrideWithVeil:           '👰',
+            PersonWithBlondHair:     '👱',
+            ManWithGuaPiMao:         '👲',
+            ManWithTurban:           '👳',
+            OlderMan:                '👴',
+            OlderWoman:              '👵',
+            Baby:                    '👶',
+            ConstructionWorker:      '👷'
+        },
+        FairyTales:               {
+            Princess:              '👸',
+            JapaneseOgre:          '👹',
+            JapaneseGoblin:        '👺',
+            Ghost:                 '👻',
+            BabyAngel:             '👼',
+            ExtraterrestrialAlien: '👽',
+            AlienMonster:          '👾',
+            Imp:                   '👿',
+            Skull:                 '💀'
+        },
+        Roles:                    {
+            InformationDeskPerson: '💁',
+            GuardsMan:             '💂',
+            Dancer:                '💃',
+            ManDancing:            '🕺'
+        },
+        PersonalCares:            {
+            LipsStick:   '💄',
+            NailPolish:  '💅',
+            FaceMassage: '💆',
+            HairCut:     '💇',
+            BarberPole:  '💈'
+        },
+        Medicals:                 {
+            Syringe: '💉',
+            Pill:    '💊'
+        },
+        Romances:                 {
+            KissMark:        '💋',
+            LoveLetter:      '💌',
+            Ring:            '💍',
+            GemStone:        '💎',
+            Kiss:            '💏',
+            Bouquet:         '💐',
+            CoupleWithHeart: '💑',
+            Wedding:         '💒'
+        },
+        Hearts:                   {
+            Beating:        '💓',
+            Broken:         '💔',
+            Two:            '💕',
+            Sparkling:      '💖',
+            Growing:        '💗',
+            HeartWithArrow: '💘',
+            Blue:           '💙',
+            Green:          '💚',
+            Yellow:         '💛',
+            Purple:         '💜',
+            WithRibbon:     '💝',
+            Revolving:      '💞',
+            Decoration:     '💟',
+            Black:          '🖤'
+        },
+        ComicStyles:              {
+            DiamondShapeWithADotLine: '💠',
+            ElectricLightBulb:        '💡',
+            Anger:                    '💢',
+            Bomb:                     '💣',
+            Sleeping:                 '💤',
+            Collision:                '💥',
+            SplashingSweat:           '💦',
+            Droplet:                  '💧',
+            Dash:                     '💨',
+            PileOfPoo:                '💩',
+            FlexedBiceps:             '💪',
+            Dizzy:                    '💫',
+            SpeechBalloon:            '💬',
+            ThoughtBalloon:           '💭'
+        },
+        JapaneseSchoolGrades:     {
+            WhiteFlower:   '💮',
+            HundredPoints: '💯'
+        },
+        Moneys:                   {
+            MoneyBag:                        '💰',
+            CurrencyExchange:                '💱',
+            HeavyDollarSign:                 '💲',
+            CreditCard:                      '💳',
+            BanknoteWithYen:                 '💴',
+            BanknoteWithDollar:              '💵',
+            BanknoteWithEuro:                '💶',
+            BanknoteWithPound:               '💷',
+            MoneyWithWings:                  '💸',
+            ChartWithUpwardsTrendAndYenSign: '💹'
+        },
+        Offices:                  {
+            Seat:                        '💺',
+            PersonalComputer:            '💻',
+            BriefCase:                   '💼',
+            MiniDisc:                    '💽',
+            FloppyDisc:                  '💾',
+            OpticalDisc:                 '💿',
+            DVD:                         '📀',
+            FileFolder:                  '📁',
+            OpenFileFolder:              '📂',
+            PageWithCurl:                '📃',
+            PageFacingUp:                '📄',
+            Calendar:                    '📅',
+            TearOffCalendar:             '📆',
+            CardIndex:                   '📇',
+            ChartWithUpwardsTrend:       '📈',
+            ChartWithDownwardsTrend:     '📉',
+            BarChart:                    '📊',
+            ClipBoard:                   '📋',
+            PushPin:                     '📌',
+            RoundPushPin:                '📍',
+            PaperClip:                   '📎',
+            StraightRuler:               '📏',
+            TriangularRuler:             '📐',
+            BookmarkTabs:                '📑',
+            Ledger:                      '📒',
+            NoteBook:                    '📓',
+            NoteBookWithDecorativeCover: '📔',
+            ClosedBook:                  '📕',
+            OpenBook:                    '📖',
+            GreenBook:                   '📗',
+            BlueBook:                    '📘',
+            OrangeBook:                  '📙',
+            Books:                       '📚',
+            NameBadge:                   '📛',
+            Scroll:                      '📜',
+            DocumentWithText:            '🖹',
+            DocumentWithTextAndPicture:  '🖺',
+            DocumentWithPicture:         '🖻',
+            FrameWithPicture:            '🖼',
+            FrameWithTiles:              '🖽',
+            FrameWithAnX:                '🖾'
+        },
+        Communications:           {
+            Memo:                                 '📝',
+            TelephoneReceiver:                    '📞',
+            Pager:                                '📟',
+            FaxMachine:                           '📠',
+            SatelliteAntenna:                     '📡',
+            PublicAddressLoudSpeaker:             '📢',
+            CheeringMegaphone:                    '📣',
+            OutboxTray:                           '📤',
+            InboxTray:                            '📥',
+            Package:                              '📦',
+            EMail:                                '📧',
+            IncomingEnvelope:                     '📨',
+            EnvelopeWithDownwardsArrowAbove:      '📩',
+            ClosedMailboxWithLoweredFlag:         '📪',
+            ClosedMailboxWithRaisedFlag:          '📫',
+            OpenMailboxWithRaisedFlag:            '📬',
+            OpenMailboxWithLoweredFlag:           '📭',
+            Postbox:                              '📮',
+            PostalHorn:                           '📯',
+            NewsPaper:                            '📰',
+            MobilePhone:                          '📱',
+            MobilePhoneWithRightwardsArrowAtLeft: '📲',
+            VibrationMode:                        '📳',
+            MobilePhoneOff:                       '📴',
+            NoMobilePhones:                       '📵',
+            AntennaWithBars:                      '📶',
+            LeftHandTelephoneReceiver:            '🕻',
+            TelephoneReceiverWithPage:            '🕼',
+            RightHandTelephoneReceiver:           '🕽',
+            WhiteTouchtoneTelephone:              '🕾',
+            BlackTouchtoneTelephone:              '🕿',
+            TelephoneOnTopOfModem:                '🖀',
+            ClamshellMobilePhone:                 '🖁',
+            BackOfEnvelope:                       '🖂',
+            StampedEnvelope:                      '🖃',
+            EnvelopeWithLightning:                '🖄',
+            FlyingEnvelope:                       '🖅',
+            PenOverStampedEnvelope:               '🖆',
+            LinkedPaperClips:                     '🖇',
+            BackPushpin:                          '🖈',
+            LowerLeftPencil:                      '🖉',
+            LowerLeftBallPointPen:                '🖊',
+            LowerLeftFountainPen:                 '🖋',
+            LowerLeftPaintBrush:                  '🖌',
+            LowerLeftCrayon:                      '🖍',
+            RightSpeaker:                         '🕨',
+            RightSpeakerWithOneSoundWave:         '🕩',
+            RightSpeakerWithThreeSoundWave:       '🕪',
+            BullHorn:                             '🕫',
+            BullHornWithSoundWave:                '🕬'
+        },
+        AudioAndVideos:           {
+            Camera:          '📷',
+            CameraWithFlash: '📸',
+            VideoCamera:     '📹',
+            Television:      '📺',
+            Radio:           '📻',
+            VideoCassette:   '📼',
+            FilmProjector:   '📽',
+            PortableStereo:  '📾'
+        },
+        Religious:                {
+            PrayerBeads:                        '📿',
+            CircleCrossPommee:                  '🕀',
+            CrossPommeWithHalfCircleBelow:      '🕁',
+            CrossPommee:                        '🕂',
+            NotchedLeftSemiCircleWithThreeDots: '🕃',
+            NotchedRightSemiCicleWithThreeDots: '🕄',
+            SymbolForMarksChapter:              '🕅',
+            WhiteLatinCross:                    '🕆',
+            HeavyLatinCross:                    '🕇',
+            CelticCross:                        '🕈',
+            Om:                                 '🕉',
+            DoveOfPeace:                        '🕊',
+            Kaaba:                              '🕋',
+            Mosque:                             '🕌',
+            Synagogue:                          '🕍',
+            MenorahWithNineBranches:            '🕎'
+        },
+        UserInterfaces:           {
+            TwistedRightwardsArrows:                                              '🔀',
+            ClockwiseRightwardsAndLeftwardsOpenCircleArrows:                      '🔁',
+            ClockwiseRightwardsAndLeftwardsOpenCircleArrowsWithCircledOneOverlay: '🔂', // OMG..
+            ClockwiseDownwardsAndUpwardsOpenCircleArrows:                         '🔃',
+            AnticlockwiseDownwardsAndUpwardsOpenCircleArrows:                     '🔄',
+            LowBrightness:                                                        '🔅',
+            HighBrightness:                                                       '🔆',
+            SpeakerWithCancellationStroke:                                        '🔇',
+            Speaker:                                                              '🔈',
+            SpeakerWithOneSoundWave:                                              '🔉',
+            SpeakerWithThreeSoundWaves:                                           '🔊',
+            Battery:                                                              '🔋',
+            ElectricPlug:                                                         '🔌',
+            LeftPointingMagnifyingGlass:                                          '🔍',
+            RightPointingMagnifyingGlass:                                         '🔎',
+            LockWithInkPen:                                                       '🔏',
+            ClosedLockWithKey:                                                    '🔐',
+            Key:                                                                  '🔑',
+            Lock:                                                                 '🔒',
+            OpenLock:                                                             '🔓',
+            Bell:                                                                 '🔔',
+            BellWithCancellationStroke:                                           '🔕',
+            Bookmark:                                                             '🔖',
+            Link:                                                                 '🔗',
+            RadioButton:                                                          '🔘',
+            UpPointingRedTriangle:                                                '🔺',
+            DownPointingRedTriangle:                                              '🔻',
+            UpPointingSmallRedTriangle:                                           '🔼',
+            DownPointingSmallRedTriangle:                                         '🔽',
+            BlackFolder:                                                          '🖿',
+            Folder:                                                               '🗀',
+            OpenFolder:                                                           '🗁',
+            CardIndexDividers:                                                    '🗂',
+            CardFileBox:                                                          '🗃',
+            FileCabinet:                                                          '🗄',
+            EmptyNote:                                                            '🗅',
+            EmptyNotePage:                                                        '🗆',
+            EmptyNotePad:                                                         '🗇',
+            Note:                                                                 '🗈',
+            NotePage:                                                             '🗉',
+            NotePad:                                                              '🗊',
+            EmptyDocument:                                                        '🗋',
+            EmptyPage:                                                            '🗌',
+            EmptyPages:                                                           '🗍',
+            Document:                                                             '🗎',
+            Page:                                                                 '🗏',
+            Pages:                                                                '🗐',
+            Wastebasket:                                                          '🗑',
+            SpiralNotePad:                                                        '🗒',
+            SpiralCalendarPad:                                                    '🗓',
+            DesktopWindow:                                                        '🗔',
+            Minimize:                                                             '🗕',
+            Maximize:                                                             '🗖',
+            Overlap:                                                              '🗗',
+            ClockwiseRightAndLeftSemiCircleArrows:                                '🗘',
+            CancellationX:                                                        '🗙',
+            IncreaseFontSize:                                                     '🗚',
+            DecreaseFontSize:                                                     '🗛',
+            Compression:                                                          '🗜',
+            OldKey:                                                               '🗝'
+        },
+        WordsWithArrows:          {
+            BackWithLeftwardsArrowAbove:                  '🔙',
+            EndWithLeftwawrdsArrowAbove:                  '🔚',
+            OnWithExclamationMarkWithLeftRightArrowAbove: '🔛',
+            SoonWithRightwardsArrowAbove:                 '🔜',
+            TopWithUpwardsArrowAbove:                     '🔝'
+        },
+        EnclosedAlphanumerics:    {
+            NoOneUnderEighteen: '🔞',
+            KeycapTen:          '🔟'
+        },
+        UserInterfaceInputStatus: {
+            InputSymbolForLatinCapitalLetters: '🔠',
+            InputSymbolForLatinSmallLetters:   '🔡',
+            InputSymbolForNumbers:             '🔢',
+            InputSymbolForSymbols:             '🔣',
+            InputSymbolForLatinLetters:        '🔤'
+        },
+        Tools:                    {
+            Fire:          '🔥',
+            ElectricTorch: '🔦',
+            Wrench:        '🔧',
+            Hammer:        '🔨',
+            NutAndBolt:    '🔩',
+            Hocho:         '🔪',
+            Pistol:        '🔫',
+            Microscope:    '🔬',
+            Telescope:     '🔭',
+            CrystalBall:   '🔮'
+        },
+        Geometrics:               {
+            BlackSquareButton:  '🔲',
+            WhiteSquareButton:  '🔳',
+            LargeRedCircle:     '🔴',
+            LargeBlueCircle:    '🔵',
+            LargeOrangeCircle:  '🔶',
+            LargeBlueDiamond:   '🔷',
+            SmallOrangeDiamond: '🔸',
+            SmallBlueDiamond:   '🔹'
+        },
+        ShadowedGeometricShapes:  {
+            LowerRightShadowedWhiteCircle: '🔾',
+            UpperRightShadowedWhiteCircle: '🔿'
+        },
+        ClockFaces:               {
+            OneOClock:    '🕐',
+            TwoOClock:    '🕑',
+            ThreeOClock:  '🕒',
+            FourOClock:   '🕓',
+            FiveOClock:   '🕔',
+            SixOClock:    '🕕',
+            SevenOClock:  '🕖',
+            EightOClock:  '🕗',
+            NineOClock:   '🕘',
+            TenOClock:    '🕙',
+            ElevenOClock: '🕚',
+            TwelveOClock: '🕛',
+            OneThirty:    '🕜',
+            TwoThirty:    '🕝',
+            ThreeThirty:  '🕞',
+            FourThirty:   '🕟',
+            FiveThirty:   '🕠',
+            SixThirty:    '🕡',
+            SevenThirty:  '🕢',
+            EightThirty:  '🕣',
+            NineThirty:   '🕤',
+            TenThirty:    '🕥',
+            ElevenThirty: '🕦',
+            TwelveThirty: '🕧'
+        },
+        Computers:                {
+            Desktop:                  '🖥',
+            KeyboardAndMouse:         '🖦',
+            ThreeNetworked:           '🖧',
+            Printer:                  '🖨',
+            PocketCalculator:         '🖩',
+            BlackHardShellFloppyDisk: '🖪',
+            WhiteHardShellFloppyDisk: '🖫',
+            SoftShellFloppyDisk:      '🖬',
+            TapeCartridge:            '🖭',
+            WiredKeyboard:            '🖮',
+            OneButtonMouse:           '🖯',
+            TwoButtonMouse:           '🖰',
+            ThreeButtonMouse:         '🖱',
+            TrackBall:                '🖲',
+            OldPersonal:              '🖳',
+            HardDisk:                 '🖴',
+            Screen:                   '🖵',
+            PrinterIcon:              '🖶',
+            FaxIcon:                  '🖷',
+            OpticalDiscIcon:          '🖸'
+        },
+        Ratings:                  {
+            DaggerKnife:              '🗡',
+            Lips:                     '🗢',
+            SpeakingHeadInSilhouette: '🗣'
+        },
+        Sounds:                   {
+            ThreeRaysAbove: '🗤',
+            ThreeRaysBelow: '🗥',
+            ThreeRaysLeft:  '🗦',
+            ThreeRaysRight: '🗧'
+        },
+        Bubbles:                  {
+            LeftSpeech:    '🗨',
+            RightSpeech:   '🗩',
+            TwoSpeech:     '🗪',
+            ThreeSpeech:   '🗫',
+            LeftTought:    '🗬',
+            RightTought:   '🗭',
+            LeftAnger:     '🗮',
+            RightAnger:    '🗯',
+            Mood:          '🗰',
+            LightningMood: '🗱',
+            Lightning:     '🗲'
+        },
+        Ballots:                  {
+            BoxWithBallot:      '🗳',
+            ScriptX:            '🗴',
+            BoxWithScriptX:     '🗵',
+            BoldScriptX:        '🗶',
+            BoxWithBoldScriptX: '🗷',
+            LightCheckMark:     '🗸',
+            BoxWithBoldCheck:   '🗹'
+        },
+        Maps:                     {
+            World: '🗺'
+        },
+        Culturals:                {
+            MontFuji:          '🗻',
+            TokyoTower:        '🗼',
+            StatueOfLiberty:   '🗽',
+            SilhouetteOfJapan: '🗾',
+            Moyai:             '🗿'
+        }
     },
-    Transports:    {},
-    Alchemical:    {}
+    Emoticons:       {
+        Faces:    {
+            Grinning:                                 '😀',
+            GrinningWithSmiling:                      '😁',
+            WithTearsOfJoy:                           '😂',
+            SmilingWithOpenMouth:                     '😃',
+            SmilingWithOpenMouthAndSmilingEyes:       '😄',
+            SmilingWithOpenMouthAndColdSweat:         '😅',
+            SmilingWithOpenMouthAndTightlyClosedEyes: '😆',
+            SmilingWithHalo:                          '😇',
+            SmilingWithHorns:                         '😈',
+            Winking:                                  '😉',
+            SmilingWithSmilingEyes:                   '😊',
+            SavouringDeliciousFood:                   '😋',
+            Relieved:                                 '😌',
+            SmilingWithHeartShapedEyes:               '😍',
+            SmilingWithSunglasses:                    '😎',
+            Smirking:                                 '😏',
+            Neutral:                                  '😐',
+            Expressionless:                           '😑',
+            Unamused:                                 '😒',
+            WithColdSweat:                            '😓',
+            Pensive:                                  '😔',
+            Confused:                                 '😕',
+            Confounded:                               '😖',
+            Kissing:                                  '😗',
+            ThrowingAKiss:                            '😘',
+            KissingWithSmilingEyes:                   '😙',
+            KissingWithClosedEyes:                    '😚',
+            WithStuckOutTongue:                       '😛',
+            WithStuckOutTongueAndWinkingEye:          '😜',
+            WithStuckOutTongueAndTightlyClosedEyes:   '😝',
+            Disappointed:                             '😞',
+            Worried:                                  '😟',
+            Angry:                                    '😠',
+            Pouting:                                  '😡',
+            Crying:                                   '😢',
+            Persevering:                              '😣',
+            WithLookOfTriumph:                        '😤',
+            DisappointedButRelieved:                  '😥',
+            FrowningFaceWithOpenMouth:                '😦',
+            Anguished:                                '😧',
+            Fearful:                                  '😨',
+            Weary:                                    '😩',
+            Sleepy:                                   '😪',
+            Tired:                                    '😫',
+            Grimacing:                                '😬',
+            LoudlyCrying:                             '😭',
+            WithOpenMouth:                            '😮',
+            Hushed:                                   '😯',
+            WithOpenMouthAndColdSweat:                '😰',
+            ScreamingInFear:                          '😱',
+            Astonished:                               '😲',
+            Flushed:                                  '😳',
+            Sleeping:                                 '😴',
+            Dizzy:                                    '😵',
+            WithoutMouth:                             '😶',
+            WithMedicalMask:                          '😷',
+            SlightlyFrowning:                         '🙁',
+            SlightlySmiling:                          '🙂',
+            UpsideDown:                               '🙃',
+            WithRollingEyes:                          '🙄'
+        },
+        Cats:     {
+            GrinningWithSmilingEyes:    '😸',
+            WithTearsOfJoy:             '😹',
+            SmilingWithOpenMouth:       '😺',
+            SmilingWithHeartShapedEyes: '😻',
+            WithWrySmile:               '😼',
+            KissingWithClosedEyes:      '😽',
+            Pouting:                    '😾',
+            Crying:                     '😿',
+            Weary:                      '🙀'
+        },
+        Gestures: {
+            WithNoGood:                          '🙅',
+            WithOk:                              '🙆',
+            PersonBowingDeeply:                  '🙇',
+            SeeNoEvilMonkey:                     '🙈',
+            HearNoEvilMonkey:                    '🙉',
+            SpeakNoEvilMonkey:                   '🙊',
+            HappyPersonRaisingOneHand:           '🙋',
+            PersonRaisingBothHandsInCelebration: '🙌',
+            PersonFrowning:                      '🙍',
+            PersonWithPouting:                   '🙎',
+            WithFoldedHands:                     '🙏'
+        }
+    },
+    Transports:      {
+        Vehicles:         {
+            Rocket:                       '🚀',
+            Helicopter:                   '🚁',
+            SteamLocomotive:              '🚂',
+            RailwayCar:                   '🚃',
+            HighSpeedTrain:               '🚄',
+            HighSpeedTrainWithBulletNose: '🚅',
+            Train:                        '🚆',
+            Metro:                        '🚇',
+            LightRail:                    '🚈',
+            Station:                      '🚉',
+            Tram:                         '🚊',
+            TramCar:                      '🚋',
+            Bus:                          '🚌',
+            OncomingBus:                  '🚍',
+            TrolleyBus:                   '🚎',
+            BusStop:                      '🚏',
+            MiniBus:                      '🚐',
+            Ambulance:                    '🚑',
+            FireEngine:                   '🚒',
+            PoliceCar:                    '🚓',
+            OnComingPoliceCar:            '🚔',
+            Taxi:                         '🚕',
+            OncomingTaxi:                 '🚖',
+            Automobile:                   '🚗',
+            OnComingAutomobile:           '🚘',
+            RecreationalVehicle:          '🚙',
+            DeliveryTruck:                '🚚',
+            ArticulatedLorry:             '🚛',
+            Tractor:                      '🚜',
+            MonoRail:                     '🚝',
+            MoutainRailway:               '🚞',
+            SuspensionRailway:            '🚟',
+            MoutainCableway:              '🚠',
+            AerialTramway:                '🚡',
+            Ship:                         '🚢',
+            RowBoat:                      '🚣',
+            SpeedBoat:                    '🚤',
+            MotorBoat:                    '🛥',
+            UpPointingMilitaryAirplane:   '🛦',
+            UpPointingAirplane:           '🛧',
+            UpPointingSmallAirplane:      '🛨',
+            SmallAirplane:                '🛩',
+            NortheastPointingAirplane:    '🛪',
+            AirplaneDeparture:            '🛫',
+            AirplaneArriving:             '🛬',
+            Satellite:                    '🛰',
+            OnComingFireEngine:           '🛱',
+            DieselLocomotive:             '🛲',
+            PassengerShip:                '🛳',
+            Scooter:                      '🛴',
+            MotorScooter:                 '🛵',
+            Canoe:                        '🛶',
+            Sled:                         '🛷',
+            FlyingSaucer:                 '🛸',
+            Skateboard:                   '🛹',
+            AutoRickshaw:                 '�',
+            PickupTruck:                  '�',
+            RollerSkate:                  '�'
+        },
+        TrafficSigns:     {
+            HorizontalTrafficLight:   '🚥',
+            VerticalTrafficLight:     '🚦',
+            ConstructionSign:         '🚧',
+            PoliceCarsRevolvingLight: '🚨'
+        },
+        SignageAndOthers: {
+            TriangularFlagOnPost:       '🚩',
+            Door:                       '🚪',
+            NoEntrySign:                '🚫',
+            Smoking:                    '🚬',
+            NoSmoking:                  '🚭',
+            PutLitterInItsPlace:        '🚮',
+            DoNotLitter:                '🚯',
+            PotableWater:               '🚰',
+            NonPotableWater:            '🚱',
+            Bicycle:                    '🚲',
+            NoBicycles:                 '🚳',
+            Bicyclist:                  '🚴',
+            MoutainBicyclist:           '🚵',
+            Pedestrian:                 '🚶',
+            NoPedestrians:              '🚷',
+            ChildrenCrossing:           '🚸',
+            Mens:                       '🚹',
+            Womens:                     '🚺',
+            Restroom:                   '🚻',
+            Baby:                       '🚼',
+            Toilet:                     '🚽',
+            WaterCloset:                '🚾',
+            Shower:                     '🚿',
+            Bath:                       '🛀',
+            Bathub:                     '🛁',
+            PassportControl:            '🛂',
+            Customs:                    '🛃',
+            BaggageClaim:               '🛄',
+            LeftLuggage:                '🛅',
+            TriangleWithRoundedCorners: '🛆',
+            ProhibitedSign:             '🛇',
+            CircledInformationSource:   '🛈',
+            Boys:                       '🛉',
+            Girls:                      '🛊',
+            PlaceOfWorship:             '🛐',
+            Octagonal:                  '🛑',
+            ShoppingTrolley:            '🛒'
+        },
+        Accomodation:     {
+            CouchAndLamp:         '🛋',
+            SleepingAccomodation: '🛌',
+            ShoppingBags:         '🛍',
+            BellhopBell:          '🛎',
+            Bed:                  '🛏'
+        },
+        Map:              {
+            Stupa:       '�',
+            Pagoda:      '�',
+            HinduTemple: '�',
+            Hut:         '�',
+            Elevator:    '�'
+        },
+        Miscellaneous:    {
+            PlaygroundSlide: '�',
+            Wheel:           '�',
+            RingBuoy:        '�',
+            HammerAndWrench: '🛠',
+            Shield:          '🛡',
+            OilDrum:         '🛢',
+            MotorWay:        '🛣',
+            RailwayTrack:    '🛤'
+        }
+    },
+    Alchemical:      {
+        Aristotelians:          {
+            Quintessence: '🜀',
+            Air:          '🜁',
+            Fire:         '🜂',
+            Earth:        '🜃',
+            Water:        '🜄'
+        },
+        Solvents:               {
+            AquaFortis: '🜅',
+            AquaRegia:  '🜆',
+            AquaRegia2: '🜇',
+            AquaVitae:  '🜈',
+            AquaVitae2: '🜉',
+            Vinegar:    '🜊',
+            Vinegar2:   '🜋',
+            Vinegar3:   '🜌'
+        },
+        SulfurAndMercury:       {
+            Sulfur:             '🜍',
+            PhilosophersSulfur: '🜎',
+            BlackSulfur:        '🜏',
+            MercurySublimate:   '🜐',
+            MercurySublimate2:  '🜑',
+            MercurySublimate3:  '🜒',
+            Cinnabar:           '🜓'
+        },
+        SaltVitriolAndNitre:    {
+            Salt:      '🜔',
+            Nitre:     '🜕',
+            Vitriol:   '🜖',
+            Vitriol2:  '🜗',
+            RockSalt:  '🜘',
+            RockSalt2: '🜙'
+        },
+        GoldAndSilver:          {
+            Gold:   '🜚',
+            Silver: '🜛'
+        },
+        IronAndDerivatives:     {
+            IronOre:       '🜜',
+            IronOre2:      '🜝',
+            CrocusOfIron:  '🜞',
+            RegulusOfIron: '🜟'
+        },
+        CopperAndDerivatives:   {
+            CopperOre:               '🜠',
+            IronCopperOre:           '🜡',
+            SublimateOfCopper:       '🜢',
+            CrocusOfCopper:          '🜣',
+            CrocusOfCopper2:         '🜤',
+            CopperAntimoniate:       '🜥',
+            SaltOfCopperAntimoniate: '🜦',
+            SublimateOfSaltOfCopper: '🜧',
+            Verdigris:               '🜨'
+        },
+        TinAndLeadOre:          {
+            TinOre:  '🜩',
+            LeadOre: '🜪'
+        },
+        AntimonyAndDerivatives: {
+            AntimonyOre:               '🜫',
+            SublimateOfAntimony:       '🜬',
+            SaltOfAntimony:            '🜭',
+            SublimateOfSaltOfAntimony: '🜮',
+            VinegarOfAntimony:         '🜯',
+            RegulusOfAntimony:         '🜰',
+            RegulusOfAntimony2:        '🜱',
+            Regulus:                   '🜲',
+            Regulus2:                  '🜳',
+            Regulus3:                  '🜴',
+            Regulus4:                  '🜵'
+        },
+        OtherSubstances:        {
+            Alkali:               '🜶',
+            Alkali2:              '🜷',
+            Marcasite:            '🜸',
+            SalAmmoniac:          '🜹',
+            Arsenic:              '🜺',
+            Realgar:              '🜻',
+            Realgar2:             '🜼',
+            Auripigment:          '🜽',
+            BismuthOre:           '🜾',
+            Tartar:               '🜿',
+            Tartar2:              '🝀',
+            QuickLime:            '🝁',
+            Borax:                '🝂',
+            Borax2:               '🝃',
+            Borax3:               '🝄',
+            Alum:                 '🝅',
+            Oil:                  '🝆',
+            Spirit:               '🝇',
+            Tincture:             '🝈',
+            Gum:                  '🝉',
+            Wax:                  '🝊',
+            Powder:               '🝋',
+            Calx:                 '🝌',
+            Tutty:                '🝍',
+            CaputMortuum:         '🝎',
+            ScepterOfJove:        '🝏',
+            Caduceus:             '🝐',
+            Trident:              '🝑',
+            StarredTrident:       '🝒',
+            Lodestone:            '🝓',
+            Soap:                 '🝔',
+            Urine:                '🝕',
+            HorseDung:            '🝖',
+            Ashes:                '🝗',
+            PotAshes:             '🝘',
+            Brick:                '🝙',
+            PowderedBrick:        '🝚',
+            Amalgam:              '🝛',
+            StratumSuperStratum:  '🝜',
+            StratumSuperStratum2: '🝝'
+        },
+        Processes:              {
+            Sublimation:  '🝞',
+            Precipitate:  '🝟',
+            Distill:      '🝠',
+            Dissolve:     '🝡',
+            Dissolve2:    '🝢',
+            Purify:       '🝣',
+            Putrefaction: '🝤'
+        },
+        Appartus:               {
+            Crucible:      '🝥',
+            Crucible2:     '🝦',
+            Crucible3:     '🝧',
+            Crucible4:     '🝨',
+            Crucible5:     '🝩',
+            Alembic:       '🝪',
+            BathOfMary:    '🝫',
+            BathOfVapours: '🝬',
+            Retort:        '🝭'
+        },
+        Times:                  {
+            Hour:     '🝮',
+            Night:    '🝯',
+            DayNight: '🝰',
+            Month:    '🝱'
+        },
+        Measures:               {
+            HalfDram:  '🝲',
+            HalfOunce: '🝳'
+        }
+    },
+    GeometricShapes: {
+        IsoscelesRightTriangles: {
+            BlackLeftPointing:  '🞀',
+            BlackUpPointing:    '🞁',
+            BlackRightPointing: '🞂',
+            BlackDownPointing:  '🞃'
+        },
+        BlackCircles:            {
+            // see 22C5, 2219, 1F784, 2022, 2981, 26AB, 25CF, 2B24
+            SlightlySmall: '🞄'
+        },
+        WhiteCircles:            {
+            MediumBold:                   '🞅',
+            Bold:                         '🞆',
+            Heavy:                        '🞇',
+            VeryHeavy:                    '🞈',
+            ExtremelyHeavy:               '🞉',
+            ContainingAnotherBlackCircle: '🞊'
+        },
+        Targets:                 {
+            Round:   '🞋',
+            Square:  '🞖',
+            Diamond: '🞜'
+            // 25CE
+            // 29BE
+            // 2B57
+        },
+        BlackSquares:            {
+            //  1F78C, 2B1D, 1F78D, 25AA, 25FE, 25FC, 25A0, and 2B1B
+            Tiny:          '🞌',
+            SlightlySmall: '🞍'
+        },
+        WhiteSquares:            {
+            Light:                        '🞎',
+            Medium:                       '🞏',
+            Bold:                         '🞐',
+            Heavy:                        '🞑',
+            VeryHeavy:                    '🞒',
+            ExtremelyHeavy:               '🞓',
+            ContainingAnotherBlackSquare: {
+                VerySmall: '🞔',
+                Medium:    '🞕'
+            }
+        },
+        BlackDiamonds:           {
+            Tiny:        '🞗',
+            VerySmall:   '🞘',
+            MediumSmall: '🞙'
+        },
+        WhiteDiamonds:           {
+            ContainingAnotherBlackDiamond: {
+                VerySmall: '🞚',
+                Medium:    '🞛'
+            }
+        },
+        BlackLozenges:           {
+            Tiny:        '🞝',
+            VerySmall:   '🞞',
+            MediumSmall: '🞟'
+        },
+        WhiteLozenges:           {
+            ContainingAnotherBlackLozenge: {
+                Small: '🞠'
+            }
+        },
+        GreekCrosses:            {
+            Thin:           '🞡',
+            Light:          '🞢',
+            Medium:         '🞣',
+            Bold:           '🞤',
+            Heavy:          '🞥',
+            VeryHeavy:      '🞦',
+            ExtremelyHeavy: '🞧'
+        },
+        Saltires:                {
+            Thin:           '🞨',
+            Light:          '🞩',
+            Medium:         '🞪',
+            Bold:           '🞫',
+            Heavy:          '🞬',
+            VeryHeavy:      '🞭',
+            ExtremelyHeavy: '🞮'
+        },
+        FiveSpokedAsterisks:     {
+            Light:          '🞯',
+            Medium:         '🞰',
+            Bold:           '🞱',
+            Heavy:          '🞲',
+            VeryHeavy:      '🞳',
+            ExtremelyHeavy: '🞴'
+        },
+        SixSpokedAsterisks:      {
+            Light:          '🞵',
+            Medium:         '🞶',
+            Bold:           '🞷',
+            Heavy:          '🞸',
+            VeryHeavy:      '🞹',
+            ExtremelyHeavy: '🞺'
+        },
+        EightSpokedAsterisks:    {
+            Light:     '🞻',
+            Medium:    '🞼',
+            Bold:      '🞽',
+            Heavy:     '🞾',
+            VeryHeavy: '🞿'
+        },
+        ThreePointedStars:       {
+            Light:    '🟀',
+            Medium:   '🟁',
+            Normal:   '🟂',
+            Pinwheel: '🟃'
+        },
+        FourPointedStars:        {
+            Light:                '🟄',
+            Medium:               '🟅',
+            Normal:               '🟆',
+            MediumPinwheel:       '🟇',
+            ReverseLightPinwheel: '🟈'
+        },
+        FivePointedStars:        {
+            Light: '🟉',
+            Heavy: '🟊'
+        },
+        SixPointedStars:         {
+            Medium:   '🟋',
+            Heavy:    '🟌',
+            Pinwheel: '🟍'
+        },
+        EightPointedStars:       {
+            Medium:        '🟎',
+            Heavy:         '🟏',
+            VeryHeavy:     '🟐',
+            HeavyPinwheel: '🟑'
+        },
+        TwelvePointedStars:      {
+            Light:         '🟒',
+            Heavy:         '🟓',
+            HeavyPinwheel: '🟔'
+        },
+        GoStoneMarkers:          {
+            CircledTriangle:        '🟕',
+            NegatedCircledTriangle: '🟖',
+            CircledSquare:          '🟗',
+            NegatedCircledSquare:   '🟘'
+        }
+    },
+    Arrows:          {
+        WithTriangleArrowheads:                  {
+            Smalls:  {
+                Leftwards:  '🠀',
+                Upwards:    '🠁',
+                Rightwards: '🠂',
+                Downwards:  '🠃'
+            },
+            Mediums: {
+                Leftwards:  '🠄',
+                Upwards:    '🠅',
+                Rightwards: '🠆',
+                Downwards:  '🠇'
+            },
+            Larges:  {
+                Leftwards:  '🠈',
+                Upwards:    '🠉',
+                Rightwards: '🠊',
+                Downwards:  '🠋'
+            }
+        },
+        WithEquilateralTriangleArrowheads:       {
+            Smalls:     {
+                Leftwards:  '🠐',
+                Upwards:    '🠑',
+                Rightwards: '🠒',
+                Downwards:  '🠓'
+            },
+            Mediums:    {
+                Leftwards:  '🠔',
+                Upwards:    '🠕',
+                Rightwards: '🠖',
+                Downwards:  '🠗'
+            },
+            Heavys:     {
+                Leftwards:  '🠘',
+                Upwards:    '🠙',
+                Rightwards: '🠚',
+                Downwards:  '🠛'
+            },
+            VeryHeavys: {
+                Leftwards:  '🠜',
+                Upwards:    '🠝',
+                Rightwards: '🠞',
+                Downwards:  '🠟'
+            }
+        },
+        TriangleHeadedWithDifferentShaftWeights: {
+            Smalls:     {
+                Leftwards:  '🠠',
+                Upwards:    '🠡',
+                Rightwards: '🠢',
+                Downwards:  '🠣'
+            },
+            Mediums:    {
+                Leftwards:  '🠤',
+                Upwards:    '🠥',
+                Rightwards: '🠦',
+                Downwards:  '🠧'
+            },
+            Bolds:      {
+                Leftwards:  '🠨',
+                Upwards:    '🠩',
+                Rightwards: '🠪',
+                Downwards:  '🠫'
+            },
+            Heavys:     {
+                Leftwards:  '🠬',
+                Upwards:    '🠭',
+                Rightwards: '🠮',
+                Downwards:  '🠯'
+            },
+            VeryHeavys: {
+                Leftwards:  '🠰',
+                Upwards:    '🠱',
+                Rightwards: '🠲',
+                Downwards:  '🠳'
+            }
+        },
+        FingerPosts:                             {
+            Leftwards:  '🠴',
+            Upwards:    '🠵',
+            Rightwards: '🠶',
+            Downwards:  '🠷'
+        },
+        Squareds:                                {
+            Leftwards:  '🠸',
+            Upwards:    '🠹',
+            Rightwards: '🠺',
+            Downwards:  '🠻'
+        },
+        Compressed:                              {
+            Normals: {
+                Leftwards:  '🠼',
+                Upwards:    '🠽',
+                Rightwards: '🠾',
+                Downwards:  '🠿'
+            },
+            Heavys:  {
+                Leftwards:  '🡀',
+                Upwards:    '🡁',
+                Rightwards: '🡂',
+                Downwards:  '🡃'
+            }
+        },
+        Heavys:                                  {
+            Leftwards:  '🡄',
+            Upwards:    '🡅',
+            Rightwards: '🡆',
+            Downwards:  '🡇'
+        },
+        SansSerifs:                              {
+            Leftwards:  '🡐',
+            Upwards:    '🡑',
+            Rightwards: '🡒',
+            Downwards:  '🡓',
+            NorthWest:  '🡔',
+            NorthEast:  '🡕',
+            SouthEast:  '🡖',
+            SouthWest:  '🡗',
+            LeftRight:  '🡘',
+            UpDown:     '🡙'
+        },
+        WideHeadedBarbs:                         {
+            Lights:     {
+                Leftwards:  '🡠',
+                Upwards:    '🡡',
+                Rightwards: '🡢',
+                Downwards:  '🡣',
+                NorthWest:  '🡤',
+                NorthEast:  '🡥',
+                SouthEast:  '🡦',
+                SouthWest:  '🡧'
+            },
+            Barbs:      {
+                Leftwards:  '🡨',
+                Upwards:    '🡩',
+                Rightwards: '🡪',
+                Downwards:  '🡫',
+                NorthWest:  '🡬',
+                NorthEast:  '🡭',
+                SouthEast:  '🡮',
+                SouthWest:  '🡯'
+            },
+            Mediums:    {
+                Leftwards:  '🡰',
+                Upwards:    '🡱',
+                Rightwards: '🡲',
+                Downwards:  '🡳',
+                NorthWest:  '🡴',
+                NorthEast:  '🡵',
+                SouthEast:  '🡶',
+                SouthWest:  '🡷'
+            },
+            Heavys:     {
+                Leftwards:  '🡸',
+                Upwards:    '🡹',
+                Rightwards: '🡺',
+                Downwards:  '🡻',
+                NorthWest:  '🡼',
+                NorthEast:  '🡽',
+                SouthEast:  '🡾',
+                SouthWest:  '🡿'
+            },
+            VeryHeavys: {
+                Leftwards:  '🢀',
+                Upwards:    '🢁',
+                Rightwards: '🢂',
+                Downwards:  '🢃',
+                NorthWest:  '🢄',
+                NorthEast:  '🢅',
+                SouthEast:  '🢆',
+                SouthWest:  '🢇'
+            }
+        },
+        Arrowheads:                              {
+            Triangles:      {
+                Leftwards:  '🢐',
+                Upwards:    '🢑',
+                Rightwards: '🢒',
+                Downwards:  '🢓'
+            },
+            WithinTriangle: {
+                Leftwards:  '🢔',
+                Upwards:    '🢕',
+                Rightwards: '🢖',
+                Downwards:  '🢗'
+            }
+        },
+        Notched:                                 {
+            Leftwards:  '🢘',
+            Upwards:    '🢙',
+            Rightwards: '🢚',
+            Downwards:  '🢛'
+        },
+        HeavyShafts:                             {
+            One:       '🢜',
+            TwoThirds: '🢝',
+            OneHalf:   '🢞',
+            OneThird:  '🢟'
+        },
+        ShadedWhite:                             {
+            BottomShaded:        {
+                Leftwards:  '🢠',
+                Rightwards: '🢡'
+            },
+            TopShaded:           {
+                Leftwards:  '🢢',
+                Rightwards: '🢣'
+            },
+            LeftShaded:          {
+                Leftwards:  '🢤',
+                Rightwards: '🢥'
+            },
+            RightShaded:         {
+                Leftwards:  '🢦',
+                Rightwards: '🢧'
+            },
+            BackTiltedShadowed:  {
+                Leftwards:  '🢨',
+                Rightwards: '🢩'
+            },
+            FrontTiltedShadowed: {
+                Leftwards:  '🢪',
+                Rightwards: '🢫'
+            }
+        },
+        WhiteShafts:                             {
+            One:       '🢬',
+            TwoThirds: '🢭'
+        },
+        LegacyComputing:                         {
+            PointingUpwardsThenNorthWest:           '🢰',
+            PointingRightwardsThenCurvingSouthWest: '🢱'
+        }
+    }
 }
 
 export {
