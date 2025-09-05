@@ -1335,7 +1335,7 @@ gulp.task( 'build', ( done ) => {
         }
     } )
 
-    const configs = require( './configs/rollup.conf' )( options )
+    const configs = rollupConfigurator( options )
 
     nextBuild()
 
