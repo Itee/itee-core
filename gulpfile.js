@@ -117,7 +117,8 @@ gulp.task( 'clean', () => {
 
     const filesToClean = [
         './builds',
-        './tests/builds',
+        './tests/units/builds',
+        './tests/benchmarks/builds',
         './docs'
     ]
 
