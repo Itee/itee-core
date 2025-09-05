@@ -42,10 +42,10 @@ function CreateUnitsRollupConfigs ( /*options*/ ) {
                 format:  'iife',
                 name:    'Itee.Units',
                 globals: {
-                    'chai': 'chai',
+                    'chai':  'chai',
                     'mocha': 'mocha'
                 },
-                file:    `tests/units/builds/${packageInfos.name}.units.iife.js`
+                file: `tests/units/builds/${packageInfos.name}.units.iife.js`
             }
         },
     ]

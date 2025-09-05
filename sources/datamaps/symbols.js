@@ -4,7 +4,7 @@
  */
 
 const Symbols = {
-    ChessPieces:     {
+    ChessPieces: {
         Black: {
             King:   '♚',
             Queen:  '♛',
@@ -22,14 +22,14 @@ const Symbols = {
             Pawn:   '♙'
         }
     },
-    MahjongTiles:    {
-        Winds:      {
+    MahjongTiles: {
+        Winds: {
             East:  '🀀',
             South: '🀁',
             West:  '🀂',
             North: '🀃'
         },
-        Dragons:    {
+        Dragons: {
             Red:   '🀄',
             Green: '🀅',
             White: '🀆'
@@ -45,7 +45,7 @@ const Symbols = {
             Eight: '🀎',
             Nine:  '🀏'
         },
-        Bamboos:    {
+        Bamboos: {
             One:   '🀐',
             Two:   '🀑',
             Three: '🀒',
@@ -56,7 +56,7 @@ const Symbols = {
             Eight: '🀗',
             Nine:  '🀘'
         },
-        Circles:    {
+        Circles: {
             One:   '🀙',
             Two:   '🀚',
             Three: '🀛',
@@ -67,22 +67,22 @@ const Symbols = {
             Eight: '🀠',
             Nine:  '🀡'
         },
-        Flowers:    {
+        Flowers: {
             Plum:          '🀢',
             Orchid:        '🀣',
             Bamboo:        '🀤',
             Chrysanthemum: '🀥'
         },
-        Seasons:    {
+        Seasons: {
             Spring: '🀦',
             Summer: '🀧',
             Autumn: '🀨',
             Winter: '🀩'
         },
-        Joker:      '🀪',
-        Back:       '🀫'
+        Joker: '🀪',
+        Back:  '🀫'
     },
-    DominoTiles:     {
+    DominoTiles: {
         Horizontal: {
             Back: '🀰',
 
@@ -142,7 +142,7 @@ const Symbols = {
             Six_Five:  '🁠',
             Six_Six:   '🁡'
         },
-        Verticale:  {
+        Verticale: {
             Back: '🁢',
 
             Zero_Zero:  '🁣',
@@ -202,9 +202,9 @@ const Symbols = {
             Six_Six:   '🂓'
         }
     },
-    PlayingCards:    {
-        Back:     '🂠',
-        Spades:   {
+    PlayingCards: {
+        Back:   '🂠',
+        Spades: {
             Ace:    '🂡',
             Two:    '🂢',
             Three:  '🂣',
@@ -220,7 +220,7 @@ const Symbols = {
             Queen:  '🂭',
             King:   '🂮'
         },
-        Hearts:   {
+        Hearts: {
             Ace:    '🂱',
             Two:    '🂲',
             Three:  '🂳',
@@ -252,7 +252,7 @@ const Symbols = {
             Queen:  '🃍',
             King:   '🃎'
         },
-        Clubs:    {
+        Clubs: {
             Ace:    '🃑',
             Two:    '🃒',
             Three:  '🃓',
@@ -268,12 +268,12 @@ const Symbols = {
             Queen:  '🃝',
             King:   '🃞'
         },
-        Joker:    {
+        Joker: {
             Red:   '🃏',
             White: '🃟',
             Black: '🂿'
         },
-        Trumps:   {
+        Trumps: {
             Fool:         '🃠',
             Individual:   '🃡',
             Childhood:    '🃢',
@@ -298,8 +298,8 @@ const Symbols = {
             Collective:   '🃵'
         }
     },
-    Miscellaneous:   {
-        WeatherLandscapeAndSkys:  {
+    Miscellaneous: {
+        WeatherLandscapeAndSkys: {
             Cyclone:             '🌀',
             Foggy:               '🌁',
             ClosedUmbrella:      '🌂',
@@ -314,13 +314,13 @@ const Symbols = {
             Volcano:             '🌋',
             MilkyWay:            '🌌'
         },
-        Globes:                   {
+        Globes: {
             EuropeAfrica:  '🌍',
             Americas:      '🌎',
             AsiaAustralia: '🌏',
             Meridians:     '🌐'
         },
-        MoonSunAndStars:          {
+        MoonSunAndStars: {
             NewMoon:                  '🌑',
             WaxingCrescentMoon:       '🌒',
             FirstQuarterMoon:         '🌓',
@@ -338,7 +338,7 @@ const Symbols = {
             GlowingStar:              '🌟',
             ShootingStar:             '🌠'
         },
-        Weathers:                 {
+        Weathers: {
             Thermometer:                 '🌡',
             BlackDroplet:                '🌢',
             WhiteSun:                    '🌣',
@@ -352,12 +352,12 @@ const Symbols = {
             Fog:                         '🌫',
             WindBlowingFace:             '🌬'
         },
-        Foods:                    {
+        Foods: {
             HotDog:  '🌭',
             Taco:    '🌮',
             Burrito: '🌯'
         },
-        Plants:                   {
+        Plants: {
             Chesnut:              '🌰',
             Seedling:             '🌱',
             EvergreenTree:        '🌲',
@@ -380,7 +380,7 @@ const Symbols = {
             LeafFlutteringInWind: '🍃',
             Mushroom:             '🍄'
         },
-        FruitAndVegetables:       {
+        FruitAndVegetables: {
             Tomato:     '🍅',
             Aubergine:  '🍆',
             Grapes:     '🍇',
@@ -397,7 +397,7 @@ const Symbols = {
             Cherries:   '🍒',
             Strawberry: '🍓'
         },
-        Food:                     {
+        Food: {
             Hamburger:               '🍔',
             SliceOfPizza:            '🍕',
             MeatOnBone:              '🍖',
@@ -432,7 +432,7 @@ const Symbols = {
             Cooking:                 '🍳',
             ForkAndKnife:            '🍴'
         },
-        Beverages:                {
+        Beverages: {
             TeacupWithoutHandle: '🍵',
             SakeBottleAndCup:    '🍶',
             WineGlass:           '🍷',
@@ -442,14 +442,14 @@ const Symbols = {
             ClinkingBeerMugs:    '🍻',
             BabyBottle:          '🍼'
         },
-        Accomodations:            {
+        Accomodations: {
             ForkAndKnifeWithPlate: '🍽'
         },
-        BeverageAndFoods:         {
+        BeverageAndFoods: {
             BottleWithPoppingCork: '🍾',
             PopCorn:               '🍿'
         },
-        Celebrations:             {
+        Celebrations: {
             Ribbon:                '🎀',
             WrappedPresent:        '🎁',
             BirthdayCake:          '🎂',
@@ -475,7 +475,7 @@ const Symbols = {
             MilitaryMedal:         '🎖',
             ReminderRibbon:        '🎗'
         },
-        Musicals:                 {
+        Musicals: {
             MusicalKeyboardWithJacks:     '🎘',
             StudioMicrophone:             '🎙',
             LevelSlider:                  '🎚',
@@ -491,7 +491,7 @@ const Symbols = {
             Violin:                       '🎻',
             MusicalScore:                 '🎼'
         },
-        Entertainments:           {
+        Entertainments: {
             FilmFrames:         '🎞',
             AdmissionTickets:   '🎟',
             CarouselHorse:      '🎠',
@@ -509,7 +509,7 @@ const Symbols = {
             ClapperBoard:       '🎬',
             PerformingArts:     '🎭'
         },
-        Games:                    {
+        Games: {
             VideoGame:          '🎮',
             DirectHit:          '🎯',
             SlotMachine:        '🎰',
@@ -519,7 +519,7 @@ const Symbols = {
             FlowerPlayingCards: '🎴',
             Joystick:           '🕹'
         },
-        Sports:                   {
+        Sports: {
             RunningShirtWithSash:           '🎽',
             TennisRacquetAndBall:           '🎾',
             SkiAndSkiBoot:                  '🎿',
@@ -546,7 +546,7 @@ const Symbols = {
             BadmintonRacquetAndShuttleCock: '🏸',
             BowAndArrow:                    '🏹'
         },
-        BuildingAndMaps:          {
+        BuildingAndMaps: {
             SnowCappedMoutain:      '🏔',
             Camping:                '🏕',
             BeachWithUmbrella:      '🏖',
@@ -577,17 +577,17 @@ const Symbols = {
             JapaneseCastle:         '🏯',
             EuropeanCastle:         '🏰'
         },
-        Flags:                    {
+        Flags: {
             WhitePennant:    '🏱',
             BlackPennant:    '🏲',
             WavingWhiteFlag: '🏳',
             WavingBlackFlag: '🏴'
         },
-        Rosettes:                 {
+        Rosettes: {
             Rosette:      '🏵',
             BlackRosette: '🏶'
         },
-        Miscellaneous:            {
+        Miscellaneous: {
             Label:                       '🏷',
             Amphora:                     '🏺',
             RolledUpNewsPaper:           '🗞',
@@ -608,7 +608,7 @@ const Symbols = {
             SleuthOrSpy:                 '🕵',
             DarkSunglasses:              '🕶'
         },
-        EmojiModifiers:           {
+        EmojiModifiers: {
             FitzPatrickType_1: '🏻',
             FitzPatrickType_2: '🏻',
             FitzPatrickType_3: '🏼',
@@ -616,7 +616,7 @@ const Symbols = {
             FitzPatrickType_5: '🏾',
             FitzPatrickType_6: '🏿'
         },
-        Animals:                  {
+        Animals: {
             Rat:                  '🐀',
             Mouse:                '🐁',
             Ox:                   '🐂',
@@ -683,12 +683,12 @@ const Symbols = {
                 Panda:         '🐼',
                 PigNose:       '🐽'
             },
-            Symbols:              {
+            Symbols: {
                 PawPrints: '🐾',
                 Chipmunk:  '🐿'
             }
         },
-        FacialParts:              {
+        FacialParts: {
             Eyes:   '👀',
             Eye:    '👁',
             Ear:    '👂',
@@ -696,7 +696,7 @@ const Symbols = {
             Mouth:  '👄',
             Tongue: '👅'
         },
-        Hands:                    {
+        Hands: {
             WhiteUpPointingBackhand:                   '👆',
             WhiteDownPointingBackhand:                 '👇',
             WhiteLeftPointingBackhand:                 '👈',
@@ -731,7 +731,7 @@ const Symbols = {
             BlackUpPointingBackhandIndex:              '🖢',
             BlackDownPointingBackhandIndex:            '🖣'
         },
-        ClothingAndAccessories:   {
+        ClothingAndAccessories: {
             Crown:          '👑',
             WomansHat:      '👒',
             EyeGlasses:     '👓',
@@ -752,7 +752,7 @@ const Symbols = {
             WomansBoots:    '👢',
             Footprints:     '👣'
         },
-        PortraitAndRoles:         {
+        PortraitAndRoles: {
             BustInSilhouette:        '👤',
             BustsInSilhouette:       '👥',
             Boy:                     '👦',
@@ -774,7 +774,7 @@ const Symbols = {
             Baby:                    '👶',
             ConstructionWorker:      '👷'
         },
-        FairyTales:               {
+        FairyTales: {
             Princess:              '👸',
             JapaneseOgre:          '👹',
             JapaneseGoblin:        '👺',
@@ -785,24 +785,24 @@ const Symbols = {
             Imp:                   '👿',
             Skull:                 '💀'
         },
-        Roles:                    {
+        Roles: {
             InformationDeskPerson: '💁',
             GuardsMan:             '💂',
             Dancer:                '💃',
             ManDancing:            '🕺'
         },
-        PersonalCares:            {
+        PersonalCares: {
             LipsStick:   '💄',
             NailPolish:  '💅',
             FaceMassage: '💆',
             HairCut:     '💇',
             BarberPole:  '💈'
         },
-        Medicals:                 {
+        Medicals: {
             Syringe: '💉',
             Pill:    '💊'
         },
-        Romances:                 {
+        Romances: {
             KissMark:        '💋',
             LoveLetter:      '💌',
             Ring:            '💍',
@@ -812,7 +812,7 @@ const Symbols = {
             CoupleWithHeart: '💑',
             Wedding:         '💒'
         },
-        Hearts:                   {
+        Hearts: {
             Beating:        '💓',
             Broken:         '💔',
             Two:            '💕',
@@ -828,7 +828,7 @@ const Symbols = {
             Decoration:     '💟',
             Black:          '🖤'
         },
-        ComicStyles:              {
+        ComicStyles: {
             DiamondShapeWithADotLine: '💠',
             ElectricLightBulb:        '💡',
             Anger:                    '💢',
@@ -844,11 +844,11 @@ const Symbols = {
             SpeechBalloon:            '💬',
             ThoughtBalloon:           '💭'
         },
-        JapaneseSchoolGrades:     {
+        JapaneseSchoolGrades: {
             WhiteFlower:   '💮',
             HundredPoints: '💯'
         },
-        Moneys:                   {
+        Moneys: {
             MoneyBag:                        '💰',
             CurrencyExchange:                '💱',
             HeavyDollarSign:                 '💲',
@@ -860,7 +860,7 @@ const Symbols = {
             MoneyWithWings:                  '💸',
             ChartWithUpwardsTrendAndYenSign: '💹'
         },
-        Offices:                  {
+        Offices: {
             Seat:                        '💺',
             PersonalComputer:            '💻',
             BriefCase:                   '💼',
@@ -903,7 +903,7 @@ const Symbols = {
             FrameWithTiles:              '🖽',
             FrameWithAnX:                '🖾'
         },
-        Communications:           {
+        Communications: {
             Memo:                                 '📝',
             TelephoneReceiver:                    '📞',
             Pager:                                '📟',
@@ -955,7 +955,7 @@ const Symbols = {
             BullHorn:                             '🕫',
             BullHornWithSoundWave:                '🕬'
         },
-        AudioAndVideos:           {
+        AudioAndVideos: {
             Camera:          '📷',
             CameraWithFlash: '📸',
             VideoCamera:     '📹',
@@ -965,7 +965,7 @@ const Symbols = {
             FilmProjector:   '📽',
             PortableStereo:  '📾'
         },
-        Religious:                {
+        Religious: {
             PrayerBeads:                        '📿',
             CircleCrossPommee:                  '🕀',
             CrossPommeWithHalfCircleBelow:      '🕁',
@@ -983,7 +983,7 @@ const Symbols = {
             Synagogue:                          '🕍',
             MenorahWithNineBranches:            '🕎'
         },
-        UserInterfaces:           {
+        UserInterfaces: {
             TwistedRightwardsArrows:                                              '🔀',
             ClockwiseRightwardsAndLeftwardsOpenCircleArrows:                      '🔁',
             ClockwiseRightwardsAndLeftwardsOpenCircleArrowsWithCircledOneOverlay: '🔂', // OMG..
@@ -1045,14 +1045,14 @@ const Symbols = {
             Compression:                                                          '🗜',
             OldKey:                                                               '🗝'
         },
-        WordsWithArrows:          {
+        WordsWithArrows: {
             BackWithLeftwardsArrowAbove:                  '🔙',
             EndWithLeftwawrdsArrowAbove:                  '🔚',
             OnWithExclamationMarkWithLeftRightArrowAbove: '🔛',
             SoonWithRightwardsArrowAbove:                 '🔜',
             TopWithUpwardsArrowAbove:                     '🔝'
         },
-        EnclosedAlphanumerics:    {
+        EnclosedAlphanumerics: {
             NoOneUnderEighteen: '🔞',
             KeycapTen:          '🔟'
         },
@@ -1063,7 +1063,7 @@ const Symbols = {
             InputSymbolForSymbols:             '🔣',
             InputSymbolForLatinLetters:        '🔤'
         },
-        Tools:                    {
+        Tools: {
             Fire:          '🔥',
             ElectricTorch: '🔦',
             Wrench:        '🔧',
@@ -1075,7 +1075,7 @@ const Symbols = {
             Telescope:     '🔭',
             CrystalBall:   '🔮'
         },
-        Geometrics:               {
+        Geometrics: {
             BlackSquareButton:  '🔲',
             WhiteSquareButton:  '🔳',
             LargeRedCircle:     '🔴',
@@ -1085,11 +1085,11 @@ const Symbols = {
             SmallOrangeDiamond: '🔸',
             SmallBlueDiamond:   '🔹'
         },
-        ShadowedGeometricShapes:  {
+        ShadowedGeometricShapes: {
             LowerRightShadowedWhiteCircle: '🔾',
             UpperRightShadowedWhiteCircle: '🔿'
         },
-        ClockFaces:               {
+        ClockFaces: {
             OneOClock:    '🕐',
             TwoOClock:    '🕑',
             ThreeOClock:  '🕒',
@@ -1115,7 +1115,7 @@ const Symbols = {
             ElevenThirty: '🕦',
             TwelveThirty: '🕧'
         },
-        Computers:                {
+        Computers: {
             Desktop:                  '🖥',
             KeyboardAndMouse:         '🖦',
             ThreeNetworked:           '🖧',
@@ -1137,18 +1137,18 @@ const Symbols = {
             FaxIcon:                  '🖷',
             OpticalDiscIcon:          '🖸'
         },
-        Ratings:                  {
+        Ratings: {
             DaggerKnife:              '🗡',
             Lips:                     '🗢',
             SpeakingHeadInSilhouette: '🗣'
         },
-        Sounds:                   {
+        Sounds: {
             ThreeRaysAbove: '🗤',
             ThreeRaysBelow: '🗥',
             ThreeRaysLeft:  '🗦',
             ThreeRaysRight: '🗧'
         },
-        Bubbles:                  {
+        Bubbles: {
             LeftSpeech:    '🗨',
             RightSpeech:   '🗩',
             TwoSpeech:     '🗪',
@@ -1161,7 +1161,7 @@ const Symbols = {
             LightningMood: '🗱',
             Lightning:     '🗲'
         },
-        Ballots:                  {
+        Ballots: {
             BoxWithBallot:      '🗳',
             ScriptX:            '🗴',
             BoxWithScriptX:     '🗵',
@@ -1170,10 +1170,10 @@ const Symbols = {
             LightCheckMark:     '🗸',
             BoxWithBoldCheck:   '🗹'
         },
-        Maps:                     {
+        Maps: {
             World: '🗺'
         },
-        Culturals:                {
+        Culturals: {
             MontFuji:          '🗻',
             TokyoTower:        '🗼',
             StatueOfLiberty:   '🗽',
@@ -1181,8 +1181,8 @@ const Symbols = {
             Moyai:             '🗿'
         }
     },
-    Emoticons:       {
-        Faces:    {
+    Emoticons: {
+        Faces: {
             Grinning:                                 '😀',
             GrinningWithSmiling:                      '😁',
             WithTearsOfJoy:                           '😂',
@@ -1244,7 +1244,7 @@ const Symbols = {
             UpsideDown:                               '🙃',
             WithRollingEyes:                          '🙄'
         },
-        Cats:     {
+        Cats: {
             GrinningWithSmilingEyes:    '😸',
             WithTearsOfJoy:             '😹',
             SmilingWithOpenMouth:       '😺',
@@ -1269,8 +1269,8 @@ const Symbols = {
             WithFoldedHands:                     '🙏'
         }
     },
-    Transports:      {
-        Vehicles:         {
+    Transports: {
+        Vehicles: {
             Rocket:                       '🚀',
             Helicopter:                   '🚁',
             SteamLocomotive:              '🚂',
@@ -1330,7 +1330,7 @@ const Symbols = {
             PickupTruck:                  '�',
             RollerSkate:                  '�'
         },
-        TrafficSigns:     {
+        TrafficSigns: {
             HorizontalTrafficLight:   '🚥',
             VerticalTrafficLight:     '🚦',
             ConstructionSign:         '🚧',
@@ -1375,21 +1375,21 @@ const Symbols = {
             Octagonal:                  '🛑',
             ShoppingTrolley:            '🛒'
         },
-        Accomodation:     {
+        Accomodation: {
             CouchAndLamp:         '🛋',
             SleepingAccomodation: '🛌',
             ShoppingBags:         '🛍',
             BellhopBell:          '🛎',
             Bed:                  '🛏'
         },
-        Map:              {
+        Map: {
             Stupa:       '�',
             Pagoda:      '�',
             HinduTemple: '�',
             Hut:         '�',
             Elevator:    '�'
         },
-        Miscellaneous:    {
+        Miscellaneous: {
             PlaygroundSlide: '�',
             Wheel:           '�',
             RingBuoy:        '�',
@@ -1400,15 +1400,15 @@ const Symbols = {
             RailwayTrack:    '🛤'
         }
     },
-    Alchemical:      {
-        Aristotelians:          {
+    Alchemical: {
+        Aristotelians: {
             Quintessence: '🜀',
             Air:          '🜁',
             Fire:         '🜂',
             Earth:        '🜃',
             Water:        '🜄'
         },
-        Solvents:               {
+        Solvents: {
             AquaFortis: '🜅',
             AquaRegia:  '🜆',
             AquaRegia2: '🜇',
@@ -1418,7 +1418,7 @@ const Symbols = {
             Vinegar2:   '🜋',
             Vinegar3:   '🜌'
         },
-        SulfurAndMercury:       {
+        SulfurAndMercury: {
             Sulfur:             '🜍',
             PhilosophersSulfur: '🜎',
             BlackSulfur:        '🜏',
@@ -1427,7 +1427,7 @@ const Symbols = {
             MercurySublimate3:  '🜒',
             Cinnabar:           '🜓'
         },
-        SaltVitriolAndNitre:    {
+        SaltVitriolAndNitre: {
             Salt:      '🜔',
             Nitre:     '🜕',
             Vitriol:   '🜖',
@@ -1435,17 +1435,17 @@ const Symbols = {
             RockSalt:  '🜘',
             RockSalt2: '🜙'
         },
-        GoldAndSilver:          {
+        GoldAndSilver: {
             Gold:   '🜚',
             Silver: '🜛'
         },
-        IronAndDerivatives:     {
+        IronAndDerivatives: {
             IronOre:       '🜜',
             IronOre2:      '🜝',
             CrocusOfIron:  '🜞',
             RegulusOfIron: '🜟'
         },
-        CopperAndDerivatives:   {
+        CopperAndDerivatives: {
             CopperOre:               '🜠',
             IronCopperOre:           '🜡',
             SublimateOfCopper:       '🜢',
@@ -1456,7 +1456,7 @@ const Symbols = {
             SublimateOfSaltOfCopper: '🜧',
             Verdigris:               '🜨'
         },
-        TinAndLeadOre:          {
+        TinAndLeadOre: {
             TinOre:  '🜩',
             LeadOre: '🜪'
         },
@@ -1473,7 +1473,7 @@ const Symbols = {
             Regulus3:                  '🜴',
             Regulus4:                  '🜵'
         },
-        OtherSubstances:        {
+        OtherSubstances: {
             Alkali:               '🜶',
             Alkali2:              '🜷',
             Marcasite:            '🜸',
@@ -1515,7 +1515,7 @@ const Symbols = {
             StratumSuperStratum:  '🝜',
             StratumSuperStratum2: '🝝'
         },
-        Processes:              {
+        Processes: {
             Sublimation:  '🝞',
             Precipitate:  '🝟',
             Distill:      '🝠',
@@ -1524,7 +1524,7 @@ const Symbols = {
             Purify:       '🝣',
             Putrefaction: '🝤'
         },
-        Appartus:               {
+        Appartus: {
             Crucible:      '🝥',
             Crucible2:     '🝦',
             Crucible3:     '🝧',
@@ -1535,13 +1535,13 @@ const Symbols = {
             BathOfVapours: '🝬',
             Retort:        '🝭'
         },
-        Times:                  {
+        Times: {
             Hour:     '🝮',
             Night:    '🝯',
             DayNight: '🝰',
             Month:    '🝱'
         },
-        Measures:               {
+        Measures: {
             HalfDram:  '🝲',
             HalfOunce: '🝳'
         }
@@ -1553,11 +1553,11 @@ const Symbols = {
             BlackRightPointing: '🞂',
             BlackDownPointing:  '🞃'
         },
-        BlackCircles:            {
+        BlackCircles: {
             // see 22C5, 2219, 1F784, 2022, 2981, 26AB, 25CF, 2B24
             SlightlySmall: '🞄'
         },
-        WhiteCircles:            {
+        WhiteCircles: {
             MediumBold:                   '🞅',
             Bold:                         '🞆',
             Heavy:                        '🞇',
@@ -1565,7 +1565,7 @@ const Symbols = {
             ExtremelyHeavy:               '🞉',
             ContainingAnotherBlackCircle: '🞊'
         },
-        Targets:                 {
+        Targets: {
             Round:   '🞋',
             Square:  '🞖',
             Diamond: '🞜'
@@ -1573,12 +1573,12 @@ const Symbols = {
             // 29BE
             // 2B57
         },
-        BlackSquares:            {
+        BlackSquares: {
             //  1F78C, 2B1D, 1F78D, 25AA, 25FE, 25FC, 25A0, and 2B1B
             Tiny:          '🞌',
             SlightlySmall: '🞍'
         },
-        WhiteSquares:            {
+        WhiteSquares: {
             Light:                        '🞎',
             Medium:                       '🞏',
             Bold:                         '🞐',
@@ -1590,28 +1590,28 @@ const Symbols = {
                 Medium:    '🞕'
             }
         },
-        BlackDiamonds:           {
+        BlackDiamonds: {
             Tiny:        '🞗',
             VerySmall:   '🞘',
             MediumSmall: '🞙'
         },
-        WhiteDiamonds:           {
+        WhiteDiamonds: {
             ContainingAnotherBlackDiamond: {
                 VerySmall: '🞚',
                 Medium:    '🞛'
             }
         },
-        BlackLozenges:           {
+        BlackLozenges: {
             Tiny:        '🞝',
             VerySmall:   '🞞',
             MediumSmall: '🞟'
         },
-        WhiteLozenges:           {
+        WhiteLozenges: {
             ContainingAnotherBlackLozenge: {
                 Small: '🞠'
             }
         },
-        GreekCrosses:            {
+        GreekCrosses: {
             Thin:           '🞡',
             Light:          '🞢',
             Medium:         '🞣',
@@ -1620,7 +1620,7 @@ const Symbols = {
             VeryHeavy:      '🞦',
             ExtremelyHeavy: '🞧'
         },
-        Saltires:                {
+        Saltires: {
             Thin:           '🞨',
             Light:          '🞩',
             Medium:         '🞪',
@@ -1629,7 +1629,7 @@ const Symbols = {
             VeryHeavy:      '🞭',
             ExtremelyHeavy: '🞮'
         },
-        FiveSpokedAsterisks:     {
+        FiveSpokedAsterisks: {
             Light:          '🞯',
             Medium:         '🞰',
             Bold:           '🞱',
@@ -1637,7 +1637,7 @@ const Symbols = {
             VeryHeavy:      '🞳',
             ExtremelyHeavy: '🞴'
         },
-        SixSpokedAsterisks:      {
+        SixSpokedAsterisks: {
             Light:          '🞵',
             Medium:         '🞶',
             Bold:           '🞷',
@@ -1645,56 +1645,56 @@ const Symbols = {
             VeryHeavy:      '🞹',
             ExtremelyHeavy: '🞺'
         },
-        EightSpokedAsterisks:    {
+        EightSpokedAsterisks: {
             Light:     '🞻',
             Medium:    '🞼',
             Bold:      '🞽',
             Heavy:     '🞾',
             VeryHeavy: '🞿'
         },
-        ThreePointedStars:       {
+        ThreePointedStars: {
             Light:    '🟀',
             Medium:   '🟁',
             Normal:   '🟂',
             Pinwheel: '🟃'
         },
-        FourPointedStars:        {
+        FourPointedStars: {
             Light:                '🟄',
             Medium:               '🟅',
             Normal:               '🟆',
             MediumPinwheel:       '🟇',
             ReverseLightPinwheel: '🟈'
         },
-        FivePointedStars:        {
+        FivePointedStars: {
             Light: '🟉',
             Heavy: '🟊'
         },
-        SixPointedStars:         {
+        SixPointedStars: {
             Medium:   '🟋',
             Heavy:    '🟌',
             Pinwheel: '🟍'
         },
-        EightPointedStars:       {
+        EightPointedStars: {
             Medium:        '🟎',
             Heavy:         '🟏',
             VeryHeavy:     '🟐',
             HeavyPinwheel: '🟑'
         },
-        TwelvePointedStars:      {
+        TwelvePointedStars: {
             Light:         '🟒',
             Heavy:         '🟓',
             HeavyPinwheel: '🟔'
         },
-        GoStoneMarkers:          {
+        GoStoneMarkers: {
             CircledTriangle:        '🟕',
             NegatedCircledTriangle: '🟖',
             CircledSquare:          '🟗',
             NegatedCircledSquare:   '🟘'
         }
     },
-    Arrows:          {
-        WithTriangleArrowheads:                  {
-            Smalls:  {
+    Arrows: {
+        WithTriangleArrowheads: {
+            Smalls: {
                 Leftwards:  '🠀',
                 Upwards:    '🠁',
                 Rightwards: '🠂',
@@ -1706,27 +1706,27 @@ const Symbols = {
                 Rightwards: '🠆',
                 Downwards:  '🠇'
             },
-            Larges:  {
+            Larges: {
                 Leftwards:  '🠈',
                 Upwards:    '🠉',
                 Rightwards: '🠊',
                 Downwards:  '🠋'
             }
         },
-        WithEquilateralTriangleArrowheads:       {
-            Smalls:     {
+        WithEquilateralTriangleArrowheads: {
+            Smalls: {
                 Leftwards:  '🠐',
                 Upwards:    '🠑',
                 Rightwards: '🠒',
                 Downwards:  '🠓'
             },
-            Mediums:    {
+            Mediums: {
                 Leftwards:  '🠔',
                 Upwards:    '🠕',
                 Rightwards: '🠖',
                 Downwards:  '🠗'
             },
-            Heavys:     {
+            Heavys: {
                 Leftwards:  '🠘',
                 Upwards:    '🠙',
                 Rightwards: '🠚',
@@ -1740,25 +1740,25 @@ const Symbols = {
             }
         },
         TriangleHeadedWithDifferentShaftWeights: {
-            Smalls:     {
+            Smalls: {
                 Leftwards:  '🠠',
                 Upwards:    '🠡',
                 Rightwards: '🠢',
                 Downwards:  '🠣'
             },
-            Mediums:    {
+            Mediums: {
                 Leftwards:  '🠤',
                 Upwards:    '🠥',
                 Rightwards: '🠦',
                 Downwards:  '🠧'
             },
-            Bolds:      {
+            Bolds: {
                 Leftwards:  '🠨',
                 Upwards:    '🠩',
                 Rightwards: '🠪',
                 Downwards:  '🠫'
             },
-            Heavys:     {
+            Heavys: {
                 Leftwards:  '🠬',
                 Upwards:    '🠭',
                 Rightwards: '🠮',
@@ -1771,39 +1771,39 @@ const Symbols = {
                 Downwards:  '🠳'
             }
         },
-        FingerPosts:                             {
+        FingerPosts: {
             Leftwards:  '🠴',
             Upwards:    '🠵',
             Rightwards: '🠶',
             Downwards:  '🠷'
         },
-        Squareds:                                {
+        Squareds: {
             Leftwards:  '🠸',
             Upwards:    '🠹',
             Rightwards: '🠺',
             Downwards:  '🠻'
         },
-        Compressed:                              {
+        Compressed: {
             Normals: {
                 Leftwards:  '🠼',
                 Upwards:    '🠽',
                 Rightwards: '🠾',
                 Downwards:  '🠿'
             },
-            Heavys:  {
+            Heavys: {
                 Leftwards:  '🡀',
                 Upwards:    '🡁',
                 Rightwards: '🡂',
                 Downwards:  '🡃'
             }
         },
-        Heavys:                                  {
+        Heavys: {
             Leftwards:  '🡄',
             Upwards:    '🡅',
             Rightwards: '🡆',
             Downwards:  '🡇'
         },
-        SansSerifs:                              {
+        SansSerifs: {
             Leftwards:  '🡐',
             Upwards:    '🡑',
             Rightwards: '🡒',
@@ -1815,8 +1815,8 @@ const Symbols = {
             LeftRight:  '🡘',
             UpDown:     '🡙'
         },
-        WideHeadedBarbs:                         {
-            Lights:     {
+        WideHeadedBarbs: {
+            Lights: {
                 Leftwards:  '🡠',
                 Upwards:    '🡡',
                 Rightwards: '🡢',
@@ -1826,7 +1826,7 @@ const Symbols = {
                 SouthEast:  '🡦',
                 SouthWest:  '🡧'
             },
-            Barbs:      {
+            Barbs: {
                 Leftwards:  '🡨',
                 Upwards:    '🡩',
                 Rightwards: '🡪',
@@ -1836,7 +1836,7 @@ const Symbols = {
                 SouthEast:  '🡮',
                 SouthWest:  '🡯'
             },
-            Mediums:    {
+            Mediums: {
                 Leftwards:  '🡰',
                 Upwards:    '🡱',
                 Rightwards: '🡲',
@@ -1846,7 +1846,7 @@ const Symbols = {
                 SouthEast:  '🡶',
                 SouthWest:  '🡷'
             },
-            Heavys:     {
+            Heavys: {
                 Leftwards:  '🡸',
                 Upwards:    '🡹',
                 Rightwards: '🡺',
@@ -1867,8 +1867,8 @@ const Symbols = {
                 SouthWest:  '🢇'
             }
         },
-        Arrowheads:                              {
-            Triangles:      {
+        Arrowheads: {
+            Triangles: {
                 Leftwards:  '🢐',
                 Upwards:    '🢑',
                 Rightwards: '🢒',
@@ -1881,36 +1881,36 @@ const Symbols = {
                 Downwards:  '🢗'
             }
         },
-        Notched:                                 {
+        Notched: {
             Leftwards:  '🢘',
             Upwards:    '🢙',
             Rightwards: '🢚',
             Downwards:  '🢛'
         },
-        HeavyShafts:                             {
+        HeavyShafts: {
             One:       '🢜',
             TwoThirds: '🢝',
             OneHalf:   '🢞',
             OneThird:  '🢟'
         },
-        ShadedWhite:                             {
-            BottomShaded:        {
+        ShadedWhite: {
+            BottomShaded: {
                 Leftwards:  '🢠',
                 Rightwards: '🢡'
             },
-            TopShaded:           {
+            TopShaded: {
                 Leftwards:  '🢢',
                 Rightwards: '🢣'
             },
-            LeftShaded:          {
+            LeftShaded: {
                 Leftwards:  '🢤',
                 Rightwards: '🢥'
             },
-            RightShaded:         {
+            RightShaded: {
                 Leftwards:  '🢦',
                 Rightwards: '🢧'
             },
-            BackTiltedShadowed:  {
+            BackTiltedShadowed: {
                 Leftwards:  '🢨',
                 Rightwards: '🢩'
             },
@@ -1919,11 +1919,11 @@ const Symbols = {
                 Rightwards: '🢫'
             }
         },
-        WhiteShafts:                             {
+        WhiteShafts: {
             One:       '🢬',
             TwoThirds: '🢭'
         },
-        LegacyComputing:                         {
+        LegacyComputing: {
             PointingUpwardsThenNorthWest:           '🢰',
             PointingRightwardsThenCurvingSouthWest: '🢱'
         }
