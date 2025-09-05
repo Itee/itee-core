@@ -305,7 +305,7 @@ const PiOnEight = Pi / Eight
 const PiOnNine  = Pi / Nine
 const PiOnTen   = Pi / Ten
 
-// Trigonometri
+// Trigonometry
 const SquareRootOfTwoOnTwo   = SquareRootOfTwo / Two
 const SquareRootOfThreeOnTwo = SquareRootOfThree / Two
 
