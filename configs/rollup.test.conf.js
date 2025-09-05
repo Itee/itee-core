@@ -22,14 +22,17 @@ function CreateTestsRollupConfigs ( /*options*/ ) {
         // For karma
         {
             input:     `tests/units/${packageInfos.name}.units.js`,
-            external:  [ 'chai' ],
+            external:  [ 'chai', 'mocha' ],
             plugins:   [],
             treeshake: true,
             output:    {
                 indent:  '\t',
                 format:  'iife',
                 name:    'Itee.Units',
-                globals: { 'chai': 'chai' },
+                globals: {
+                    'chai': 'chai',
+                    'mocha': 'mocha'
+                },
                 file:    `tests/builds/${packageInfos.name}.units.iife.js`
             }
         },

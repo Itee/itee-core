@@ -1,4 +1,5 @@
-/* global describe, beforeEach, before, after, afterEach, context, it */
+import { expect }       from 'chai'
+import { describe, it } from 'mocha'
 
 describe( 'Array', () => {
 
@@ -21,6 +22,11 @@ describe( 'Array', () => {
     describe( '#indexOf()', () => {
 
         context( 'when not present', () => {
+
+            it( 'should be true', ()=>{
+                const myVar = 'i exist'
+                expect(myVar).to.exist
+            })
 
             it( 'should return -1', () => {
 
