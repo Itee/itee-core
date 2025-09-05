@@ -192,10 +192,10 @@ gulp.task( 'lint', () => {
  */
 gulp.task( 'doc', ( done ) => {
 
-    const config     = require( './configs/jsdoc.conf' )
+    const config     = jsdocConfiguration
     const filesToDoc = [
         'README.md',
-        'gulpfile.js',
+        'gulpfile.mjs',
         './configs/*.js',
         './sources/**/*.js',
         './tests/**/*.js'
