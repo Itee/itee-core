@@ -37,23 +37,40 @@
 
 /* eslint-env node */
 
-const packageInfos = require( './package.json' )
-const gulp         = require( 'gulp' )
-const jsdoc        = require( 'gulp-jsdoc3' )
-const eslint       = require( 'gulp-eslint' )
-const del          = require( 'del' )
-const parseArgs    = require( 'minimist' )
-const rollup       = require( 'rollup' )
-const path         = require( 'path' )
-const karma        = require( 'karma' )
-const log          = require( 'fancy-log' )
-const colors       = require( 'ansi-colors' )
-const red          = colors.red
-const green        = colors.green
-const blue         = colors.blue
-const cyan         = colors.cyan
-const yellow       = colors.yellow
-const magenta      = colors.magenta
+import childProcess                from 'child_process'
+import fs                          from 'fs'
+import glob                        from 'glob'
+import gulp                        from 'gulp'
+import jsdoc                       from 'gulp-jsdoc3'
+import eslint                      from 'gulp-eslint'
+import {deleteAsync}               from 'del'
+import parseArgs                   from 'minimist'
+import {rollup}                    from 'rollup'
+import path                        from 'path'
+import karma                       from 'karma'
+import log                         from 'fancy-log'
+import colors                      from 'ansi-colors'
+import {fileURLToPath}             from 'url'
+import jsdocConfiguration          from './configs/jsdoc.conf.js'
+import rollupConfigurator          from './configs/rollup.conf.js'
+import rollupUnitTestsConfigurator from './configs/rollup.units.conf.js'
+import rollupBenchesConfigurator   from './configs/rollup.benchs.conf.js'
+
+const red     = colors.red
+const green   = colors.green
+const blue    = colors.blue
+const cyan    = colors.cyan
+const yellow  = colors.yellow
+const magenta = colors.magenta
+
+// eslint-disable-next-line
+const __dirname = path.dirname( fileURLToPath( import.meta.url ) )
+
+const packageInfos = JSON.parse( fs.readFileSync(
+    new URL( './package.json', import.meta.url )
+) )
+
+//---------
 
 /**
  * @method npm run help ( default )
@@ -65,7 +82,7 @@ gulp.task( 'help', ( done ) => {
     log( '' )
     log( '====================================================' )
     log( '|                      HELP                        |' )
-    log( '|                 Itee Validators                  |' )
+    log( '|                    Itee Core                     |' )
     log( `|                     v${packageInfos.version}                       |` )
     log( '====================================================' )
     log( '' )
@@ -97,6 +114,8 @@ gulp.task( 'help', ( done ) => {
 
 } )
 
+//---------
+
 /**
  * @method npm run patch
  * @global
@@ -107,6 +126,8 @@ gulp.task( 'patch', ( done ) => {
     done()
 
 } )
+
+//---------
 
 /**
  * @method npm run clean
@@ -122,9 +143,11 @@ gulp.task( 'clean', () => {
         './docs'
     ]
 
-    return del( filesToClean )
+    return deleteAsync( filesToClean )
 
 } )
+
+//---------
 
 /**
  * @method npm run lint
@@ -134,11 +157,11 @@ gulp.task( 'clean', () => {
 gulp.task( 'lint', () => {
 
     const filesToLint = [
-        'gulpfile.js',
         'configs/**/*.js',
         'sources/**/*.js',
         'tests/**/*.js',
-        '!tests/builds/*.js'
+        '!tests/builds/*.js',
+        'tutorials/*.js',
     ]
 
     return gulp.src( filesToLint, { base: './' } )
@@ -160,6 +183,8 @@ gulp.task( 'lint', () => {
 
 } )
 
+//---------
+
 /**
  * @method npm run doc
  * @global
@@ -180,6 +205,48 @@ gulp.task( 'doc', ( done ) => {
         .pipe( jsdoc( config, done ) )
 
 } )
+
+//---------
+
+/**
+ * @method npm run build-test
+ * @global
+ * @description Will build itee client tests.
+ */
+gulp.task( 'build-test', ( done ) => {
+
+    const configs = require( './configs/rollup.test.conf' )()
+
+    nextBuild()
+
+    function nextBuild ( error ) {
+        'use strict'
+
+        if ( error ) {
+
+            done( error )
+
+        } else if ( configs.length === 0 ) {
+
+            done()
+
+        } else {
+
+            const config = configs.pop()
+            log( `Building ${config.output.file}` )
+
+            rollup( config )
+                  .then( ( bundle ) => { return bundle.write( config.output ) } )
+                  .then( () => { nextBuild() } )
+                  .catch( nextBuild )
+
+        }
+
+    }
+
+} )
+
+//---------
 
 /**
  * @method npm run unit
@@ -246,43 +313,7 @@ gulp.task( 'bench', ( done ) => {
  */
 gulp.task( 'test', gulp.series( 'unit', 'bench' ) )
 
-/**
- * @method npm run build-test
- * @global
- * @description Will build itee client tests.
- */
-gulp.task( 'build-test', ( done ) => {
-
-    const configs = require( './configs/rollup.test.conf' )()
-
-    nextBuild()
-
-    function nextBuild ( error ) {
-        'use strict'
-
-        if ( error ) {
-
-            done( error )
-
-        } else if ( configs.length === 0 ) {
-
-            done()
-
-        } else {
-
-            const config = configs.pop()
-            log( `Building ${config.output.file}` )
-
-            rollup.rollup( config )
-                  .then( ( bundle ) => { return bundle.write( config.output ) } )
-                  .then( () => { nextBuild() } )
-                  .catch( nextBuild )
-
-        }
-
-    }
-
-} )
+//---------
 
 /**
  * @method npm run build
@@ -334,7 +365,7 @@ gulp.task( 'build', ( done ) => {
             const config = configs.pop()
             log( `Building ${config.output.file}` )
 
-            rollup.rollup( config )
+            rollup( config )
                   .then( ( bundle ) => { return bundle.write( config.output ) } )
                   .then( () => { nextBuild() } )
                   .catch( nextBuild )
@@ -344,6 +375,8 @@ gulp.task( 'build', ( done ) => {
     }
 
 } )
+
+//---------
 
 /**
  * @method npm run release
