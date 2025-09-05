@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/Itee/itee-core/compare/v1.2.2...v1.3.0) (2022-04-19)
+
+
+### Bug Fixes
+
+* **constant:** fix wrong naming ([b0c51f0](https://github.com/Itee/itee-core/commit/b0c51f052abeb0334af4ec285530ec7083a50145))
+
+
+### Features
+
+* **symbols:** add lot of unicode character like emoji animals and more ([fed2721](https://github.com/Itee/itee-core/commit/fed2721bb23d5fcc69d8cf2dd362577c7dbe9933))
+* **symbols:** start implementing unicode symbols ([40f37a1](https://github.com/Itee/itee-core/commit/40f37a18919aaf4862f95e990c5c01007536068c))
+
 ## [1.2.2](https://github.com/Itee/itee-core/compare/v1.2.1...v1.2.2) (2022-02-14)
 
 
