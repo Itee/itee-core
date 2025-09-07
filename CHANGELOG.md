@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/Itee/itee-core/compare/v1.3.1...v1.3.2) (2025-09-07)
+
+
+### Bug Fixes
+
+* **package:** apply npm audit fix ([1321079](https://github.com/Itee/itee-core/commit/1321079a022f0c57d6b261b8bcc34901747a8875))
+
 ## [1.3.1](https://github.com/Itee/itee-core/compare/v1.3.0...v1.3.1) (2025-09-07)
 
 
