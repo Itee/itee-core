@@ -1,4 +1,4 @@
-console.log('Itee.Core v1.3.0 - CommonJs')
+console.log('Itee.Core v1.3.1 - CommonJs')
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
