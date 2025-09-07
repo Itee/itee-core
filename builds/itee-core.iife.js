@@ -316,7 +316,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	const PiOnNine  = Pi / Nine;
 	const PiOnTen   = Pi / Ten;
 
-	// Trigonometri
+	// Trigonometry
 	const SquareRootOfTwoOnTwo   = SquareRootOfTwo / Two;
 	const SquareRootOfThreeOnTwo = SquareRootOfThree / Two;
 
