@@ -1,4 +1,4 @@
-console.log('Itee.Core v1.3.0 - EsModule')
+console.log('Itee.Core v1.3.1 - EsModule')
 import { Color, Vector3 } from 'three-full';
 import { toEnum } from 'itee-utils';
 import { isNull, isUndefined, isString, isObject, isArrayOfString, isArrayOfObject, isNotString } from 'itee-validators';

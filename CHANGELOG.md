@@ -1,3 +1,13 @@
+## [1.3.1](https://github.com/Itee/itee-core/compare/v1.3.0...v1.3.1) (2025-09-07)
+
+
+### Bug Fixes
+
+* **gulpfile:** fix doc task config import ([b6211c1](https://github.com/Itee/itee-core/commit/b6211c1a44125dc82a55474793d9d2fb9a02ea92))
+* **gulpfile:** fix release task ([3c31c1e](https://github.com/Itee/itee-core/commit/3c31c1eee4cda61dcb28ed1130649c95afd52071))
+* **gulpfile:** fix some tests generations ([64a4eae](https://github.com/Itee/itee-core/commit/64a4eae6c8c183cf76af9f76dfe574898fd76491))
+* **package:** revert karma version ([061f9ee](https://github.com/Itee/itee-core/commit/061f9ee203fc6c327b414e4a98c2df1eea0d1953))
+
 # [1.3.0](https://github.com/Itee/itee-core/compare/v1.2.2...v1.3.0) (2022-04-19)
 
 
