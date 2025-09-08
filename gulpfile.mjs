@@ -267,7 +267,6 @@ gulp.task( 'check-bundling-side-effect', async ( done ) => {
 
         const config = {
             input: temporaryFile,
-            //                                external:  [ 'itee-validators' ],
             plugins:   [
                 nodeResolve()
                 //                commonJs()
@@ -1195,6 +1194,8 @@ gulp.task( 'compute-benchmarks', async ( done ) => {
         `}` + '\n'
 
     const benchsFilePath = path.join( benchsDir, `${ packageInfos.name }.benchs.js` )
+
+    log( green( `Create ${ benchsFilePath }` ) )
     fs.writeFileSync( benchsFilePath, benchsTemplate )
 
     done()
@@ -1408,16 +1409,5 @@ gulp.task( 'build', ( done ) => {
 gulp.task( 'release', gulp.series( 'clean', 'lint', 'doc', 'build-tests', 'test', 'build' ) )
 
 //---------
-
-// gulp.task( 'default', gulp.series( 'compute-unit-tests' ) )
-// gulp.task( 'default', gulp.series( 'bundle-unit-tests' ) )
-// gulp.task( 'default', gulp.series( 'build-unit-tests' ) )
-
-// gulp.task( 'default', gulp.series( 'compute-benchmarks' ) )
-// gulp.task( 'default', gulp.series( 'bundle-benchmarks' ) )
-// gulp.task( 'default', gulp.series( 'build-benchmarks' ) )
-
-// gulp.task( 'default', gulp.series( 'run-unit-tests' ) )
-// gulp.task( 'default', gulp.series( 'run-benchmarks' ) )
 
 gulp.task( 'default', gulp.series( 'help' ) )
