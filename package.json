@@ -57,8 +57,8 @@
     "postversion": "gulp build"
   },
   "dependencies": {
-    "itee-utils": "^5.4.4",
-    "itee-validators": "^5.3.9",
+    "itee-utils": "^5.5.0",
+    "itee-validators": "^5.5.1",
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
