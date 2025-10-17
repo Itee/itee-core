@@ -109,7 +109,7 @@ function _computeBanner( format ) {
 
 }
 
-function _computeIntro () {
+function _computeIntro() {
 
     return '' +
         'if( iteeValidators === undefined ) { throw new Error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
@@ -150,18 +150,18 @@ function CreateRollupConfigs( options ) {
             const outputPath = ( isProd ) ? path.join( output, `${ fileName }.${ format }.min.js` ) : path.join( output, `${ fileName }.${ format }.js` )
 
             configs.push( {
-                input:    input,
-                external: ( format !== 'iife' ) ? [
+                input:     input,
+                external:  ( format !== 'iife' ) ? [
                     'itee-validators',
                     'itee-utils',
-                    'three-full',
+                    'three',
                     'crypto'
                 ] : [
                     'itee-validators',
                     'itee-utils',
-                    'three-full'
+                    'three'
                 ],
-                plugins: [
+                plugins:   [
                     alias( {
                         entries: ( format === 'iife' ) ? [
                             {
@@ -189,7 +189,7 @@ function CreateRollupConfigs( options ) {
                     } ),
                     isProd && terser()
                 ],
-                onwarn: ( {
+                onwarn:    ( {
                     loc,
                     frame,
                     message
@@ -215,12 +215,12 @@ function CreateRollupConfigs( options ) {
                     globals: ( format !== 'iife' ) ? {
                         'itee-utils':      'Itee.Utils',
                         'itee-validators': 'Itee.Validators',
-                        'three-full':      'Three',
+                        'three':           'Three',
                         'crypto':          'crypto'
                     } : {
                         'itee-utils':      'Itee.Utils',
                         'itee-validators': 'Itee.Validators',
-                        'three-full':      'Three'
+                        'three':           'Three'
                     },
 
                     // advanced options

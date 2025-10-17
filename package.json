@@ -62,8 +62,7 @@
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
-    "three": "^0.149.0",
-    "three-full": "^28.0.2"
+    "three": "^0.149.0"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
