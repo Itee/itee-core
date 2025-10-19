@@ -150,8 +150,8 @@ function CreateRollupConfigs( options ) {
             const outputPath = ( isProd ) ? path.join( output, `${ fileName }.${ format }.min.js` ) : path.join( output, `${ fileName }.${ format }.js` )
 
             configs.push( {
-                input:     input,
-                external:  ( format !== 'iife' ) ? [
+                input:    input,
+                external: ( format !== 'iife' ) ? [
                     'itee-validators',
                     'itee-utils',
                     'three',
@@ -161,7 +161,7 @@ function CreateRollupConfigs( options ) {
                     'itee-utils',
                     'three'
                 ],
-                plugins:   [
+                plugins: [
                     alias( {
                         entries: ( format === 'iife' ) ? [
                             {
@@ -189,7 +189,7 @@ function CreateRollupConfigs( options ) {
                     } ),
                     isProd && terser()
                 ],
-                onwarn:    ( {
+                onwarn: ( {
                     loc,
                     frame,
                     message

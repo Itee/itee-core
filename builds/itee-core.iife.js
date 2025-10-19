@@ -1,42 +1,23 @@
-console.log('Itee.Core v1.3.2 - Standalone')
+/**
+ * ┳      ┏┓          ┓ ┏┓ ┏┓      ┏┓      ┓  ┓      
+ * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┃  ┫ ┏┛  ━━  ┗┓╋┏┓┏┓┏┫┏┓┃┏┓┏┓┏┓
+ * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┻•┗┛•┗━      ┗┛┗┗┻┛┗┗┻┗┻┗┗┛┛┗┗ 
+ *                                                   
+ * @desc    The Itee Core package contains all base class and shared common stuff for the Itee environment.
+ * @author  [Tristan Valcke]{@link https://github.com/Itee}
+ * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
+ * 
+ */
 this.Itee = this.Itee || {};
-this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
+this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	'use strict';
 
-	if( iteeValidators === undefined ) { console.error('Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.') }
-	if( iteeUtils === undefined ) { console.error('Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.') }
-	if( threeFull === undefined ) { console.error('Itee.Core need Three to be defined first. Please check your scripts loading order.') }
-	if( crypto === undefined ) { console.error('Itee.Core need crypto to be defined first !') }
+	if( iteeValidators === undefined ) { throw new Error('Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.') }
+	if( iteeUtils === undefined ) { throw new Error('Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.') }
+	if( threeFull === undefined ) { throw new Error('Itee.Core need Three to be defined first. Please check your scripts loading order.') }
 
 
-	/**
-	 * A freezed javascript object used like an enum.
-	 * @typedef {object} Enum
-	 * @constant
-	 * @example
-	 * var Meal = toEnum( {
-	 *     Food: 'Tartiflette',
-	 *     Drink: 'Saint-Emilion',
-	 *     Dessert: 'Mousse au chocolat'
-	 * } )
-	 *
-	 * if( Foo.includes('Tartiflette') {
-	 *     // Happy
-	 * }
-	 *
-	 * var myDrink = 'coke'
-	 * if( myDrink === Meal.Drink ) {
-	 *
-	 * } else {
-	 *     // Your life is a pain
-	 * }
-	 *
-	 * var MealTypes = Meal.types
-	 * // ['Tartiflette', 'Saint-Emilion', 'Mousse au chocolat' ]
-	 *
-	 */
-
-	    // Maths
+	// Maths
 	const Zero               = 0;
 	const One                = 1;
 	const Two                = 2;
@@ -88,212 +69,212 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	const TwoFourth   = 2 / 4;
 	const ThreeFourth = 3 / 4;
 
-	const SquareRootOfTwo   = Math.sqrt( Two );
-	const SquareRootOfThree = Math.sqrt( Three );
-	const SquareRootOfFour  = Math.sqrt( Four );
-	const SquareRootOfFive  = Math.sqrt( Five );
-	const SquareRootOfSix   = Math.sqrt( Six );
-	const SquareRootOfSeven = Math.sqrt( Seven );
-	const SquareRootOfEight = Math.sqrt( Eight );
-	const SquareRootOfNine  = Math.sqrt( Nine );
-	const SquareRootOfTen   = Math.sqrt( Ten );
+	const SquareRootOfTwo   = /*#__PURE__*/Math.sqrt( Two );
+	const SquareRootOfThree = /*#__PURE__*/Math.sqrt( Three );
+	const SquareRootOfFour  = /*#__PURE__*/Math.sqrt( Four );
+	const SquareRootOfFive  = /*#__PURE__*/Math.sqrt( Five );
+	const SquareRootOfSix   = /*#__PURE__*/Math.sqrt( Six );
+	const SquareRootOfSeven = /*#__PURE__*/Math.sqrt( Seven );
+	const SquareRootOfEight = /*#__PURE__*/Math.sqrt( Eight );
+	const SquareRootOfNine  = /*#__PURE__*/Math.sqrt( Nine );
+	const SquareRootOfTen   = /*#__PURE__*/Math.sqrt( Ten );
 
-	const CubeRootOfTwo   = Math.cbrt( Two );
-	const CubeRootOfThree = Math.cbrt( Three );
-	const CubeRootOfFour  = Math.cbrt( Four );
-	const CubeRootOfFive  = Math.cbrt( Five );
-	const CubeRootOfSix   = Math.cbrt( Six );
-	const CubeRootOfSeven = Math.cbrt( Seven );
-	const CubeRootOfEight = Math.cbrt( Eight );
-	const CubeRootOfNine  = Math.cbrt( Nine );
-	const CubeRootOfTen   = Math.cbrt( Ten );
+	const CubeRootOfTwo   = /*#__PURE__*/Math.cbrt( Two );
+	const CubeRootOfThree = /*#__PURE__*/Math.cbrt( Three );
+	const CubeRootOfFour  = /*#__PURE__*/Math.cbrt( Four );
+	const CubeRootOfFive  = /*#__PURE__*/Math.cbrt( Five );
+	const CubeRootOfSix   = /*#__PURE__*/Math.cbrt( Six );
+	const CubeRootOfSeven = /*#__PURE__*/Math.cbrt( Seven );
+	const CubeRootOfEight = /*#__PURE__*/Math.cbrt( Eight );
+	const CubeRootOfNine  = /*#__PURE__*/Math.cbrt( Nine );
+	const CubeRootOfTen   = /*#__PURE__*/Math.cbrt( Ten );
 
 	/**
 	 * Two power of two equal 4
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwo         = Math.pow( Two, Two );
+	const TwoPowTwo         = /*#__PURE__*/Math.pow( Two, Two );
 	/**
 	 * Two power of three equal 8
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThree       = Math.pow( Two, Three );
+	const TwoPowThree       = /*#__PURE__*/Math.pow( Two, Three );
 	/**
 	 * Two power of four equal 16
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFour        = Math.pow( Two, Four );
+	const TwoPowFour        = /*#__PURE__*/Math.pow( Two, Four );
 	/**
 	 * Two power of five equal 32
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFive        = Math.pow( Two, Five );
+	const TwoPowFive        = /*#__PURE__*/Math.pow( Two, Five );
 	/**
 	 * Two power of six equal 64
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSix         = Math.pow( Two, Six );
+	const TwoPowSix         = /*#__PURE__*/Math.pow( Two, Six );
 	/**
 	 * Two power of seven equal 128
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSeven       = Math.pow( Two, Seven );
+	const TwoPowSeven       = /*#__PURE__*/Math.pow( Two, Seven );
 	/**
 	 * Two power of height equal 256
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowEight       = Math.pow( Two, Eight );
+	const TwoPowEight       = /*#__PURE__*/Math.pow( Two, Eight );
 	/**
 	 * Two power of nine equal 512
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowNine        = Math.pow( Two, Nine );
+	const TwoPowNine        = /*#__PURE__*/Math.pow( Two, Nine );
 	/**
 	 * Two power of ten equal 1.024
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTen         = Math.pow( Two, Ten );
+	const TwoPowTen         = /*#__PURE__*/Math.pow( Two, Ten );
 	/**
 	 * Two power of eleven equal 2.048
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowEleven      = Math.pow( Two, Eleven );
+	const TwoPowEleven      = /*#__PURE__*/Math.pow( Two, Eleven );
 	/**
 	 * Two power of twelve equal 4.096
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwelve      = Math.pow( Two, Twelve );
+	const TwoPowTwelve      = /*#__PURE__*/Math.pow( Two, Twelve );
 	/**
 	 * Two power of thirteen equal 8.192
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirteen    = Math.pow( Two, Thirteen );
+	const TwoPowThirteen    = /*#__PURE__*/Math.pow( Two, Thirteen );
 	/**
 	 * Two power of fourteen equal 16.384
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFourteen    = Math.pow( Two, Fourteen );
+	const TwoPowFourteen    = /*#__PURE__*/Math.pow( Two, Fourteen );
 	/**
 	 * Two power of fifteen equal 32.768
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowFifteen     = Math.pow( Two, Fifteen );
+	const TwoPowFifteen     = /*#__PURE__*/Math.pow( Two, Fifteen );
 	/**
 	 * Two power of sixteen equal 65.536
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSixteen     = Math.pow( Two, Sixteen );
+	const TwoPowSixteen     = /*#__PURE__*/Math.pow( Two, Sixteen );
 	/**
 	 * Two power of seventeen equal 131.072
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowSeventeen   = Math.pow( Two, Seventeen );
+	const TwoPowSeventeen   = /*#__PURE__*/Math.pow( Two, Seventeen );
 	/**
 	 * Two power of heighteen equal 262.144
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowEighteen    = Math.pow( Two, Eighteen );
+	const TwoPowEighteen    = /*#__PURE__*/Math.pow( Two, Eighteen );
 	/**
 	 * Two power of nineteen equal 524.288
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowNineteen    = Math.pow( Two, Nineteen );
+	const TwoPowNineteen    = /*#__PURE__*/Math.pow( Two, Nineteen );
 	/**
 	 * Two power of twenty equal 1.048.576
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwenty      = Math.pow( Two, Twenty );
+	const TwoPowTwenty      = /*#__PURE__*/Math.pow( Two, Twenty );
 	/**
 	 * Two power of twenty-one equal 2.097.152
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyOne   = Math.pow( Two, TwentyOne );
+	const TwoPowTwentyOne   = /*#__PURE__*/Math.pow( Two, TwentyOne );
 	/**
 	 * Two power of twenty-two equal 4.194.304
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyTwo   = Math.pow( Two, TwentyTwo );
+	const TwoPowTwentyTwo   = /*#__PURE__*/Math.pow( Two, TwentyTwo );
 	/**
 	 * Two power of twenty-three equal 8.388.608
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyThree = Math.pow( Two, TwentyThree );
+	const TwoPowTwentyThree = /*#__PURE__*/Math.pow( Two, TwentyThree );
 	/**
 	 * Two power of twenty-four equal 16.777.216
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyFour  = Math.pow( Two, TwentyFour );
+	const TwoPowTwentyFour  = /*#__PURE__*/Math.pow( Two, TwentyFour );
 	/**
 	 * Two power of twenty-five equal 33.554.432
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyFive  = Math.pow( Two, TwentyFive );
+	const TwoPowTwentyFive  = /*#__PURE__*/Math.pow( Two, TwentyFive );
 	/**
 	 * Two power of twenty-six equal 67.108.864
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentySix   = Math.pow( Two, TwentySix );
+	const TwoPowTwentySix   = /*#__PURE__*/Math.pow( Two, TwentySix );
 	/**
 	 * Two power of twenty-seven equal 134.217.728
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentySeven = Math.pow( Two, TwentySeven );
+	const TwoPowTwentySeven = /*#__PURE__*/Math.pow( Two, TwentySeven );
 	/**
 	 * Two power of twenty-height equal 268.435.456
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyEight = Math.pow( Two, TwentyEight );
+	const TwoPowTwentyEight = /*#__PURE__*/Math.pow( Two, TwentyEight );
 	/**
 	 * Two power of twenty-nine equal 536.870.912
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowTwentyNine  = Math.pow( Two, TwentyNine );
+	const TwoPowTwentyNine  = /*#__PURE__*/Math.pow( Two, TwentyNine );
 	/**
 	 * Two power of thirty equal 1.073.741.824
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirty      = Math.pow( Two, Thirty );
+	const TwoPowThirty      = /*#__PURE__*/Math.pow( Two, Thirty );
 	/**
 	 * Two power of thirty-one equal 2.147.483.648
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirtyOne   = Math.pow( Two, 31 );
+	const TwoPowThirtyOne   = /*#__PURE__*/Math.pow( Two, 31 );
 	/**
 	 * Two power of thirty-two equal 4.294.967.296
 	 * @const
 	 * @type {Number}
 	 */
-	const TwoPowThirtyTwo   = Math.pow( Two, 32 );
+	const TwoPowThirtyTwo   = /*#__PURE__*/Math.pow( Two, 32 );
 
 	const Pi      = Math.PI;
 	const TwoPi   = Two * Pi;
@@ -325,166 +306,204 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
 
-	const Colors = {
-	    Black:                new threeFull.Color( '#000000' ),
-	    Navy:                 new threeFull.Color( '#000080' ),
-	    DarkBlue:             new threeFull.Color( '#00008b' ),
-	    MediumBlue:           new threeFull.Color( '#0000cd' ),
-	    Blue:                 new threeFull.Color( '#0000ff' ),
-	    DarkGreen:            new threeFull.Color( '#006400' ),
-	    Green:                new threeFull.Color( '#008000' ),
-	    Teal:                 new threeFull.Color( '#008080' ),
-	    DarkCyan:             new threeFull.Color( '#008b8b' ),
-	    DeepSkyBlue:          new threeFull.Color( '#00bfff' ),
-	    DarkTurquoise:        new threeFull.Color( '#00ced1' ),
-	    MediumSpringGreen:    new threeFull.Color( '#00fa9a' ),
-	    Lime:                 new threeFull.Color( '#00ff00' ),
-	    SpringGreen:          new threeFull.Color( '#00ff7f' ),
-	    Aqua:                 new threeFull.Color( '#00ffff' ),
-	    Cyan:                 new threeFull.Color( '#00ffff' ),
-	    MidnightBlue:         new threeFull.Color( '#191970' ),
-	    DodgerBlue:           new threeFull.Color( '#1e90ff' ),
-	    LightSeaGreen:        new threeFull.Color( '#20b2aa' ),
-	    ForestGreen:          new threeFull.Color( '#228b22' ),
-	    SeaGreen:             new threeFull.Color( '#2e8b57' ),
-	    DarkSlateGray:        new threeFull.Color( '#2f4f4f' ),
-	    DarkSlateGrey:        new threeFull.Color( '#2f4f4f' ),
-	    LimeGreen:            new threeFull.Color( '#32cd32' ),
-	    MediumSeaGreen:       new threeFull.Color( '#3cb371' ),
-	    Turquoise:            new threeFull.Color( '#40e0d0' ),
-	    RoyalBlue:            new threeFull.Color( '#4169e1' ),
-	    SteelBlue:            new threeFull.Color( '#4682b4' ),
-	    DarkSlateBlue:        new threeFull.Color( '#483d8b' ),
-	    MediumTurquoise:      new threeFull.Color( '#48d1cc' ),
-	    Indigo:               new threeFull.Color( '#4b0082' ),
-	    DarkOliveGreen:       new threeFull.Color( '#556b2f' ),
-	    CadetBlue:            new threeFull.Color( '#5f9ea0' ),
-	    CornflowerBlue:       new threeFull.Color( '#6495ed' ),
-	    RebeccaPurple:        new threeFull.Color( '#663399' ),
-	    MediumAquaMarine:     new threeFull.Color( '#66cdaa' ),
-	    DimGray:              new threeFull.Color( '#696969' ),
-	    DimGrey:              new threeFull.Color( '#696969' ),
-	    SlateBlue:            new threeFull.Color( '#6a5acd' ),
-	    OliveDrab:            new threeFull.Color( '#6b8e23' ),
-	    SlateGray:            new threeFull.Color( '#708090' ),
-	    SlateGrey:            new threeFull.Color( '#708090' ),
-	    LightSlateGray:       new threeFull.Color( '#778899' ),
-	    LightSlateGrey:       new threeFull.Color( '#778899' ),
-	    MediumSlateBlue:      new threeFull.Color( '#7b68ee' ),
-	    LawnGreen:            new threeFull.Color( '#7cfc00' ),
-	    Chartreuse:           new threeFull.Color( '#7fff00' ),
-	    Aquamarine:           new threeFull.Color( '#7fffd4' ),
-	    Maroon:               new threeFull.Color( '#800000' ),
-	    Purple:               new threeFull.Color( '#800080' ),
-	    Olive:                new threeFull.Color( '#808000' ),
-	    Gray:                 new threeFull.Color( '#808080' ),
-	    Grey:                 new threeFull.Color( '#808080' ),
-	    SkyBlue:              new threeFull.Color( '#87ceeb' ),
-	    LightSkyBlue:         new threeFull.Color( '#87cefa' ),
-	    BlueViolet:           new threeFull.Color( '#8a2be2' ),
-	    DarkRed:              new threeFull.Color( '#8b0000' ),
-	    DarkMagenta:          new threeFull.Color( '#8b008b' ),
-	    SaddleBrown:          new threeFull.Color( '#8b4513' ),
-	    DarkSeaGreen:         new threeFull.Color( '#8fbc8f' ),
-	    LightGreen:           new threeFull.Color( '#90ee90' ),
-	    MediumPurple:         new threeFull.Color( '#9370db' ),
-	    DarkViolet:           new threeFull.Color( '#9400d3' ),
-	    PaleGreen:            new threeFull.Color( '#98fb98' ),
-	    DarkOrchid:           new threeFull.Color( '#9932cc' ),
-	    YellowGreen:          new threeFull.Color( '#9acd32' ),
-	    Sienna:               new threeFull.Color( '#a0522d' ),
-	    Brown:                new threeFull.Color( '#a52a2a' ),
-	    DarkGray:             new threeFull.Color( '#a9a9a9' ),
-	    DarkGrey:             new threeFull.Color( '#a9a9a9' ),
-	    LightBlue:            new threeFull.Color( '#add8e6' ),
-	    GreenYellow:          new threeFull.Color( '#adff2f' ),
-	    PaleTurquoise:        new threeFull.Color( '#afeeee' ),
-	    LightSteelBlue:       new threeFull.Color( '#b0c4de' ),
-	    PowderBlue:           new threeFull.Color( '#b0e0e6' ),
-	    FireBrick:            new threeFull.Color( '#b22222' ),
-	    DarkGoldenRod:        new threeFull.Color( '#b8860b' ),
-	    MediumOrchid:         new threeFull.Color( '#ba55d3' ),
-	    RosyBrown:            new threeFull.Color( '#bc8f8f' ),
-	    DarkKhaki:            new threeFull.Color( '#bdb76b' ),
-	    Silver:               new threeFull.Color( '#c0c0c0' ),
-	    MediumVioletRed:      new threeFull.Color( '#c71585' ),
-	    IndianRed:            new threeFull.Color( '#cd5c5c' ),
-	    Peru:                 new threeFull.Color( '#cd853f' ),
-	    Chocolate:            new threeFull.Color( '#d2691e' ),
-	    Tan:                  new threeFull.Color( '#d2b48c' ),
-	    LightGray:            new threeFull.Color( '#d3d3d3' ),
-	    LightGrey:            new threeFull.Color( '#d3d3d3' ),
-	    Thistle:              new threeFull.Color( '#d8bfd8' ),
-	    Orchid:               new threeFull.Color( '#da70d6' ),
-	    GoldenRod:            new threeFull.Color( '#daa520' ),
-	    PaleVioletRed:        new threeFull.Color( '#db7093' ),
-	    Crimson:              new threeFull.Color( '#dc143c' ),
-	    Gainsboro:            new threeFull.Color( '#dcdcdc' ),
-	    Plum:                 new threeFull.Color( '#dda0dd' ),
-	    BurlyWood:            new threeFull.Color( '#deb887' ),
-	    LightCyan:            new threeFull.Color( '#e0ffff' ),
-	    Lavender:             new threeFull.Color( '#e6e6fa' ),
-	    DarkSalmon:           new threeFull.Color( '#e9967a' ),
-	    Violet:               new threeFull.Color( '#ee82ee' ),
-	    PaleGoldenRod:        new threeFull.Color( '#eee8aa' ),
-	    LightCoral:           new threeFull.Color( '#f08080' ),
-	    Khaki:                new threeFull.Color( '#f0e68c' ),
-	    AliceBlue:            new threeFull.Color( '#f0f8ff' ),
-	    HoneyDew:             new threeFull.Color( '#f0fff0' ),
-	    Azure:                new threeFull.Color( '#f0ffff' ),
-	    SandyBrown:           new threeFull.Color( '#f4a460' ),
-	    Wheat:                new threeFull.Color( '#f5deb3' ),
-	    Beige:                new threeFull.Color( '#f5f5dc' ),
-	    WhiteSmoke:           new threeFull.Color( '#f5f5f5' ),
-	    MintCream:            new threeFull.Color( '#f5fffa' ),
-	    GhostWhite:           new threeFull.Color( '#f8f8ff' ),
-	    Salmon:               new threeFull.Color( '#fa8072' ),
-	    AntiqueWhite:         new threeFull.Color( '#faebd7' ),
-	    Linen:                new threeFull.Color( '#faf0e6' ),
-	    LightGoldenRodYellow: new threeFull.Color( '#fafad2' ),
-	    OldLace:              new threeFull.Color( '#fdf5e6' ),
-	    Red:                  new threeFull.Color( '#ff0000' ),
-	    Fuchsia:              new threeFull.Color( '#ff00ff' ),
-	    Magenta:              new threeFull.Color( '#ff00ff' ),
-	    DeepPink:             new threeFull.Color( '#ff1493' ),
-	    OrangeRed:            new threeFull.Color( '#ff4500' ),
-	    Tomato:               new threeFull.Color( '#ff6347' ),
-	    HotPink:              new threeFull.Color( '#ff69b4' ),
-	    Coral:                new threeFull.Color( '#ff7f50' ),
-	    DarkOrange:           new threeFull.Color( '#ff8c00' ),
-	    LightSalmon:          new threeFull.Color( '#ffa07a' ),
-	    Orange:               new threeFull.Color( '#ffa500' ),
-	    LightPink:            new threeFull.Color( '#ffb6c1' ),
-	    Pink:                 new threeFull.Color( '#ffc0cb' ),
-	    Gold:                 new threeFull.Color( '#ffd700' ),
-	    PeachPuff:            new threeFull.Color( '#ffdab9' ),
-	    NavajoWhite:          new threeFull.Color( '#ffdead' ),
-	    Moccasin:             new threeFull.Color( '#ffe4b5' ),
-	    Bisque:               new threeFull.Color( '#ffe4c4' ),
-	    MistyRose:            new threeFull.Color( '#ffe4e1' ),
-	    BlanchedAlmond:       new threeFull.Color( '#ffebcd' ),
-	    PapayaWhip:           new threeFull.Color( '#ffefd5' ),
-	    LavenderBlush:        new threeFull.Color( '#fff0f5' ),
-	    SeaShell:             new threeFull.Color( '#fff5ee' ),
-	    Cornsilk:             new threeFull.Color( '#fff8dc' ),
-	    LemonChiffon:         new threeFull.Color( '#fffacd' ),
-	    FloralWhite:          new threeFull.Color( '#fffaf0' ),
-	    Snow:                 new threeFull.Color( '#fffafa' ),
-	    Yellow:               new threeFull.Color( '#ffff00' ),
-	    LightYellow:          new threeFull.Color( '#ffffe0' ),
-	    Ivory:                new threeFull.Color( '#fffff0' ),
-	    White:                new threeFull.Color( '#ffffff' )
-	};
+	const Colors = /*#__PURE__*/iteeUtils.toEnum( {
+	    Black:                /*#__PURE__*/new three.Color( '#000000' ),
+	    Navy:                 /*#__PURE__*/new three.Color( '#000080' ),
+	    DarkBlue:             /*#__PURE__*/new three.Color( '#00008b' ),
+	    MediumBlue:           /*#__PURE__*/new three.Color( '#0000cd' ),
+	    Blue:                 /*#__PURE__*/new three.Color( '#0000ff' ),
+	    DarkGreen:            /*#__PURE__*/new three.Color( '#006400' ),
+	    Green:                /*#__PURE__*/new three.Color( '#008000' ),
+	    Teal:                 /*#__PURE__*/new three.Color( '#008080' ),
+	    DarkCyan:             /*#__PURE__*/new three.Color( '#008b8b' ),
+	    DeepSkyBlue:          /*#__PURE__*/new three.Color( '#00bfff' ),
+	    DarkTurquoise:        /*#__PURE__*/new three.Color( '#00ced1' ),
+	    MediumSpringGreen:    /*#__PURE__*/new three.Color( '#00fa9a' ),
+	    Lime:                 /*#__PURE__*/new three.Color( '#00ff00' ),
+	    SpringGreen:          /*#__PURE__*/new three.Color( '#00ff7f' ),
+	    Aqua:                 /*#__PURE__*/new three.Color( '#00ffff' ),
+	    Cyan:                 /*#__PURE__*/new three.Color( '#00ffff' ),
+	    MidnightBlue:         /*#__PURE__*/new three.Color( '#191970' ),
+	    DodgerBlue:           /*#__PURE__*/new three.Color( '#1e90ff' ),
+	    LightSeaGreen:        /*#__PURE__*/new three.Color( '#20b2aa' ),
+	    ForestGreen:          /*#__PURE__*/new three.Color( '#228b22' ),
+	    SeaGreen:             /*#__PURE__*/new three.Color( '#2e8b57' ),
+	    DarkSlateGray:        /*#__PURE__*/new three.Color( '#2f4f4f' ),
+	    DarkSlateGrey:        /*#__PURE__*/new three.Color( '#2f4f4f' ),
+	    LimeGreen:            /*#__PURE__*/new three.Color( '#32cd32' ),
+	    MediumSeaGreen:       /*#__PURE__*/new three.Color( '#3cb371' ),
+	    Turquoise:            /*#__PURE__*/new three.Color( '#40e0d0' ),
+	    RoyalBlue:            /*#__PURE__*/new three.Color( '#4169e1' ),
+	    SteelBlue:            /*#__PURE__*/new three.Color( '#4682b4' ),
+	    DarkSlateBlue:        /*#__PURE__*/new three.Color( '#483d8b' ),
+	    MediumTurquoise:      /*#__PURE__*/new three.Color( '#48d1cc' ),
+	    Indigo:               /*#__PURE__*/new three.Color( '#4b0082' ),
+	    DarkOliveGreen:       /*#__PURE__*/new three.Color( '#556b2f' ),
+	    CadetBlue:            /*#__PURE__*/new three.Color( '#5f9ea0' ),
+	    CornflowerBlue:       /*#__PURE__*/new three.Color( '#6495ed' ),
+	    RebeccaPurple:        /*#__PURE__*/new three.Color( '#663399' ),
+	    MediumAquaMarine:     /*#__PURE__*/new three.Color( '#66cdaa' ),
+	    DimGray:              /*#__PURE__*/new three.Color( '#696969' ),
+	    DimGrey:              /*#__PURE__*/new three.Color( '#696969' ),
+	    SlateBlue:            /*#__PURE__*/new three.Color( '#6a5acd' ),
+	    OliveDrab:            /*#__PURE__*/new three.Color( '#6b8e23' ),
+	    SlateGray:            /*#__PURE__*/new three.Color( '#708090' ),
+	    SlateGrey:            /*#__PURE__*/new three.Color( '#708090' ),
+	    LightSlateGray:       /*#__PURE__*/new three.Color( '#778899' ),
+	    LightSlateGrey:       /*#__PURE__*/new three.Color( '#778899' ),
+	    MediumSlateBlue:      /*#__PURE__*/new three.Color( '#7b68ee' ),
+	    LawnGreen:            /*#__PURE__*/new three.Color( '#7cfc00' ),
+	    Chartreuse:           /*#__PURE__*/new three.Color( '#7fff00' ),
+	    Aquamarine:           /*#__PURE__*/new three.Color( '#7fffd4' ),
+	    Maroon:               /*#__PURE__*/new three.Color( '#800000' ),
+	    Purple:               /*#__PURE__*/new three.Color( '#800080' ),
+	    Olive:                /*#__PURE__*/new three.Color( '#808000' ),
+	    Gray:                 /*#__PURE__*/new three.Color( '#808080' ),
+	    Grey:                 /*#__PURE__*/new three.Color( '#808080' ),
+	    SkyBlue:              /*#__PURE__*/new three.Color( '#87ceeb' ),
+	    LightSkyBlue:         /*#__PURE__*/new three.Color( '#87cefa' ),
+	    BlueViolet:           /*#__PURE__*/new three.Color( '#8a2be2' ),
+	    DarkRed:              /*#__PURE__*/new three.Color( '#8b0000' ),
+	    DarkMagenta:          /*#__PURE__*/new three.Color( '#8b008b' ),
+	    SaddleBrown:          /*#__PURE__*/new three.Color( '#8b4513' ),
+	    DarkSeaGreen:         /*#__PURE__*/new three.Color( '#8fbc8f' ),
+	    LightGreen:           /*#__PURE__*/new three.Color( '#90ee90' ),
+	    MediumPurple:         /*#__PURE__*/new three.Color( '#9370db' ),
+	    DarkViolet:           /*#__PURE__*/new three.Color( '#9400d3' ),
+	    PaleGreen:            /*#__PURE__*/new three.Color( '#98fb98' ),
+	    DarkOrchid:           /*#__PURE__*/new three.Color( '#9932cc' ),
+	    YellowGreen:          /*#__PURE__*/new three.Color( '#9acd32' ),
+	    Sienna:               /*#__PURE__*/new three.Color( '#a0522d' ),
+	    Brown:                /*#__PURE__*/new three.Color( '#a52a2a' ),
+	    DarkGray:             /*#__PURE__*/new three.Color( '#a9a9a9' ),
+	    DarkGrey:             /*#__PURE__*/new three.Color( '#a9a9a9' ),
+	    LightBlue:            /*#__PURE__*/new three.Color( '#add8e6' ),
+	    GreenYellow:          /*#__PURE__*/new three.Color( '#adff2f' ),
+	    PaleTurquoise:        /*#__PURE__*/new three.Color( '#afeeee' ),
+	    LightSteelBlue:       /*#__PURE__*/new three.Color( '#b0c4de' ),
+	    PowderBlue:           /*#__PURE__*/new three.Color( '#b0e0e6' ),
+	    FireBrick:            /*#__PURE__*/new three.Color( '#b22222' ),
+	    DarkGoldenRod:        /*#__PURE__*/new three.Color( '#b8860b' ),
+	    MediumOrchid:         /*#__PURE__*/new three.Color( '#ba55d3' ),
+	    RosyBrown:            /*#__PURE__*/new three.Color( '#bc8f8f' ),
+	    DarkKhaki:            /*#__PURE__*/new three.Color( '#bdb76b' ),
+	    Silver:               /*#__PURE__*/new three.Color( '#c0c0c0' ),
+	    MediumVioletRed:      /*#__PURE__*/new three.Color( '#c71585' ),
+	    IndianRed:            /*#__PURE__*/new three.Color( '#cd5c5c' ),
+	    Peru:                 /*#__PURE__*/new three.Color( '#cd853f' ),
+	    Chocolate:            /*#__PURE__*/new three.Color( '#d2691e' ),
+	    Tan:                  /*#__PURE__*/new three.Color( '#d2b48c' ),
+	    LightGray:            /*#__PURE__*/new three.Color( '#d3d3d3' ),
+	    LightGrey:            /*#__PURE__*/new three.Color( '#d3d3d3' ),
+	    Thistle:              /*#__PURE__*/new three.Color( '#d8bfd8' ),
+	    Orchid:               /*#__PURE__*/new three.Color( '#da70d6' ),
+	    GoldenRod:            /*#__PURE__*/new three.Color( '#daa520' ),
+	    PaleVioletRed:        /*#__PURE__*/new three.Color( '#db7093' ),
+	    Crimson:              /*#__PURE__*/new three.Color( '#dc143c' ),
+	    Gainsboro:            /*#__PURE__*/new three.Color( '#dcdcdc' ),
+	    Plum:                 /*#__PURE__*/new three.Color( '#dda0dd' ),
+	    BurlyWood:            /*#__PURE__*/new three.Color( '#deb887' ),
+	    LightCyan:            /*#__PURE__*/new three.Color( '#e0ffff' ),
+	    Lavender:             /*#__PURE__*/new three.Color( '#e6e6fa' ),
+	    DarkSalmon:           /*#__PURE__*/new three.Color( '#e9967a' ),
+	    Violet:               /*#__PURE__*/new three.Color( '#ee82ee' ),
+	    PaleGoldenRod:        /*#__PURE__*/new three.Color( '#eee8aa' ),
+	    LightCoral:           /*#__PURE__*/new three.Color( '#f08080' ),
+	    Khaki:                /*#__PURE__*/new three.Color( '#f0e68c' ),
+	    AliceBlue:            /*#__PURE__*/new three.Color( '#f0f8ff' ),
+	    HoneyDew:             /*#__PURE__*/new three.Color( '#f0fff0' ),
+	    Azure:                /*#__PURE__*/new three.Color( '#f0ffff' ),
+	    SandyBrown:           /*#__PURE__*/new three.Color( '#f4a460' ),
+	    Wheat:                /*#__PURE__*/new three.Color( '#f5deb3' ),
+	    Beige:                /*#__PURE__*/new three.Color( '#f5f5dc' ),
+	    WhiteSmoke:           /*#__PURE__*/new three.Color( '#f5f5f5' ),
+	    MintCream:            /*#__PURE__*/new three.Color( '#f5fffa' ),
+	    GhostWhite:           /*#__PURE__*/new three.Color( '#f8f8ff' ),
+	    Salmon:               /*#__PURE__*/new three.Color( '#fa8072' ),
+	    AntiqueWhite:         /*#__PURE__*/new three.Color( '#faebd7' ),
+	    Linen:                /*#__PURE__*/new three.Color( '#faf0e6' ),
+	    LightGoldenRodYellow: /*#__PURE__*/new three.Color( '#fafad2' ),
+	    OldLace:              /*#__PURE__*/new three.Color( '#fdf5e6' ),
+	    Red:                  /*#__PURE__*/new three.Color( '#ff0000' ),
+	    Fuchsia:              /*#__PURE__*/new three.Color( '#ff00ff' ),
+	    Magenta:              /*#__PURE__*/new three.Color( '#ff00ff' ),
+	    DeepPink:             /*#__PURE__*/new three.Color( '#ff1493' ),
+	    OrangeRed:            /*#__PURE__*/new three.Color( '#ff4500' ),
+	    Tomato:               /*#__PURE__*/new three.Color( '#ff6347' ),
+	    HotPink:              /*#__PURE__*/new three.Color( '#ff69b4' ),
+	    Coral:                /*#__PURE__*/new three.Color( '#ff7f50' ),
+	    DarkOrange:           /*#__PURE__*/new three.Color( '#ff8c00' ),
+	    LightSalmon:          /*#__PURE__*/new three.Color( '#ffa07a' ),
+	    Orange:               /*#__PURE__*/new three.Color( '#ffa500' ),
+	    LightPink:            /*#__PURE__*/new three.Color( '#ffb6c1' ),
+	    Pink:                 /*#__PURE__*/new three.Color( '#ffc0cb' ),
+	    Gold:                 /*#__PURE__*/new three.Color( '#ffd700' ),
+	    PeachPuff:            /*#__PURE__*/new three.Color( '#ffdab9' ),
+	    NavajoWhite:          /*#__PURE__*/new three.Color( '#ffdead' ),
+	    Moccasin:             /*#__PURE__*/new three.Color( '#ffe4b5' ),
+	    Bisque:               /*#__PURE__*/new three.Color( '#ffe4c4' ),
+	    MistyRose:            /*#__PURE__*/new three.Color( '#ffe4e1' ),
+	    BlanchedAlmond:       /*#__PURE__*/new three.Color( '#ffebcd' ),
+	    PapayaWhip:           /*#__PURE__*/new three.Color( '#ffefd5' ),
+	    LavenderBlush:        /*#__PURE__*/new three.Color( '#fff0f5' ),
+	    SeaShell:             /*#__PURE__*/new three.Color( '#fff5ee' ),
+	    Cornsilk:             /*#__PURE__*/new three.Color( '#fff8dc' ),
+	    LemonChiffon:         /*#__PURE__*/new three.Color( '#fffacd' ),
+	    FloralWhite:          /*#__PURE__*/new three.Color( '#fffaf0' ),
+	    Snow:                 /*#__PURE__*/new three.Color( '#fffafa' ),
+	    Yellow:               /*#__PURE__*/new three.Color( '#ffff00' ),
+	    LightYellow:          /*#__PURE__*/new three.Color( '#ffffe0' ),
+	    Ivory:                /*#__PURE__*/new three.Color( '#fffff0' ),
+	    White:                /*#__PURE__*/new three.Color( '#ffffff' )
+	} );
 
-	Colors.UI = {
-	    Default:     Colors.Fuchsia,
-	    Intersected: Colors.PeachPuff,
-	    Selected:    Colors.DarkOrange,
-	    Active:      Colors.YellowGreen,
-	    Inactive:    Colors.LightCyan,
-	    Enabled:     Colors.Lavender,
-	    Disabled:    Colors.Grey
-	};
+	class ColorPalette {
+
+	    constructor( palette ) {
+	        if ( palette.default ) {
+	            this.default.set( palette.default );
+	        } else {
+	            this.default.set( Colors.Fuchsia );
+	        }
+
+	        if ( palette.intersected ) {
+	            this.intersected.set( palette.intersected );
+	        } else {
+	            this.default.set( Colors.PeachPuff );
+	        }
+
+	        if ( palette.selected ) {
+	            this.selected.set( palette.selected );
+	        } else {
+	            this.default.set( Colors.DarkOrange );
+	        }
+
+	        if ( palette.active ) {
+	            this.active.set( palette.active );
+	        } else {
+	            this.default.set( Colors.YellowGreen );
+	        }
+
+	        if ( palette.inactive ) {
+	            this.inactive.set( palette.inactive );
+	        } else {
+	            this.default.set( Colors.LightCyan );
+	        }
+
+	        if ( palette.enabled ) {
+	            this.enabled.set( palette.enabled );
+	        } else {
+	            this.default.set( Colors.Lavender );
+	        }
+
+	        if ( palette.disabled ) {
+	            this.disabled.set( palette.disabled );
+	        } else {
+	            this.default.set( Colors.Grey );
+	        }
+	    }
+
+	}
 
 	/**
 	 * @author [Tristan Valcke]{@link https://github.com/Itee}
@@ -492,33 +511,33 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 */
 
 	//[x:LEFT-RIGHT][y:DOWN-UP][z:BACK-FRONT]
-	const Left_Down_Back   = new threeFull.Vector3( -1, -1, -1 ).normalize();
-	const Left_Down        = new threeFull.Vector3( -1, -1, +0 ).normalize();
-	const Left_Down_Front  = new threeFull.Vector3( -1, -1, +1 ).normalize();
-	const Left_Back        = new threeFull.Vector3( -1, +0, -1 ).normalize();
-	const Left             = new threeFull.Vector3( -1, +0, +0 ).normalize();
-	const Left_Front       = new threeFull.Vector3( -1, +0, +1 ).normalize();
-	const Left_Up_Back     = new threeFull.Vector3( -1, +1, -1 ).normalize();
-	const Left_Up          = new threeFull.Vector3( -1, +1, +0 ).normalize();
-	const Left_Up_Front    = new threeFull.Vector3( -1, +1, +1 ).normalize();
-	const Down_Back        = new threeFull.Vector3( +0, -1, -1 ).normalize();
-	const Down             = new threeFull.Vector3( +0, -1, +0 ).normalize();
-	const Down_Front       = new threeFull.Vector3( +0, -1, +1 ).normalize();
-	const Back             = new threeFull.Vector3( +0, +0, -1 ).normalize();
-	const Null             = new threeFull.Vector3( +0, +0, +0 ).normalize();
-	const Front            = new threeFull.Vector3( +0, +0, +1 ).normalize();
-	const Up_Back          = new threeFull.Vector3( +0, +1, -1 ).normalize();
-	const Up               = new threeFull.Vector3( +0, +1, +0 ).normalize();
-	const Up_Front         = new threeFull.Vector3( +0, +1, +1 ).normalize();
-	const Right_Down_Back  = new threeFull.Vector3( +1, -1, -1 ).normalize();
-	const Right_Down       = new threeFull.Vector3( +1, -1, +0 ).normalize();
-	const Right_Down_Front = new threeFull.Vector3( +1, -1, +1 ).normalize();
-	const Right_Back       = new threeFull.Vector3( +1, +0, -1 ).normalize();
-	const Right            = new threeFull.Vector3( +1, +0, +0 ).normalize();
-	const Right_Front      = new threeFull.Vector3( +1, +0, +1 ).normalize();
-	const Right_Up_Back    = new threeFull.Vector3( +1, +1, -1 ).normalize();
-	const Right_Up         = new threeFull.Vector3( +1, +1, +0 ).normalize();
-	const Right_Up_Front   = new threeFull.Vector3( +1, +1, +1 ).normalize();
+	const Left_Down_Back   = /*#__PURE__*/new three.Vector3( -1, -1, -1 ).normalize();
+	const Left_Down        = /*#__PURE__*/new three.Vector3( -1, -1, +0 ).normalize();
+	const Left_Down_Front  = /*#__PURE__*/new three.Vector3( -1, -1, +1 ).normalize();
+	const Left_Back        = /*#__PURE__*/new three.Vector3( -1, +0, -1 ).normalize();
+	const Left             = /*#__PURE__*/new three.Vector3( -1, +0, +0 ).normalize();
+	const Left_Front       = /*#__PURE__*/new three.Vector3( -1, +0, +1 ).normalize();
+	const Left_Up_Back     = /*#__PURE__*/new three.Vector3( -1, +1, -1 ).normalize();
+	const Left_Up          = /*#__PURE__*/new three.Vector3( -1, +1, +0 ).normalize();
+	const Left_Up_Front    = /*#__PURE__*/new three.Vector3( -1, +1, +1 ).normalize();
+	const Down_Back        = /*#__PURE__*/new three.Vector3( +0, -1, -1 ).normalize();
+	const Down             = /*#__PURE__*/new three.Vector3( +0, -1, +0 ).normalize();
+	const Down_Front       = /*#__PURE__*/new three.Vector3( +0, -1, +1 ).normalize();
+	const Back             = /*#__PURE__*/new three.Vector3( +0, +0, -1 ).normalize();
+	const Null             = /*#__PURE__*/new three.Vector3( +0, +0, +0 ).normalize();
+	const Front            = /*#__PURE__*/new three.Vector3( +0, +0, +1 ).normalize();
+	const Up_Back          = /*#__PURE__*/new three.Vector3( +0, +1, -1 ).normalize();
+	const Up               = /*#__PURE__*/new three.Vector3( +0, +1, +0 ).normalize();
+	const Up_Front         = /*#__PURE__*/new three.Vector3( +0, +1, +1 ).normalize();
+	const Right_Down_Back  = /*#__PURE__*/new three.Vector3( +1, -1, -1 ).normalize();
+	const Right_Down       = /*#__PURE__*/new three.Vector3( +1, -1, +0 ).normalize();
+	const Right_Down_Front = /*#__PURE__*/new three.Vector3( +1, -1, +1 ).normalize();
+	const Right_Back       = /*#__PURE__*/new three.Vector3( +1, +0, -1 ).normalize();
+	const Right            = /*#__PURE__*/new three.Vector3( +1, +0, +0 ).normalize();
+	const Right_Front      = /*#__PURE__*/new three.Vector3( +1, +0, +1 ).normalize();
+	const Right_Up_Back    = /*#__PURE__*/new three.Vector3( +1, +1, -1 ).normalize();
+	const Right_Up         = /*#__PURE__*/new three.Vector3( +1, +1, +0 ).normalize();
+	const Right_Up_Front   = /*#__PURE__*/new three.Vector3( +1, +1, +1 ).normalize();
 
 	/*
 
@@ -537,21 +556,21 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 */
 	const Cardinales = {
 	    North:            Back,
-	    North_North_East: new threeFull.Vector3( OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize(),
-	    North_East:       new threeFull.Vector3( SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
-	    East_North_East:  new threeFull.Vector3( SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
+	    North_North_East: /*#__PURE__*/new three.Vector3( OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize(),
+	    North_East:       /*#__PURE__*/new three.Vector3( SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
+	    East_North_East:  /*#__PURE__*/new three.Vector3( SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
 	    East:             Right,
-	    East_South_East:  new threeFull.Vector3( SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
-	    South_East:       new threeFull.Vector3( SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
-	    South_South_East: new threeFull.Vector3( OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
+	    East_South_East:  /*#__PURE__*/new three.Vector3( SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
+	    South_East:       /*#__PURE__*/new three.Vector3( SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
+	    South_South_East: /*#__PURE__*/new three.Vector3( OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
 	    South:            Front,
-	    South_South_West: new threeFull.Vector3( -OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
-	    South_West:       new threeFull.Vector3( -SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
-	    West_South_West:  new threeFull.Vector3( -SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
+	    South_South_West: /*#__PURE__*/new three.Vector3( -OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
+	    South_West:       /*#__PURE__*/new three.Vector3( -SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
+	    West_South_West:  /*#__PURE__*/new three.Vector3( -SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
 	    West:             Left,
-	    West_North_West:  new threeFull.Vector3( -SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
-	    North_West:       new threeFull.Vector3( -SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
-	    North_North_West: new threeFull.Vector3( -OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize()
+	    West_North_West:  /*#__PURE__*/new three.Vector3( -SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
+	    North_West:       /*#__PURE__*/new three.Vector3( -SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
+	    North_North_West: /*#__PURE__*/new three.Vector3( -OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize()
 	};
 
 	const Directions = {
@@ -607,7 +626,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @type {FileFormat}
 	 * @description The FileFormat Enum give some commonly used file format in 3d context
 	 */
-	const FileFormat = iteeUtils.toEnum( {
+	const FileFormat = /*#__PURE__*/iteeUtils.toEnum( {
 	    Asc:  { value: 'asc' },
 	    Dae:  { value: 'dae' },
 	    Dbf:  { value: 'dbf' },
@@ -716,7 +735,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @description HttpStatusCode contains all http status code available to check and process correctly server response.
 	 * @see {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes} for further information.
 	 */
-	const HttpStatusCode = iteeUtils.toEnum( {
+	const HttpStatusCode = /*#__PURE__*/iteeUtils.toEnum( {
 
 	    // 100
 	    Continue:           { value: 100 },
@@ -826,7 +845,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @description HttpVerb contains the CRUD actions with corresponding http verb to request an itee server.
 	 * @see {@link https://en.wikipedia.org/wiki/Create,_read,_update_and_delete} for further information.
 	 */
-	const HttpVerb = iteeUtils.toEnum( {
+	const HttpVerb = /*#__PURE__*/iteeUtils.toEnum( {
 	    Create: { value: 'PUT' },
 	    Read:   { value: 'POST' },
 	    Update: { value: 'PATCH' },
@@ -849,7 +868,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @type {Keys}
 	 * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
 	 */
-	const Keys = iteeUtils.toEnum( {
+	const Keys = /*#__PURE__*/iteeUtils.toEnum( {
 	    BACKSPACE:            { value: 8 },
 	    TAB:                  { value: 9 },
 	    ENTER:                { value: 13 },
@@ -964,7 +983,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @type {MimeType}
 	 * @description Todo...
 	 */
-	const MimeType = iteeUtils.toEnum( {} );
+	const MimeType = /*#__PURE__*/iteeUtils.toEnum( {} );
 
 	/**
 	 * @author [Tristan Valcke]{@link https://github.com/Itee}
@@ -982,7 +1001,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @type {Mouse}
 	 * @description This Mouse Enum expose 4 common state of mouse button values (Wheel, Left, Middle and Right), this allow to write semantic code instead of integer when dealing with mouse button codes.
 	 */
-	const Mouse = iteeUtils.toEnum( {
+	const Mouse = /*#__PURE__*/iteeUtils.toEnum( {
 	    Wheel:  { value: -1 },
 	    Left:   { value: 0 },
 	    Middle: { value: 1 },
@@ -1008,7 +1027,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @description ResponseType allow to filter wich type of response is recieved from the server.
 	 * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType} for further information.
 	 */
-	const ResponseType = iteeUtils.toEnum( {
+	const ResponseType = /*#__PURE__*/iteeUtils.toEnum( {
 	    ArrayBuffer: { value: 'arraybuffer' },
 	    Blob:        { value: 'blob' },
 	    Document:    { value: 'document' },
@@ -1028,7 +1047,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @inner
 	 * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
 	 */
-	const LogOutput = iteeUtils.toEnum( {
+	const LogOutput = /*#__PURE__*/iteeUtils.toEnum( {
 	    Console:  1,
 	    Html:     2,
 	    Toast:    4,
@@ -1045,7 +1064,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @deprecated
 	 * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
 	 */
-	const LogType = iteeUtils.toEnum( {
+	const LogType = /*#__PURE__*/iteeUtils.toEnum( {
 	    Message:  0,
 	    Progress: 1,
 	    Time:     2
@@ -1064,7 +1083,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * @type {LogLevel}
 	 * @description LogLevel is a flag that allow to set which type of log is allowed
 	 */
-	const LogLevel = iteeUtils.toEnum( {
+	const LogLevel = /*#__PURE__*/iteeUtils.toEnum( {
 	    None:    0,
 	    Debug:   1,
 	    Info:    2,
@@ -1669,7 +1688,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 	 * A default logger instance that can be use everywhere it is needed.
 	 * @type {TLogger}
 	 */
-	const DefaultLogger = new TLogger();
+	const DefaultLogger = /*#__PURE__*/new TLogger();
 
 	// Unique ID creation requires a high quality random # generator. In the browser we therefore
 	// require the crypto API and do not support built-in fallback to lower quality random number
@@ -1830,6 +1849,7 @@ this.Itee.Core = (function (exports, threeFull, iteeUtils, iteeValidators) {
 
 	}
 
+	exports.ColorPalette = ColorPalette;
 	exports.Colors = Colors;
 	exports.CubeRootOfEight = CubeRootOfEight;
 	exports.CubeRootOfFive = CubeRootOfFive;

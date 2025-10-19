@@ -159,22 +159,48 @@ const Colors = /*#__PURE__*/toEnum( {
 
 class ColorPalette {
 
-    default     = Colors.Fuchsia
-    intersected = Colors.PeachPuff
-    selected    = Colors.DarkOrange
-    active      = Colors.YellowGreen
-    inactive    = Colors.LightCyan
-    enabled     = Colors.Lavender
-    disabled    = Colors.Grey
-
     constructor( palette ) {
-        if ( palette.default ) this.default.set( palette.default )
-        if ( palette.intersected ) this.intersected.set( palette.intersected )
-        if ( palette.selected ) this.selected.set( palette.selected )
-        if ( palette.active ) this.active.set( palette.active )
-        if ( palette.inactive ) this.inactive.set( palette.inactive )
-        if ( palette.enabled ) this.enabled.set( palette.enabled )
-        if ( palette.disabled ) this.disabled.set( palette.disabled )
+        if ( palette.default ) {
+            this.default.set( palette.default )
+        } else {
+            this.default.set( Colors.Fuchsia )
+        }
+
+        if ( palette.intersected ) {
+            this.intersected.set( palette.intersected )
+        } else {
+            this.default.set( Colors.PeachPuff )
+        }
+
+        if ( palette.selected ) {
+            this.selected.set( palette.selected )
+        } else {
+            this.default.set( Colors.DarkOrange )
+        }
+
+        if ( palette.active ) {
+            this.active.set( palette.active )
+        } else {
+            this.default.set( Colors.YellowGreen )
+        }
+
+        if ( palette.inactive ) {
+            this.inactive.set( palette.inactive )
+        } else {
+            this.default.set( Colors.LightCyan )
+        }
+
+        if ( palette.enabled ) {
+            this.enabled.set( palette.enabled )
+        } else {
+            this.default.set( Colors.Lavender )
+        }
+
+        if ( palette.disabled ) {
+            this.disabled.set( palette.disabled )
+        } else {
+            this.default.set( Colors.Grey )
+        }
     }
 
 }
