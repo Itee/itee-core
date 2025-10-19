@@ -1,3 +1,13 @@
+# [v1.4.0](https://github.com/Itee/itee-core/compare/v1.3.2...v1.4.0) (2025-10-19)
+
+## ✨ New Features
+- [`45699cc`](https://github.com/Itee/itee-core/commit/45699cc)  (package) use cz-emoji in favor of cz-conventional-changlog 
+- [`58349e2`](https://github.com/Itee/itee-core/commit/58349e2)  (gulpfile) split gulpfile tasks into sub-tasks files 
+
+## 🐛 Bug Fixes
+- [`2277319`](https://github.com/Itee/itee-core/commit/2277319)  (gulpfile) fix gulp.conf file extension 
+- [`6f36904`](https://github.com/Itee/itee-core/commit/6f36904)  (rollup.conf) fix removed parameter name to fix iife generation
+
 ## [1.3.2](https://github.com/Itee/itee-core/compare/v1.3.1...v1.3.2) (2025-09-07)
 
 

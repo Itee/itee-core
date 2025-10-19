@@ -1,7 +1,7 @@
 /**
  * ┳      ┏┓          ┓ ┏┓ ┏┓      ┏┓ ┳┳┓   ┓  ┓  
- * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┃  ┫ ┏┛  ━━  ┣ ┏┃┃┃┏┓┏┫┓┏┃┏┓
- * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┻•┗┛•┗━      ┗┛┛┛ ┗┗┛┗┻┗┻┗┗ 
+ * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┃ ┃┃ ┃┫  ━━  ┣ ┏┃┃┃┏┓┏┫┓┏┃┏┓
+ * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┻•┗╋•┗┛      ┗┛┛┛ ┗┗┛┗┻┗┻┗┗ 
  *                                                
  * @desc    The Itee Core package contains all base class and shared common stuff for the Itee environment.
  * @author  [Tristan Valcke]{@link https://github.com/Itee}
