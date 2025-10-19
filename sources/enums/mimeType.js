@@ -13,6 +13,6 @@ import { toEnum } from 'itee-utils'
  * @type {MimeType}
  * @description Todo...
  */
-const MimeType = toEnum( {} )
+const MimeType = /*#__PURE__*/toEnum( {} )
 
 export { MimeType }

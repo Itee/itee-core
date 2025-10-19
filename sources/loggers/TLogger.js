@@ -19,7 +19,7 @@ import {
  * @inner
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const LogOutput = toEnum( {
+const LogOutput = /*#__PURE__*/toEnum( {
     Console:  1,
     Html:     2,
     Toast:    4,
@@ -36,7 +36,7 @@ const LogOutput = toEnum( {
  * @deprecated
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const LogType = toEnum( {
+const LogType = /*#__PURE__*/toEnum( {
     Message:  0,
     Progress: 1,
     Time:     2
@@ -55,7 +55,7 @@ const LogType = toEnum( {
  * @type {LogLevel}
  * @description LogLevel is a flag that allow to set which type of log is allowed
  */
-const LogLevel = toEnum( {
+const LogLevel = /*#__PURE__*/toEnum( {
     None:    0,
     Debug:   1,
     Info:    2,
@@ -732,7 +732,7 @@ class TLogger {
  * A default logger instance that can be use everywhere it is needed.
  * @type {TLogger}
  */
-const DefaultLogger = new TLogger()
+const DefaultLogger = /*#__PURE__*/new TLogger()
 
 export {
     TLogger,

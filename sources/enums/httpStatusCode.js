@@ -97,7 +97,7 @@ import { toEnum } from 'itee-utils'
  * @description HttpStatusCode contains all http status code available to check and process correctly server response.
  * @see {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes} for further information.
  */
-const HttpStatusCode = toEnum( {
+const HttpStatusCode = /*#__PURE__*/toEnum( {
 
     // 100
     Continue:           { value: 100 },

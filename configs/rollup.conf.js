@@ -18,13 +18,33 @@ const path            = require( 'path' )
 const commonjs        = require( '@rollup/plugin-commonjs' )
 const alias           = require( '@rollup/plugin-alias' )
 const { nodeResolve } = require( '@rollup/plugin-node-resolve' )
-const replace         = require( 'rollup-plugin-re' )
 const terser          = require( 'rollup-plugin-terser' ).terser
+const replace         = require( 'rollup-plugin-re' )
+const figlet          = require( 'figlet' )
 
-function _computeBanner ( name, format ) {
+function getPrettyPackageName() {
 
-    const packageName = name || packageInfos.name
-    let prettyFormat  = ''
+    let packageName = ''
+
+    const nameSplits = packageInfos.name.split( '-' )
+    for ( const nameSplit of nameSplits ) {
+        packageName += nameSplit.charAt( 0 ).toUpperCase() + nameSplit.slice( 1 ) + '.'
+    }
+    packageName = packageName.slice( 0, -1 )
+
+    return packageName
+
+}
+
+function getPrettyPackageVersion() {
+
+    return 'v' + packageInfos.version
+
+}
+
+function getPrettyFormatForBanner( format ) {
+
+    let prettyFormat = ''
 
     switch ( format ) {
 
@@ -49,17 +69,52 @@ function _computeBanner ( name, format ) {
 
     }
 
-    return `console.log('${ packageName } v${ packageInfos.version } - ${ prettyFormat }')`
+    return prettyFormat
 
 }
 
-function _computeIntro () {
+function _commentarize( banner ) {
+
+    let bannerCommented = '/**\n'
+    bannerCommented += ' * '
+    bannerCommented += banner.replaceAll( '\n', '\n * ' )
+    bannerCommented += '\n'
+    bannerCommented += ` * @desc    ${ packageInfos.description }\n`
+    bannerCommented += ' * @author  [Tristan Valcke]{@link https://github.com/Itee}\n'
+    bannerCommented += ' * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}\n'
+    bannerCommented += ' * \n'
+    bannerCommented += ' */'
+
+    return bannerCommented
+
+}
+
+function _computeBanner( format ) {
+
+    const packageName    = getPrettyPackageName()
+    const packageVersion = getPrettyPackageVersion()
+    const prettyFormat   = getPrettyFormatForBanner( format )
+
+    const figText = figlet.textSync(
+        `${ packageName } ${ packageVersion } - ${ prettyFormat }`,
+        {
+            font:             'Tmplr',
+            horizontalLayout: 'default',
+            verticalLayout:   'default',
+            whitespaceBreak:  true,
+        }
+    )
+
+    return _commentarize( figText )
+
+}
+
+function _computeIntro() {
 
     return '' +
-        'if( iteeValidators === undefined ) { console.error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
-        'if( iteeUtils === undefined ) { console.error(\'Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.\') }' + '\n' +
-        'if( threeFull === undefined ) { console.error(\'Itee.Core need Three to be defined first. Please check your scripts loading order.\') }' + '\n' +
-        'if( crypto === undefined ) { console.error(\'Itee.Core need crypto to be defined first !\') }' + '\n'
+        'if( iteeValidators === undefined ) { throw new Error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
+        'if( iteeUtils === undefined ) { throw new Error(\'Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.\') }' + '\n' +
+        'if( threeFull === undefined ) { throw new Error(\'Itee.Core need Three to be defined first. Please check your scripts loading order.\') }' + '\n'
 
 }
 
@@ -70,17 +125,17 @@ function _computeIntro () {
  * @param options
  * @return {Array.<json>} An array of rollup configuration
  */
-function CreateRollupConfigs ( options ) {
+function CreateRollupConfigs( options ) {
     'use strict'
 
     const {
-              name,
               input,
               output,
               formats,
               envs,
               treeshake
           }        = options
+    const name     = getPrettyPackageName()
     const fileName = path.basename( input, '.js' )
 
     const configs = []
@@ -95,18 +150,18 @@ function CreateRollupConfigs ( options ) {
             const outputPath = ( isProd ) ? path.join( output, `${ fileName }.${ format }.min.js` ) : path.join( output, `${ fileName }.${ format }.js` )
 
             configs.push( {
-                input:    input,
-                external: ( format !== 'iife' ) ? [
+                input:     input,
+                external:  ( format !== 'iife' ) ? [
                     'itee-validators',
                     'itee-utils',
-                    'three-full',
+                    'three',
                     'crypto'
                 ] : [
                     'itee-validators',
                     'itee-utils',
-                    'three-full'
+                    'three'
                 ],
-                plugins: [
+                plugins:   [
                     alias( {
                         entries: ( format === 'iife' ) ? [
                             {
@@ -134,7 +189,7 @@ function CreateRollupConfigs ( options ) {
                     } ),
                     isProd && terser()
                 ],
-                onwarn: ( {
+                onwarn:    ( {
                     loc,
                     frame,
                     message
@@ -160,17 +215,17 @@ function CreateRollupConfigs ( options ) {
                     globals: ( format !== 'iife' ) ? {
                         'itee-utils':      'Itee.Utils',
                         'itee-validators': 'Itee.Validators',
-                        'three-full':      'Three',
+                        'three':           'Three',
                         'crypto':          'crypto'
                     } : {
                         'itee-utils':      'Itee.Utils',
                         'itee-validators': 'Itee.Validators',
-                        'three-full':      'Three'
+                        'three':           'Three'
                     },
 
                     // advanced options
                     paths:     {},
-                    banner:    isProd ? '' : _computeBanner( name, format ),
+                    banner:    ( isProd ) ? '' : _computeBanner( format ),
                     footer:    '',
                     intro:     ( !isProd && format === 'iife' ) ? _computeIntro() : '',
                     outro:     '',

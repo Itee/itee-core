@@ -9,7 +9,7 @@ import {
     isUndefined
 } from 'itee-validators'
 import {
-    v4 as uuidv4,
+    v4 as uuidV4,
     validate,
     version
 } from 'uuid'
@@ -18,7 +18,7 @@ class TAbstractObject {
 
     constructor ( parameters = {} ) {
 
-        const _uuid       = uuidv4()
+        const _uuid       = uuidV4()
         const _name       = `${ this.constructor.name }_${ _uuid }`
         const _parameters = {
             ...{
