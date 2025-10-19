@@ -16,7 +16,7 @@ import { toEnum } from 'itee-utils'
  * @type {Mouse}
  * @description This Mouse Enum expose 4 common state of mouse button values (Wheel, Left, Middle and Right), this allow to write semantic code instead of integer when dealing with mouse button codes.
  */
-const Mouse = toEnum( {
+const Mouse = /*#__PURE__*/toEnum( {
     Wheel:  { value: -1 },
     Left:   { value: 0 },
     Middle: { value: 1 },

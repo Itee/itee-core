@@ -17,7 +17,7 @@ import { toEnum } from 'itee-utils'
  * @description HttpVerb contains the CRUD actions with corresponding http verb to request an itee server.
  * @see {@link https://en.wikipedia.org/wiki/Create,_read,_update_and_delete} for further information.
  */
-const HttpVerb = toEnum( {
+const HttpVerb = /*#__PURE__*/toEnum( {
     Create: { value: 'PUT' },
     Read:   { value: 'POST' },
     Update: { value: 'PATCH' },

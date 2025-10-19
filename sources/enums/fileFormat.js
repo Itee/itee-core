@@ -21,7 +21,7 @@ import { toEnum } from 'itee-utils'
  * @type {FileFormat}
  * @description The FileFormat Enum give some commonly used file format in 3d context
  */
-const FileFormat = toEnum( {
+const FileFormat = /*#__PURE__*/toEnum( {
     Asc:  { value: 'asc' },
     Dae:  { value: 'dae' },
     Dbf:  { value: 'dbf' },

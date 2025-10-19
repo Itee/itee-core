@@ -16,7 +16,7 @@ import { toEnum } from 'itee-utils'
  * @type {Keys}
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const Keys = toEnum( {
+const Keys = /*#__PURE__*/toEnum( {
     BACKSPACE:            { value: 8 },
     TAB:                  { value: 9 },
     ENTER:                { value: 13 },
