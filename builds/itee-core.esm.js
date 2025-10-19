@@ -1,37 +1,19 @@
-console.log('Itee.Core v1.3.2 - EsModule')
-import { Color, Vector3 } from 'three-full';
+/**
+ * ┳      ┏┓          ┓ ┏┓ ┏┓      ┏┓ ┳┳┓   ┓  ┓  
+ * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┃  ┫ ┏┛  ━━  ┣ ┏┃┃┃┏┓┏┫┓┏┃┏┓
+ * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┻•┗┛•┗━      ┗┛┛┛ ┗┗┛┗┻┗┻┗┗ 
+ *                                                
+ * @desc    The Itee Core package contains all base class and shared common stuff for the Itee environment.
+ * @author  [Tristan Valcke]{@link https://github.com/Itee}
+ * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
+ * 
+ */
+import { Color, Vector3 } from 'three';
 import { toEnum } from 'itee-utils';
 import { isNull, isUndefined, isString, isObject, isArrayOfString, isArrayOfObject, isNotString } from 'itee-validators';
 import crypto from 'crypto';
 
-/**
- * A freezed javascript object used like an enum.
- * @typedef {object} Enum
- * @constant
- * @example
- * var Meal = toEnum( {
- *     Food: 'Tartiflette',
- *     Drink: 'Saint-Emilion',
- *     Dessert: 'Mousse au chocolat'
- * } )
- *
- * if( Foo.includes('Tartiflette') {
- *     // Happy
- * }
- *
- * var myDrink = 'coke'
- * if( myDrink === Meal.Drink ) {
- *
- * } else {
- *     // Your life is a pain
- * }
- *
- * var MealTypes = Meal.types
- * // ['Tartiflette', 'Saint-Emilion', 'Mousse au chocolat' ]
- *
- */
-
-    // Maths
+// Maths
 const Zero               = 0;
 const One                = 1;
 const Two                = 2;
@@ -83,212 +65,212 @@ const OneFourth   = 1 / 4;
 const TwoFourth   = 2 / 4;
 const ThreeFourth = 3 / 4;
 
-const SquareRootOfTwo   = Math.sqrt( Two );
-const SquareRootOfThree = Math.sqrt( Three );
-const SquareRootOfFour  = Math.sqrt( Four );
-const SquareRootOfFive  = Math.sqrt( Five );
-const SquareRootOfSix   = Math.sqrt( Six );
-const SquareRootOfSeven = Math.sqrt( Seven );
-const SquareRootOfEight = Math.sqrt( Eight );
-const SquareRootOfNine  = Math.sqrt( Nine );
-const SquareRootOfTen   = Math.sqrt( Ten );
+const SquareRootOfTwo   = /*#__PURE__*/Math.sqrt( Two );
+const SquareRootOfThree = /*#__PURE__*/Math.sqrt( Three );
+const SquareRootOfFour  = /*#__PURE__*/Math.sqrt( Four );
+const SquareRootOfFive  = /*#__PURE__*/Math.sqrt( Five );
+const SquareRootOfSix   = /*#__PURE__*/Math.sqrt( Six );
+const SquareRootOfSeven = /*#__PURE__*/Math.sqrt( Seven );
+const SquareRootOfEight = /*#__PURE__*/Math.sqrt( Eight );
+const SquareRootOfNine  = /*#__PURE__*/Math.sqrt( Nine );
+const SquareRootOfTen   = /*#__PURE__*/Math.sqrt( Ten );
 
-const CubeRootOfTwo   = Math.cbrt( Two );
-const CubeRootOfThree = Math.cbrt( Three );
-const CubeRootOfFour  = Math.cbrt( Four );
-const CubeRootOfFive  = Math.cbrt( Five );
-const CubeRootOfSix   = Math.cbrt( Six );
-const CubeRootOfSeven = Math.cbrt( Seven );
-const CubeRootOfEight = Math.cbrt( Eight );
-const CubeRootOfNine  = Math.cbrt( Nine );
-const CubeRootOfTen   = Math.cbrt( Ten );
+const CubeRootOfTwo   = /*#__PURE__*/Math.cbrt( Two );
+const CubeRootOfThree = /*#__PURE__*/Math.cbrt( Three );
+const CubeRootOfFour  = /*#__PURE__*/Math.cbrt( Four );
+const CubeRootOfFive  = /*#__PURE__*/Math.cbrt( Five );
+const CubeRootOfSix   = /*#__PURE__*/Math.cbrt( Six );
+const CubeRootOfSeven = /*#__PURE__*/Math.cbrt( Seven );
+const CubeRootOfEight = /*#__PURE__*/Math.cbrt( Eight );
+const CubeRootOfNine  = /*#__PURE__*/Math.cbrt( Nine );
+const CubeRootOfTen   = /*#__PURE__*/Math.cbrt( Ten );
 
 /**
  * Two power of two equal 4
  * @const
  * @type {Number}
  */
-const TwoPowTwo         = Math.pow( Two, Two );
+const TwoPowTwo         = /*#__PURE__*/Math.pow( Two, Two );
 /**
  * Two power of three equal 8
  * @const
  * @type {Number}
  */
-const TwoPowThree       = Math.pow( Two, Three );
+const TwoPowThree       = /*#__PURE__*/Math.pow( Two, Three );
 /**
  * Two power of four equal 16
  * @const
  * @type {Number}
  */
-const TwoPowFour        = Math.pow( Two, Four );
+const TwoPowFour        = /*#__PURE__*/Math.pow( Two, Four );
 /**
  * Two power of five equal 32
  * @const
  * @type {Number}
  */
-const TwoPowFive        = Math.pow( Two, Five );
+const TwoPowFive        = /*#__PURE__*/Math.pow( Two, Five );
 /**
  * Two power of six equal 64
  * @const
  * @type {Number}
  */
-const TwoPowSix         = Math.pow( Two, Six );
+const TwoPowSix         = /*#__PURE__*/Math.pow( Two, Six );
 /**
  * Two power of seven equal 128
  * @const
  * @type {Number}
  */
-const TwoPowSeven       = Math.pow( Two, Seven );
+const TwoPowSeven       = /*#__PURE__*/Math.pow( Two, Seven );
 /**
  * Two power of height equal 256
  * @const
  * @type {Number}
  */
-const TwoPowEight       = Math.pow( Two, Eight );
+const TwoPowEight       = /*#__PURE__*/Math.pow( Two, Eight );
 /**
  * Two power of nine equal 512
  * @const
  * @type {Number}
  */
-const TwoPowNine        = Math.pow( Two, Nine );
+const TwoPowNine        = /*#__PURE__*/Math.pow( Two, Nine );
 /**
  * Two power of ten equal 1.024
  * @const
  * @type {Number}
  */
-const TwoPowTen         = Math.pow( Two, Ten );
+const TwoPowTen         = /*#__PURE__*/Math.pow( Two, Ten );
 /**
  * Two power of eleven equal 2.048
  * @const
  * @type {Number}
  */
-const TwoPowEleven      = Math.pow( Two, Eleven );
+const TwoPowEleven      = /*#__PURE__*/Math.pow( Two, Eleven );
 /**
  * Two power of twelve equal 4.096
  * @const
  * @type {Number}
  */
-const TwoPowTwelve      = Math.pow( Two, Twelve );
+const TwoPowTwelve      = /*#__PURE__*/Math.pow( Two, Twelve );
 /**
  * Two power of thirteen equal 8.192
  * @const
  * @type {Number}
  */
-const TwoPowThirteen    = Math.pow( Two, Thirteen );
+const TwoPowThirteen    = /*#__PURE__*/Math.pow( Two, Thirteen );
 /**
  * Two power of fourteen equal 16.384
  * @const
  * @type {Number}
  */
-const TwoPowFourteen    = Math.pow( Two, Fourteen );
+const TwoPowFourteen    = /*#__PURE__*/Math.pow( Two, Fourteen );
 /**
  * Two power of fifteen equal 32.768
  * @const
  * @type {Number}
  */
-const TwoPowFifteen     = Math.pow( Two, Fifteen );
+const TwoPowFifteen     = /*#__PURE__*/Math.pow( Two, Fifteen );
 /**
  * Two power of sixteen equal 65.536
  * @const
  * @type {Number}
  */
-const TwoPowSixteen     = Math.pow( Two, Sixteen );
+const TwoPowSixteen     = /*#__PURE__*/Math.pow( Two, Sixteen );
 /**
  * Two power of seventeen equal 131.072
  * @const
  * @type {Number}
  */
-const TwoPowSeventeen   = Math.pow( Two, Seventeen );
+const TwoPowSeventeen   = /*#__PURE__*/Math.pow( Two, Seventeen );
 /**
  * Two power of heighteen equal 262.144
  * @const
  * @type {Number}
  */
-const TwoPowEighteen    = Math.pow( Two, Eighteen );
+const TwoPowEighteen    = /*#__PURE__*/Math.pow( Two, Eighteen );
 /**
  * Two power of nineteen equal 524.288
  * @const
  * @type {Number}
  */
-const TwoPowNineteen    = Math.pow( Two, Nineteen );
+const TwoPowNineteen    = /*#__PURE__*/Math.pow( Two, Nineteen );
 /**
  * Two power of twenty equal 1.048.576
  * @const
  * @type {Number}
  */
-const TwoPowTwenty      = Math.pow( Two, Twenty );
+const TwoPowTwenty      = /*#__PURE__*/Math.pow( Two, Twenty );
 /**
  * Two power of twenty-one equal 2.097.152
  * @const
  * @type {Number}
  */
-const TwoPowTwentyOne   = Math.pow( Two, TwentyOne );
+const TwoPowTwentyOne   = /*#__PURE__*/Math.pow( Two, TwentyOne );
 /**
  * Two power of twenty-two equal 4.194.304
  * @const
  * @type {Number}
  */
-const TwoPowTwentyTwo   = Math.pow( Two, TwentyTwo );
+const TwoPowTwentyTwo   = /*#__PURE__*/Math.pow( Two, TwentyTwo );
 /**
  * Two power of twenty-three equal 8.388.608
  * @const
  * @type {Number}
  */
-const TwoPowTwentyThree = Math.pow( Two, TwentyThree );
+const TwoPowTwentyThree = /*#__PURE__*/Math.pow( Two, TwentyThree );
 /**
  * Two power of twenty-four equal 16.777.216
  * @const
  * @type {Number}
  */
-const TwoPowTwentyFour  = Math.pow( Two, TwentyFour );
+const TwoPowTwentyFour  = /*#__PURE__*/Math.pow( Two, TwentyFour );
 /**
  * Two power of twenty-five equal 33.554.432
  * @const
  * @type {Number}
  */
-const TwoPowTwentyFive  = Math.pow( Two, TwentyFive );
+const TwoPowTwentyFive  = /*#__PURE__*/Math.pow( Two, TwentyFive );
 /**
  * Two power of twenty-six equal 67.108.864
  * @const
  * @type {Number}
  */
-const TwoPowTwentySix   = Math.pow( Two, TwentySix );
+const TwoPowTwentySix   = /*#__PURE__*/Math.pow( Two, TwentySix );
 /**
  * Two power of twenty-seven equal 134.217.728
  * @const
  * @type {Number}
  */
-const TwoPowTwentySeven = Math.pow( Two, TwentySeven );
+const TwoPowTwentySeven = /*#__PURE__*/Math.pow( Two, TwentySeven );
 /**
  * Two power of twenty-height equal 268.435.456
  * @const
  * @type {Number}
  */
-const TwoPowTwentyEight = Math.pow( Two, TwentyEight );
+const TwoPowTwentyEight = /*#__PURE__*/Math.pow( Two, TwentyEight );
 /**
  * Two power of twenty-nine equal 536.870.912
  * @const
  * @type {Number}
  */
-const TwoPowTwentyNine  = Math.pow( Two, TwentyNine );
+const TwoPowTwentyNine  = /*#__PURE__*/Math.pow( Two, TwentyNine );
 /**
  * Two power of thirty equal 1.073.741.824
  * @const
  * @type {Number}
  */
-const TwoPowThirty      = Math.pow( Two, Thirty );
+const TwoPowThirty      = /*#__PURE__*/Math.pow( Two, Thirty );
 /**
  * Two power of thirty-one equal 2.147.483.648
  * @const
  * @type {Number}
  */
-const TwoPowThirtyOne   = Math.pow( Two, 31 );
+const TwoPowThirtyOne   = /*#__PURE__*/Math.pow( Two, 31 );
 /**
  * Two power of thirty-two equal 4.294.967.296
  * @const
  * @type {Number}
  */
-const TwoPowThirtyTwo   = Math.pow( Two, 32 );
+const TwoPowThirtyTwo   = /*#__PURE__*/Math.pow( Two, 32 );
 
 const Pi      = Math.PI;
 const TwoPi   = Two * Pi;
@@ -320,166 +302,204 @@ const SquareRootOfThreeOnTwo = SquareRootOfThree / Two;
  * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
  */
 
-const Colors = {
-    Black:                new Color( '#000000' ),
-    Navy:                 new Color( '#000080' ),
-    DarkBlue:             new Color( '#00008b' ),
-    MediumBlue:           new Color( '#0000cd' ),
-    Blue:                 new Color( '#0000ff' ),
-    DarkGreen:            new Color( '#006400' ),
-    Green:                new Color( '#008000' ),
-    Teal:                 new Color( '#008080' ),
-    DarkCyan:             new Color( '#008b8b' ),
-    DeepSkyBlue:          new Color( '#00bfff' ),
-    DarkTurquoise:        new Color( '#00ced1' ),
-    MediumSpringGreen:    new Color( '#00fa9a' ),
-    Lime:                 new Color( '#00ff00' ),
-    SpringGreen:          new Color( '#00ff7f' ),
-    Aqua:                 new Color( '#00ffff' ),
-    Cyan:                 new Color( '#00ffff' ),
-    MidnightBlue:         new Color( '#191970' ),
-    DodgerBlue:           new Color( '#1e90ff' ),
-    LightSeaGreen:        new Color( '#20b2aa' ),
-    ForestGreen:          new Color( '#228b22' ),
-    SeaGreen:             new Color( '#2e8b57' ),
-    DarkSlateGray:        new Color( '#2f4f4f' ),
-    DarkSlateGrey:        new Color( '#2f4f4f' ),
-    LimeGreen:            new Color( '#32cd32' ),
-    MediumSeaGreen:       new Color( '#3cb371' ),
-    Turquoise:            new Color( '#40e0d0' ),
-    RoyalBlue:            new Color( '#4169e1' ),
-    SteelBlue:            new Color( '#4682b4' ),
-    DarkSlateBlue:        new Color( '#483d8b' ),
-    MediumTurquoise:      new Color( '#48d1cc' ),
-    Indigo:               new Color( '#4b0082' ),
-    DarkOliveGreen:       new Color( '#556b2f' ),
-    CadetBlue:            new Color( '#5f9ea0' ),
-    CornflowerBlue:       new Color( '#6495ed' ),
-    RebeccaPurple:        new Color( '#663399' ),
-    MediumAquaMarine:     new Color( '#66cdaa' ),
-    DimGray:              new Color( '#696969' ),
-    DimGrey:              new Color( '#696969' ),
-    SlateBlue:            new Color( '#6a5acd' ),
-    OliveDrab:            new Color( '#6b8e23' ),
-    SlateGray:            new Color( '#708090' ),
-    SlateGrey:            new Color( '#708090' ),
-    LightSlateGray:       new Color( '#778899' ),
-    LightSlateGrey:       new Color( '#778899' ),
-    MediumSlateBlue:      new Color( '#7b68ee' ),
-    LawnGreen:            new Color( '#7cfc00' ),
-    Chartreuse:           new Color( '#7fff00' ),
-    Aquamarine:           new Color( '#7fffd4' ),
-    Maroon:               new Color( '#800000' ),
-    Purple:               new Color( '#800080' ),
-    Olive:                new Color( '#808000' ),
-    Gray:                 new Color( '#808080' ),
-    Grey:                 new Color( '#808080' ),
-    SkyBlue:              new Color( '#87ceeb' ),
-    LightSkyBlue:         new Color( '#87cefa' ),
-    BlueViolet:           new Color( '#8a2be2' ),
-    DarkRed:              new Color( '#8b0000' ),
-    DarkMagenta:          new Color( '#8b008b' ),
-    SaddleBrown:          new Color( '#8b4513' ),
-    DarkSeaGreen:         new Color( '#8fbc8f' ),
-    LightGreen:           new Color( '#90ee90' ),
-    MediumPurple:         new Color( '#9370db' ),
-    DarkViolet:           new Color( '#9400d3' ),
-    PaleGreen:            new Color( '#98fb98' ),
-    DarkOrchid:           new Color( '#9932cc' ),
-    YellowGreen:          new Color( '#9acd32' ),
-    Sienna:               new Color( '#a0522d' ),
-    Brown:                new Color( '#a52a2a' ),
-    DarkGray:             new Color( '#a9a9a9' ),
-    DarkGrey:             new Color( '#a9a9a9' ),
-    LightBlue:            new Color( '#add8e6' ),
-    GreenYellow:          new Color( '#adff2f' ),
-    PaleTurquoise:        new Color( '#afeeee' ),
-    LightSteelBlue:       new Color( '#b0c4de' ),
-    PowderBlue:           new Color( '#b0e0e6' ),
-    FireBrick:            new Color( '#b22222' ),
-    DarkGoldenRod:        new Color( '#b8860b' ),
-    MediumOrchid:         new Color( '#ba55d3' ),
-    RosyBrown:            new Color( '#bc8f8f' ),
-    DarkKhaki:            new Color( '#bdb76b' ),
-    Silver:               new Color( '#c0c0c0' ),
-    MediumVioletRed:      new Color( '#c71585' ),
-    IndianRed:            new Color( '#cd5c5c' ),
-    Peru:                 new Color( '#cd853f' ),
-    Chocolate:            new Color( '#d2691e' ),
-    Tan:                  new Color( '#d2b48c' ),
-    LightGray:            new Color( '#d3d3d3' ),
-    LightGrey:            new Color( '#d3d3d3' ),
-    Thistle:              new Color( '#d8bfd8' ),
-    Orchid:               new Color( '#da70d6' ),
-    GoldenRod:            new Color( '#daa520' ),
-    PaleVioletRed:        new Color( '#db7093' ),
-    Crimson:              new Color( '#dc143c' ),
-    Gainsboro:            new Color( '#dcdcdc' ),
-    Plum:                 new Color( '#dda0dd' ),
-    BurlyWood:            new Color( '#deb887' ),
-    LightCyan:            new Color( '#e0ffff' ),
-    Lavender:             new Color( '#e6e6fa' ),
-    DarkSalmon:           new Color( '#e9967a' ),
-    Violet:               new Color( '#ee82ee' ),
-    PaleGoldenRod:        new Color( '#eee8aa' ),
-    LightCoral:           new Color( '#f08080' ),
-    Khaki:                new Color( '#f0e68c' ),
-    AliceBlue:            new Color( '#f0f8ff' ),
-    HoneyDew:             new Color( '#f0fff0' ),
-    Azure:                new Color( '#f0ffff' ),
-    SandyBrown:           new Color( '#f4a460' ),
-    Wheat:                new Color( '#f5deb3' ),
-    Beige:                new Color( '#f5f5dc' ),
-    WhiteSmoke:           new Color( '#f5f5f5' ),
-    MintCream:            new Color( '#f5fffa' ),
-    GhostWhite:           new Color( '#f8f8ff' ),
-    Salmon:               new Color( '#fa8072' ),
-    AntiqueWhite:         new Color( '#faebd7' ),
-    Linen:                new Color( '#faf0e6' ),
-    LightGoldenRodYellow: new Color( '#fafad2' ),
-    OldLace:              new Color( '#fdf5e6' ),
-    Red:                  new Color( '#ff0000' ),
-    Fuchsia:              new Color( '#ff00ff' ),
-    Magenta:              new Color( '#ff00ff' ),
-    DeepPink:             new Color( '#ff1493' ),
-    OrangeRed:            new Color( '#ff4500' ),
-    Tomato:               new Color( '#ff6347' ),
-    HotPink:              new Color( '#ff69b4' ),
-    Coral:                new Color( '#ff7f50' ),
-    DarkOrange:           new Color( '#ff8c00' ),
-    LightSalmon:          new Color( '#ffa07a' ),
-    Orange:               new Color( '#ffa500' ),
-    LightPink:            new Color( '#ffb6c1' ),
-    Pink:                 new Color( '#ffc0cb' ),
-    Gold:                 new Color( '#ffd700' ),
-    PeachPuff:            new Color( '#ffdab9' ),
-    NavajoWhite:          new Color( '#ffdead' ),
-    Moccasin:             new Color( '#ffe4b5' ),
-    Bisque:               new Color( '#ffe4c4' ),
-    MistyRose:            new Color( '#ffe4e1' ),
-    BlanchedAlmond:       new Color( '#ffebcd' ),
-    PapayaWhip:           new Color( '#ffefd5' ),
-    LavenderBlush:        new Color( '#fff0f5' ),
-    SeaShell:             new Color( '#fff5ee' ),
-    Cornsilk:             new Color( '#fff8dc' ),
-    LemonChiffon:         new Color( '#fffacd' ),
-    FloralWhite:          new Color( '#fffaf0' ),
-    Snow:                 new Color( '#fffafa' ),
-    Yellow:               new Color( '#ffff00' ),
-    LightYellow:          new Color( '#ffffe0' ),
-    Ivory:                new Color( '#fffff0' ),
-    White:                new Color( '#ffffff' )
-};
+const Colors = /*#__PURE__*/toEnum( {
+    Black:                /*#__PURE__*/new Color( '#000000' ),
+    Navy:                 /*#__PURE__*/new Color( '#000080' ),
+    DarkBlue:             /*#__PURE__*/new Color( '#00008b' ),
+    MediumBlue:           /*#__PURE__*/new Color( '#0000cd' ),
+    Blue:                 /*#__PURE__*/new Color( '#0000ff' ),
+    DarkGreen:            /*#__PURE__*/new Color( '#006400' ),
+    Green:                /*#__PURE__*/new Color( '#008000' ),
+    Teal:                 /*#__PURE__*/new Color( '#008080' ),
+    DarkCyan:             /*#__PURE__*/new Color( '#008b8b' ),
+    DeepSkyBlue:          /*#__PURE__*/new Color( '#00bfff' ),
+    DarkTurquoise:        /*#__PURE__*/new Color( '#00ced1' ),
+    MediumSpringGreen:    /*#__PURE__*/new Color( '#00fa9a' ),
+    Lime:                 /*#__PURE__*/new Color( '#00ff00' ),
+    SpringGreen:          /*#__PURE__*/new Color( '#00ff7f' ),
+    Aqua:                 /*#__PURE__*/new Color( '#00ffff' ),
+    Cyan:                 /*#__PURE__*/new Color( '#00ffff' ),
+    MidnightBlue:         /*#__PURE__*/new Color( '#191970' ),
+    DodgerBlue:           /*#__PURE__*/new Color( '#1e90ff' ),
+    LightSeaGreen:        /*#__PURE__*/new Color( '#20b2aa' ),
+    ForestGreen:          /*#__PURE__*/new Color( '#228b22' ),
+    SeaGreen:             /*#__PURE__*/new Color( '#2e8b57' ),
+    DarkSlateGray:        /*#__PURE__*/new Color( '#2f4f4f' ),
+    DarkSlateGrey:        /*#__PURE__*/new Color( '#2f4f4f' ),
+    LimeGreen:            /*#__PURE__*/new Color( '#32cd32' ),
+    MediumSeaGreen:       /*#__PURE__*/new Color( '#3cb371' ),
+    Turquoise:            /*#__PURE__*/new Color( '#40e0d0' ),
+    RoyalBlue:            /*#__PURE__*/new Color( '#4169e1' ),
+    SteelBlue:            /*#__PURE__*/new Color( '#4682b4' ),
+    DarkSlateBlue:        /*#__PURE__*/new Color( '#483d8b' ),
+    MediumTurquoise:      /*#__PURE__*/new Color( '#48d1cc' ),
+    Indigo:               /*#__PURE__*/new Color( '#4b0082' ),
+    DarkOliveGreen:       /*#__PURE__*/new Color( '#556b2f' ),
+    CadetBlue:            /*#__PURE__*/new Color( '#5f9ea0' ),
+    CornflowerBlue:       /*#__PURE__*/new Color( '#6495ed' ),
+    RebeccaPurple:        /*#__PURE__*/new Color( '#663399' ),
+    MediumAquaMarine:     /*#__PURE__*/new Color( '#66cdaa' ),
+    DimGray:              /*#__PURE__*/new Color( '#696969' ),
+    DimGrey:              /*#__PURE__*/new Color( '#696969' ),
+    SlateBlue:            /*#__PURE__*/new Color( '#6a5acd' ),
+    OliveDrab:            /*#__PURE__*/new Color( '#6b8e23' ),
+    SlateGray:            /*#__PURE__*/new Color( '#708090' ),
+    SlateGrey:            /*#__PURE__*/new Color( '#708090' ),
+    LightSlateGray:       /*#__PURE__*/new Color( '#778899' ),
+    LightSlateGrey:       /*#__PURE__*/new Color( '#778899' ),
+    MediumSlateBlue:      /*#__PURE__*/new Color( '#7b68ee' ),
+    LawnGreen:            /*#__PURE__*/new Color( '#7cfc00' ),
+    Chartreuse:           /*#__PURE__*/new Color( '#7fff00' ),
+    Aquamarine:           /*#__PURE__*/new Color( '#7fffd4' ),
+    Maroon:               /*#__PURE__*/new Color( '#800000' ),
+    Purple:               /*#__PURE__*/new Color( '#800080' ),
+    Olive:                /*#__PURE__*/new Color( '#808000' ),
+    Gray:                 /*#__PURE__*/new Color( '#808080' ),
+    Grey:                 /*#__PURE__*/new Color( '#808080' ),
+    SkyBlue:              /*#__PURE__*/new Color( '#87ceeb' ),
+    LightSkyBlue:         /*#__PURE__*/new Color( '#87cefa' ),
+    BlueViolet:           /*#__PURE__*/new Color( '#8a2be2' ),
+    DarkRed:              /*#__PURE__*/new Color( '#8b0000' ),
+    DarkMagenta:          /*#__PURE__*/new Color( '#8b008b' ),
+    SaddleBrown:          /*#__PURE__*/new Color( '#8b4513' ),
+    DarkSeaGreen:         /*#__PURE__*/new Color( '#8fbc8f' ),
+    LightGreen:           /*#__PURE__*/new Color( '#90ee90' ),
+    MediumPurple:         /*#__PURE__*/new Color( '#9370db' ),
+    DarkViolet:           /*#__PURE__*/new Color( '#9400d3' ),
+    PaleGreen:            /*#__PURE__*/new Color( '#98fb98' ),
+    DarkOrchid:           /*#__PURE__*/new Color( '#9932cc' ),
+    YellowGreen:          /*#__PURE__*/new Color( '#9acd32' ),
+    Sienna:               /*#__PURE__*/new Color( '#a0522d' ),
+    Brown:                /*#__PURE__*/new Color( '#a52a2a' ),
+    DarkGray:             /*#__PURE__*/new Color( '#a9a9a9' ),
+    DarkGrey:             /*#__PURE__*/new Color( '#a9a9a9' ),
+    LightBlue:            /*#__PURE__*/new Color( '#add8e6' ),
+    GreenYellow:          /*#__PURE__*/new Color( '#adff2f' ),
+    PaleTurquoise:        /*#__PURE__*/new Color( '#afeeee' ),
+    LightSteelBlue:       /*#__PURE__*/new Color( '#b0c4de' ),
+    PowderBlue:           /*#__PURE__*/new Color( '#b0e0e6' ),
+    FireBrick:            /*#__PURE__*/new Color( '#b22222' ),
+    DarkGoldenRod:        /*#__PURE__*/new Color( '#b8860b' ),
+    MediumOrchid:         /*#__PURE__*/new Color( '#ba55d3' ),
+    RosyBrown:            /*#__PURE__*/new Color( '#bc8f8f' ),
+    DarkKhaki:            /*#__PURE__*/new Color( '#bdb76b' ),
+    Silver:               /*#__PURE__*/new Color( '#c0c0c0' ),
+    MediumVioletRed:      /*#__PURE__*/new Color( '#c71585' ),
+    IndianRed:            /*#__PURE__*/new Color( '#cd5c5c' ),
+    Peru:                 /*#__PURE__*/new Color( '#cd853f' ),
+    Chocolate:            /*#__PURE__*/new Color( '#d2691e' ),
+    Tan:                  /*#__PURE__*/new Color( '#d2b48c' ),
+    LightGray:            /*#__PURE__*/new Color( '#d3d3d3' ),
+    LightGrey:            /*#__PURE__*/new Color( '#d3d3d3' ),
+    Thistle:              /*#__PURE__*/new Color( '#d8bfd8' ),
+    Orchid:               /*#__PURE__*/new Color( '#da70d6' ),
+    GoldenRod:            /*#__PURE__*/new Color( '#daa520' ),
+    PaleVioletRed:        /*#__PURE__*/new Color( '#db7093' ),
+    Crimson:              /*#__PURE__*/new Color( '#dc143c' ),
+    Gainsboro:            /*#__PURE__*/new Color( '#dcdcdc' ),
+    Plum:                 /*#__PURE__*/new Color( '#dda0dd' ),
+    BurlyWood:            /*#__PURE__*/new Color( '#deb887' ),
+    LightCyan:            /*#__PURE__*/new Color( '#e0ffff' ),
+    Lavender:             /*#__PURE__*/new Color( '#e6e6fa' ),
+    DarkSalmon:           /*#__PURE__*/new Color( '#e9967a' ),
+    Violet:               /*#__PURE__*/new Color( '#ee82ee' ),
+    PaleGoldenRod:        /*#__PURE__*/new Color( '#eee8aa' ),
+    LightCoral:           /*#__PURE__*/new Color( '#f08080' ),
+    Khaki:                /*#__PURE__*/new Color( '#f0e68c' ),
+    AliceBlue:            /*#__PURE__*/new Color( '#f0f8ff' ),
+    HoneyDew:             /*#__PURE__*/new Color( '#f0fff0' ),
+    Azure:                /*#__PURE__*/new Color( '#f0ffff' ),
+    SandyBrown:           /*#__PURE__*/new Color( '#f4a460' ),
+    Wheat:                /*#__PURE__*/new Color( '#f5deb3' ),
+    Beige:                /*#__PURE__*/new Color( '#f5f5dc' ),
+    WhiteSmoke:           /*#__PURE__*/new Color( '#f5f5f5' ),
+    MintCream:            /*#__PURE__*/new Color( '#f5fffa' ),
+    GhostWhite:           /*#__PURE__*/new Color( '#f8f8ff' ),
+    Salmon:               /*#__PURE__*/new Color( '#fa8072' ),
+    AntiqueWhite:         /*#__PURE__*/new Color( '#faebd7' ),
+    Linen:                /*#__PURE__*/new Color( '#faf0e6' ),
+    LightGoldenRodYellow: /*#__PURE__*/new Color( '#fafad2' ),
+    OldLace:              /*#__PURE__*/new Color( '#fdf5e6' ),
+    Red:                  /*#__PURE__*/new Color( '#ff0000' ),
+    Fuchsia:              /*#__PURE__*/new Color( '#ff00ff' ),
+    Magenta:              /*#__PURE__*/new Color( '#ff00ff' ),
+    DeepPink:             /*#__PURE__*/new Color( '#ff1493' ),
+    OrangeRed:            /*#__PURE__*/new Color( '#ff4500' ),
+    Tomato:               /*#__PURE__*/new Color( '#ff6347' ),
+    HotPink:              /*#__PURE__*/new Color( '#ff69b4' ),
+    Coral:                /*#__PURE__*/new Color( '#ff7f50' ),
+    DarkOrange:           /*#__PURE__*/new Color( '#ff8c00' ),
+    LightSalmon:          /*#__PURE__*/new Color( '#ffa07a' ),
+    Orange:               /*#__PURE__*/new Color( '#ffa500' ),
+    LightPink:            /*#__PURE__*/new Color( '#ffb6c1' ),
+    Pink:                 /*#__PURE__*/new Color( '#ffc0cb' ),
+    Gold:                 /*#__PURE__*/new Color( '#ffd700' ),
+    PeachPuff:            /*#__PURE__*/new Color( '#ffdab9' ),
+    NavajoWhite:          /*#__PURE__*/new Color( '#ffdead' ),
+    Moccasin:             /*#__PURE__*/new Color( '#ffe4b5' ),
+    Bisque:               /*#__PURE__*/new Color( '#ffe4c4' ),
+    MistyRose:            /*#__PURE__*/new Color( '#ffe4e1' ),
+    BlanchedAlmond:       /*#__PURE__*/new Color( '#ffebcd' ),
+    PapayaWhip:           /*#__PURE__*/new Color( '#ffefd5' ),
+    LavenderBlush:        /*#__PURE__*/new Color( '#fff0f5' ),
+    SeaShell:             /*#__PURE__*/new Color( '#fff5ee' ),
+    Cornsilk:             /*#__PURE__*/new Color( '#fff8dc' ),
+    LemonChiffon:         /*#__PURE__*/new Color( '#fffacd' ),
+    FloralWhite:          /*#__PURE__*/new Color( '#fffaf0' ),
+    Snow:                 /*#__PURE__*/new Color( '#fffafa' ),
+    Yellow:               /*#__PURE__*/new Color( '#ffff00' ),
+    LightYellow:          /*#__PURE__*/new Color( '#ffffe0' ),
+    Ivory:                /*#__PURE__*/new Color( '#fffff0' ),
+    White:                /*#__PURE__*/new Color( '#ffffff' )
+} );
 
-Colors.UI = {
-    Default:     Colors.Fuchsia,
-    Intersected: Colors.PeachPuff,
-    Selected:    Colors.DarkOrange,
-    Active:      Colors.YellowGreen,
-    Inactive:    Colors.LightCyan,
-    Enabled:     Colors.Lavender,
-    Disabled:    Colors.Grey
-};
+class ColorPalette {
+
+    constructor( palette ) {
+        if ( palette.default ) {
+            this.default.set( palette.default );
+        } else {
+            this.default.set( Colors.Fuchsia );
+        }
+
+        if ( palette.intersected ) {
+            this.intersected.set( palette.intersected );
+        } else {
+            this.default.set( Colors.PeachPuff );
+        }
+
+        if ( palette.selected ) {
+            this.selected.set( palette.selected );
+        } else {
+            this.default.set( Colors.DarkOrange );
+        }
+
+        if ( palette.active ) {
+            this.active.set( palette.active );
+        } else {
+            this.default.set( Colors.YellowGreen );
+        }
+
+        if ( palette.inactive ) {
+            this.inactive.set( palette.inactive );
+        } else {
+            this.default.set( Colors.LightCyan );
+        }
+
+        if ( palette.enabled ) {
+            this.enabled.set( palette.enabled );
+        } else {
+            this.default.set( Colors.Lavender );
+        }
+
+        if ( palette.disabled ) {
+            this.disabled.set( palette.disabled );
+        } else {
+            this.default.set( Colors.Grey );
+        }
+    }
+
+}
 
 /**
  * @author [Tristan Valcke]{@link https://github.com/Itee}
@@ -487,33 +507,33 @@ Colors.UI = {
  */
 
 //[x:LEFT-RIGHT][y:DOWN-UP][z:BACK-FRONT]
-const Left_Down_Back   = new Vector3( -1, -1, -1 ).normalize();
-const Left_Down        = new Vector3( -1, -1, +0 ).normalize();
-const Left_Down_Front  = new Vector3( -1, -1, +1 ).normalize();
-const Left_Back        = new Vector3( -1, +0, -1 ).normalize();
-const Left             = new Vector3( -1, +0, +0 ).normalize();
-const Left_Front       = new Vector3( -1, +0, +1 ).normalize();
-const Left_Up_Back     = new Vector3( -1, +1, -1 ).normalize();
-const Left_Up          = new Vector3( -1, +1, +0 ).normalize();
-const Left_Up_Front    = new Vector3( -1, +1, +1 ).normalize();
-const Down_Back        = new Vector3( +0, -1, -1 ).normalize();
-const Down             = new Vector3( +0, -1, +0 ).normalize();
-const Down_Front       = new Vector3( +0, -1, +1 ).normalize();
-const Back             = new Vector3( +0, +0, -1 ).normalize();
-const Null             = new Vector3( +0, +0, +0 ).normalize();
-const Front            = new Vector3( +0, +0, +1 ).normalize();
-const Up_Back          = new Vector3( +0, +1, -1 ).normalize();
-const Up               = new Vector3( +0, +1, +0 ).normalize();
-const Up_Front         = new Vector3( +0, +1, +1 ).normalize();
-const Right_Down_Back  = new Vector3( +1, -1, -1 ).normalize();
-const Right_Down       = new Vector3( +1, -1, +0 ).normalize();
-const Right_Down_Front = new Vector3( +1, -1, +1 ).normalize();
-const Right_Back       = new Vector3( +1, +0, -1 ).normalize();
-const Right            = new Vector3( +1, +0, +0 ).normalize();
-const Right_Front      = new Vector3( +1, +0, +1 ).normalize();
-const Right_Up_Back    = new Vector3( +1, +1, -1 ).normalize();
-const Right_Up         = new Vector3( +1, +1, +0 ).normalize();
-const Right_Up_Front   = new Vector3( +1, +1, +1 ).normalize();
+const Left_Down_Back   = /*#__PURE__*/new Vector3( -1, -1, -1 ).normalize();
+const Left_Down        = /*#__PURE__*/new Vector3( -1, -1, +0 ).normalize();
+const Left_Down_Front  = /*#__PURE__*/new Vector3( -1, -1, +1 ).normalize();
+const Left_Back        = /*#__PURE__*/new Vector3( -1, +0, -1 ).normalize();
+const Left             = /*#__PURE__*/new Vector3( -1, +0, +0 ).normalize();
+const Left_Front       = /*#__PURE__*/new Vector3( -1, +0, +1 ).normalize();
+const Left_Up_Back     = /*#__PURE__*/new Vector3( -1, +1, -1 ).normalize();
+const Left_Up          = /*#__PURE__*/new Vector3( -1, +1, +0 ).normalize();
+const Left_Up_Front    = /*#__PURE__*/new Vector3( -1, +1, +1 ).normalize();
+const Down_Back        = /*#__PURE__*/new Vector3( +0, -1, -1 ).normalize();
+const Down             = /*#__PURE__*/new Vector3( +0, -1, +0 ).normalize();
+const Down_Front       = /*#__PURE__*/new Vector3( +0, -1, +1 ).normalize();
+const Back             = /*#__PURE__*/new Vector3( +0, +0, -1 ).normalize();
+const Null             = /*#__PURE__*/new Vector3( +0, +0, +0 ).normalize();
+const Front            = /*#__PURE__*/new Vector3( +0, +0, +1 ).normalize();
+const Up_Back          = /*#__PURE__*/new Vector3( +0, +1, -1 ).normalize();
+const Up               = /*#__PURE__*/new Vector3( +0, +1, +0 ).normalize();
+const Up_Front         = /*#__PURE__*/new Vector3( +0, +1, +1 ).normalize();
+const Right_Down_Back  = /*#__PURE__*/new Vector3( +1, -1, -1 ).normalize();
+const Right_Down       = /*#__PURE__*/new Vector3( +1, -1, +0 ).normalize();
+const Right_Down_Front = /*#__PURE__*/new Vector3( +1, -1, +1 ).normalize();
+const Right_Back       = /*#__PURE__*/new Vector3( +1, +0, -1 ).normalize();
+const Right            = /*#__PURE__*/new Vector3( +1, +0, +0 ).normalize();
+const Right_Front      = /*#__PURE__*/new Vector3( +1, +0, +1 ).normalize();
+const Right_Up_Back    = /*#__PURE__*/new Vector3( +1, +1, -1 ).normalize();
+const Right_Up         = /*#__PURE__*/new Vector3( +1, +1, +0 ).normalize();
+const Right_Up_Front   = /*#__PURE__*/new Vector3( +1, +1, +1 ).normalize();
 
 /*
 
@@ -532,21 +552,21 @@ const Right_Up_Front   = new Vector3( +1, +1, +1 ).normalize();
  */
 const Cardinales = {
     North:            Back,
-    North_North_East: new Vector3( OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize(),
-    North_East:       new Vector3( SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
-    East_North_East:  new Vector3( SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
+    North_North_East: /*#__PURE__*/new Vector3( OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize(),
+    North_East:       /*#__PURE__*/new Vector3( SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
+    East_North_East:  /*#__PURE__*/new Vector3( SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
     East:             Right,
-    East_South_East:  new Vector3( SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
-    South_East:       new Vector3( SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
-    South_South_East: new Vector3( OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
+    East_South_East:  /*#__PURE__*/new Vector3( SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
+    South_East:       /*#__PURE__*/new Vector3( SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
+    South_South_East: /*#__PURE__*/new Vector3( OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
     South:            Front,
-    South_South_West: new Vector3( -OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
-    South_West:       new Vector3( -SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
-    West_South_West:  new Vector3( -SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
+    South_South_West: /*#__PURE__*/new Vector3( -OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
+    South_West:       /*#__PURE__*/new Vector3( -SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
+    West_South_West:  /*#__PURE__*/new Vector3( -SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
     West:             Left,
-    West_North_West:  new Vector3( -SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
-    North_West:       new Vector3( -SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
-    North_North_West: new Vector3( -OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize()
+    West_North_West:  /*#__PURE__*/new Vector3( -SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
+    North_West:       /*#__PURE__*/new Vector3( -SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
+    North_North_West: /*#__PURE__*/new Vector3( -OneHalf, 0, -( SquareRootOfThreeOnTwo ) ).normalize()
 };
 
 const Directions = {
@@ -602,7 +622,7 @@ const Directions = {
  * @type {FileFormat}
  * @description The FileFormat Enum give some commonly used file format in 3d context
  */
-const FileFormat = toEnum( {
+const FileFormat = /*#__PURE__*/toEnum( {
     Asc:  { value: 'asc' },
     Dae:  { value: 'dae' },
     Dbf:  { value: 'dbf' },
@@ -711,7 +731,7 @@ const FileFormat = toEnum( {
  * @description HttpStatusCode contains all http status code available to check and process correctly server response.
  * @see {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes} for further information.
  */
-const HttpStatusCode = toEnum( {
+const HttpStatusCode = /*#__PURE__*/toEnum( {
 
     // 100
     Continue:           { value: 100 },
@@ -821,7 +841,7 @@ const HttpStatusCode = toEnum( {
  * @description HttpVerb contains the CRUD actions with corresponding http verb to request an itee server.
  * @see {@link https://en.wikipedia.org/wiki/Create,_read,_update_and_delete} for further information.
  */
-const HttpVerb = toEnum( {
+const HttpVerb = /*#__PURE__*/toEnum( {
     Create: { value: 'PUT' },
     Read:   { value: 'POST' },
     Update: { value: 'PATCH' },
@@ -844,7 +864,7 @@ const HttpVerb = toEnum( {
  * @type {Keys}
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const Keys = toEnum( {
+const Keys = /*#__PURE__*/toEnum( {
     BACKSPACE:            { value: 8 },
     TAB:                  { value: 9 },
     ENTER:                { value: 13 },
@@ -959,7 +979,7 @@ const Keys = toEnum( {
  * @type {MimeType}
  * @description Todo...
  */
-const MimeType = toEnum( {} );
+const MimeType = /*#__PURE__*/toEnum( {} );
 
 /**
  * @author [Tristan Valcke]{@link https://github.com/Itee}
@@ -977,7 +997,7 @@ const MimeType = toEnum( {} );
  * @type {Mouse}
  * @description This Mouse Enum expose 4 common state of mouse button values (Wheel, Left, Middle and Right), this allow to write semantic code instead of integer when dealing with mouse button codes.
  */
-const Mouse = toEnum( {
+const Mouse = /*#__PURE__*/toEnum( {
     Wheel:  { value: -1 },
     Left:   { value: 0 },
     Middle: { value: 1 },
@@ -1003,7 +1023,7 @@ const Mouse = toEnum( {
  * @description ResponseType allow to filter wich type of response is recieved from the server.
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType} for further information.
  */
-const ResponseType = toEnum( {
+const ResponseType = /*#__PURE__*/toEnum( {
     ArrayBuffer: { value: 'arraybuffer' },
     Blob:        { value: 'blob' },
     Document:    { value: 'document' },
@@ -1023,7 +1043,7 @@ const ResponseType = toEnum( {
  * @inner
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const LogOutput = toEnum( {
+const LogOutput = /*#__PURE__*/toEnum( {
     Console:  1,
     Html:     2,
     Toast:    4,
@@ -1040,7 +1060,7 @@ const LogOutput = toEnum( {
  * @deprecated
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const LogType = toEnum( {
+const LogType = /*#__PURE__*/toEnum( {
     Message:  0,
     Progress: 1,
     Time:     2
@@ -1059,7 +1079,7 @@ const LogType = toEnum( {
  * @type {LogLevel}
  * @description LogLevel is a flag that allow to set which type of log is allowed
  */
-const LogLevel = toEnum( {
+const LogLevel = /*#__PURE__*/toEnum( {
     None:    0,
     Debug:   1,
     Info:    2,
@@ -1664,7 +1684,7 @@ class TLogger {
  * A default logger instance that can be use everywhere it is needed.
  * @type {TLogger}
  */
-const DefaultLogger = new TLogger();
+const DefaultLogger = /*#__PURE__*/new TLogger();
 
 const rnds8Pool = new Uint8Array(256); // # of random values to pre-allocate
 
@@ -1816,5 +1836,5 @@ class TAbstractObject {
 
 }
 
-export { Colors, CubeRootOfEight, CubeRootOfFive, CubeRootOfFour, CubeRootOfNine, CubeRootOfSeven, CubeRootOfSix, CubeRootOfTen, CubeRootOfThree, CubeRootOfTwo, DefaultLogger, Directions, Eight, EightPi, Eighteen, Eighty, Eleven, Fifteen, Fifty, FileFormat, Five, FiveHundred, FivePi, Four, FourPi, Fourteen, Fourty, HttpStatusCode, HttpVerb, Keys, LogLevel, LogOutput, LogType, MimeType, Mouse, Nine, NinePi, Nineteen, Ninety, One, OneFourth, OneHalf, OneHundred, OneHundredThousand, OneMillion, OneThird, OneThousand, Pi, PiOnEight, PiOnFive, PiOnFour, PiOnNine, PiOnSeven, PiOnSix, PiOnTen, PiOnThree, PiOnTwo, ResponseType, Seven, SevenPi, Seventeen, Seventy, Six, SixPi, Sixteen, Sixty, SquareRootOfEight, SquareRootOfFive, SquareRootOfFour, SquareRootOfNine, SquareRootOfSeven, SquareRootOfSix, SquareRootOfTen, SquareRootOfThree, SquareRootOfThreeOnTwo, SquareRootOfTwo, SquareRootOfTwoOnTwo, TAbstractObject, TLogger, Ten, TenPi, TenThousand, Thirteen, Thirty, Three, ThreeFourth, ThreePi, Twelve, Twenty, TwentyEight, TwentyFive, TwentyFour, TwentyNine, TwentyOne, TwentySeven, TwentySix, TwentyThree, TwentyTwo, Two, TwoFourth, TwoPi, TwoPowEight, TwoPowEighteen, TwoPowEleven, TwoPowFifteen, TwoPowFive, TwoPowFour, TwoPowFourteen, TwoPowNine, TwoPowNineteen, TwoPowSeven, TwoPowSeventeen, TwoPowSix, TwoPowSixteen, TwoPowTen, TwoPowThirteen, TwoPowThirty, TwoPowThirtyOne, TwoPowThirtyTwo, TwoPowThree, TwoPowTwelve, TwoPowTwenty, TwoPowTwentyEight, TwoPowTwentyFive, TwoPowTwentyFour, TwoPowTwentyNine, TwoPowTwentyOne, TwoPowTwentySeven, TwoPowTwentySix, TwoPowTwentyThree, TwoPowTwentyTwo, TwoPowTwo, TwoThird, Zero };
+export { ColorPalette, Colors, CubeRootOfEight, CubeRootOfFive, CubeRootOfFour, CubeRootOfNine, CubeRootOfSeven, CubeRootOfSix, CubeRootOfTen, CubeRootOfThree, CubeRootOfTwo, DefaultLogger, Directions, Eight, EightPi, Eighteen, Eighty, Eleven, Fifteen, Fifty, FileFormat, Five, FiveHundred, FivePi, Four, FourPi, Fourteen, Fourty, HttpStatusCode, HttpVerb, Keys, LogLevel, LogOutput, LogType, MimeType, Mouse, Nine, NinePi, Nineteen, Ninety, One, OneFourth, OneHalf, OneHundred, OneHundredThousand, OneMillion, OneThird, OneThousand, Pi, PiOnEight, PiOnFive, PiOnFour, PiOnNine, PiOnSeven, PiOnSix, PiOnTen, PiOnThree, PiOnTwo, ResponseType, Seven, SevenPi, Seventeen, Seventy, Six, SixPi, Sixteen, Sixty, SquareRootOfEight, SquareRootOfFive, SquareRootOfFour, SquareRootOfNine, SquareRootOfSeven, SquareRootOfSix, SquareRootOfTen, SquareRootOfThree, SquareRootOfThreeOnTwo, SquareRootOfTwo, SquareRootOfTwoOnTwo, TAbstractObject, TLogger, Ten, TenPi, TenThousand, Thirteen, Thirty, Three, ThreeFourth, ThreePi, Twelve, Twenty, TwentyEight, TwentyFive, TwentyFour, TwentyNine, TwentyOne, TwentySeven, TwentySix, TwentyThree, TwentyTwo, Two, TwoFourth, TwoPi, TwoPowEight, TwoPowEighteen, TwoPowEleven, TwoPowFifteen, TwoPowFive, TwoPowFour, TwoPowFourteen, TwoPowNine, TwoPowNineteen, TwoPowSeven, TwoPowSeventeen, TwoPowSix, TwoPowSixteen, TwoPowTen, TwoPowThirteen, TwoPowThirty, TwoPowThirtyOne, TwoPowThirtyTwo, TwoPowThree, TwoPowTwelve, TwoPowTwenty, TwoPowTwentyEight, TwoPowTwentyFive, TwoPowTwentyFour, TwoPowTwentyNine, TwoPowTwentyOne, TwoPowTwentySeven, TwoPowTwentySix, TwoPowTwentyThree, TwoPowTwentyTwo, TwoPowTwo, TwoThird, Zero };
 //# sourceMappingURL=itee-core.esm.js.map
