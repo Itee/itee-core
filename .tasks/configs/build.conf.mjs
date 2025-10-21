@@ -12,49 +12,28 @@
  * @requires {@link module: [rollup-plugin-node-resolve]{@link https://github.com/rollup/rollup-plugin-node-resolve}}
  * @requires {@link module: [rollup-plugin-terser]{@link https://github.com/TrySound/rollup-plugin-terser}}
  */
-
-import { readFileSync }  from 'fs'
+import alias from '@rollup/plugin-alias'
 import {
-    dirname,
+    packageSourcesDirectory,
+    packageBuildsDirectory,
+    packageName,
+    packageJson,
+    packageDescription,
+    getPrettyPackageName,
+    getPrettyPackageVersion
+}            from '../_utils.mjs'
+import {
     join,
     basename
-}                        from 'path'
-import commonjs          from '@rollup/plugin-commonjs'
-import nodeResolve       from '@rollup/plugin-node-resolve'
-import { terser }        from 'rollup-plugin-terser'
-import cleanup           from 'rollup-plugin-cleanup'
-import alias             from '@rollup/plugin-alias'
-import replace           from 'rollup-plugin-re'
-import figlet            from 'figlet'
-import { fileURLToPath } from 'url'
-
-const __filename   = fileURLToPath( import.meta.url )
-const __dirname    = dirname( __filename )
-const packagePath  = join( __dirname, '..', 'package.json' )
-const packageData  = readFileSync( packagePath )
-const packageInfos = JSON.parse( packageData )
+}            from 'path'
+import commonjs    from '@rollup/plugin-commonjs'
+import nodeResolve from '@rollup/plugin-node-resolve'
+import { terser }  from 'rollup-plugin-terser'
+import cleanup     from 'rollup-plugin-cleanup'
+import replace     from 'rollup-plugin-re'
+import figlet      from 'figlet'
 
 // Utils
-
-function getPrettyPackageName() {
-
-    let packageName = ''
-
-    const nameSplits = packageInfos.name.split( '-' )
-    for ( const nameSplit of nameSplits ) {
-        packageName += nameSplit.charAt( 0 ).toUpperCase() + nameSplit.slice( 1 ) + '.'
-    }
-    packageName = packageName.slice( 0, -1 )
-
-    return packageName
-
-}
-
-function getPrettyPackageVersion() {
-
-    return 'v' + packageInfos.version
-
-}
 
 function getPrettyFormatForBanner( format ) {
 
@@ -93,7 +72,7 @@ function _commentarize( banner ) {
     bannerCommented += ' * '
     bannerCommented += banner.replaceAll( '\n', '\n * ' )
     bannerCommented += '\n'
-    bannerCommented += ` * @desc    ${ packageInfos.description }\n`
+    bannerCommented += ` * @desc    ${ packageDescription }\n`
     bannerCommented += ' * @author  [Tristan Valcke]{@link https://github.com/Itee}\n'
     bannerCommented += ' * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}\n'
     bannerCommented += ' * \n'
@@ -105,7 +84,7 @@ function _commentarize( banner ) {
 
 function _computeBanner( format ) {
 
-    const packageName    = getPrettyPackageName()
+    const packageName    = getPrettyPackageName( '.' )
     const packageVersion = getPrettyPackageVersion()
     const prettyFormat   = getPrettyFormatForBanner( format )
 
@@ -132,67 +111,6 @@ function _computeIntro() {
 
 }
 
-// Configs
-
-const configs = {
-    'benchmarks-backend':  {
-        input:     `tests/benchmarks/${packageInfos.name}.benchs.js`,
-        plugins:   [],
-        treeshake: true,
-        output:    {
-            indent: '\t',
-            format: 'cjs',
-            name:   'Itee.Benchs',
-            file:   `tests/benchmarks/builds/${packageInfos.name}.benchs.cjs.js`
-        }
-    },
-    'benchmarks-frontend': {
-        input:     `tests/benchmarks/${packageInfos.name}.benchs.js`,
-        plugins:   [],
-        treeshake: true,
-        output:    {
-            indent: '\t',
-            format: 'iife',
-            name:   'Itee.Benchs',
-            file:   `tests/benchmarks/builds/${packageInfos.name}.benchs.iife.js`
-        }
-    },
-    'units-backend':       {
-        input:     `tests/units/${packageInfos.name}.units.js`,
-        external:  [ 'chai' ],
-        plugins:   [],
-        treeshake: true,
-        output:    {
-            indent: '\t',
-            format: 'cjs',
-            name:   'Itee.Units',
-            file:   `tests/units/builds/${packageInfos.name}.units.cjs.js`
-        }
-    },
-    'units-frontend':      {
-        input:     `tests/units/${packageInfos.name}.units.js`,
-        external:  [ 'chai', 'mocha' ],
-        plugins:   [],
-        treeshake: true,
-        output:    {
-            indent:  '\t',
-            format:  'iife',
-            name:    'Itee.Units',
-            globals: {
-                'chai':  'chai',
-                'mocha': 'mocha'
-            },
-            file: `tests/units/builds/${packageInfos.name}.units.iife.js`
-        }
-    },
-}
-
-function getRollupConfigurationFor( bundleName ) {
-
-    return configs[ bundleName ]
-
-}
-
 /**
  * Will create an appropriate configuration object for rollup, related to the given arguments.
  *
@@ -200,7 +118,7 @@ function getRollupConfigurationFor( bundleName ) {
  * @param options
  * @return {Array.<json>} An array of rollup configuration
  */
-function CreateRollupConfigs( options ) {
+function _createRollupConfigs( options ) {
     'use strict'
 
     const {
@@ -210,7 +128,7 @@ function CreateRollupConfigs( options ) {
               envs,
               treeshake
           }        = options
-    const name     = getPrettyPackageName()
+    const name     = getPrettyPackageName('.')
     const fileName = basename( input, '.js' )
 
     const configs = []
@@ -323,8 +241,198 @@ function CreateRollupConfigs( options ) {
 
 }
 
-export {
-    getRollupConfigurationFor,
-    CreateRollupConfigs
+// Configs
+
+const configs = {
+    'build':                                _createRollupConfigs( {
+        input:     join( packageSourcesDirectory, `${ packageName }.js` ),
+        output:    packageBuildsDirectory,
+        formats:   [ 'esm', 'cjs', 'iife' ],
+        envs:      [ 'dev', 'prod' ],
+        sourcemap: true,
+        treeshake: true
+    } ),
+    'check-bundling-from-esm-build-import': {
+        input:     null,
+        external:  [ '' ],
+        plugins:   [
+            nodeResolve( {
+                preferBuiltins: true
+            } ),
+            cleanup( {
+                comments: 'all' // else remove __PURE__ declaration... -_-'
+            } )
+        ],
+        onwarn:    ( {
+            loc,
+            frame,
+            message
+        } ) => {
+
+            // Ignore some errors
+            if ( message.includes( 'Circular dependency' ) ) { return }
+            if ( message.includes( 'Generated an empty chunk' ) ) { return }
+
+            if ( loc ) {
+                process.stderr.write( `/!\\ ${ loc.file } (${ loc.line }:${ loc.column }) ${ frame } ${ message }\n` )
+            } else {
+                process.stderr.write( `/!\\ ${ message }\n` )
+            }
+
+        },
+        treeshake: {
+            moduleSideEffects:                true,
+            annotations:                      true,
+            correctVarValueBeforeDeclaration: true,
+            propertyReadSideEffects:          true,
+            tryCatchDeoptimization:           true,
+            unknownGlobalSideEffects:         true
+        },
+        output:    {
+            indent: '\t',
+            format: 'esm',
+            file:   null
+        }
+    },
+    'check-bundling-from-esm-files-import': {
+        input:     null,
+        plugins:   [
+            nodeResolve(),
+            cleanup( {
+                comments: 'all' // else remove __PURE__ declaration... -_-'
+            } )
+        ],
+        onwarn:    ( {
+            loc,
+            frame,
+            message
+        } ) => {
+
+            // Ignore some errors
+            if ( message.includes( 'Circular dependency' ) ) { return }
+            if ( message.includes( 'Generated an empty chunk' ) ) { return }
+
+            if ( loc ) {
+                process.stderr.write( `/!\\ ${ loc.file } (${ loc.line }:${ loc.column }) ${ frame } ${ message }\n` )
+            } else {
+                process.stderr.write( `/!\\ ${ message }\n` )
+            }
+
+        },
+        treeshake: {
+            moduleSideEffects:                true,
+            annotations:                      true,
+            correctVarValueBeforeDeclaration: true,
+            propertyReadSideEffects:          true,
+            tryCatchDeoptimization:           true,
+            unknownGlobalSideEffects:         true
+        },
+        output:    {
+            indent: '\t',
+            format: 'esm',
+            file:   null
+        }
+    },
+    'check-bundling-from-esm-files-direct': {
+        input:     null,
+        external:  [ '' ],
+        plugins:   [
+            nodeResolve( {
+                preferBuiltins: true
+            } ),
+            cleanup( {
+                comments: 'none'
+            } )
+        ],
+        onwarn:    ( {
+            loc,
+            frame,
+            message
+        } ) => {
+
+            // Ignore some errors
+            if ( message.includes( 'Circular dependency' ) ) { return }
+            if ( message.includes( 'Generated an empty chunk' ) ) { return }
+
+            if ( loc ) {
+                process.stderr.write( `/!\\ ${ loc.file } (${ loc.line }:${ loc.column }) ${ frame } ${ message }\n` )
+            } else {
+                process.stderr.write( `/!\\ ${ message }\n` )
+            }
+
+        },
+        treeshake: {
+            moduleSideEffects:                true,
+            annotations:                      true,
+            correctVarValueBeforeDeclaration: true,
+            propertyReadSideEffects:          true,
+            tryCatchDeoptimization:           true,
+            unknownGlobalSideEffects:         true
+        },
+        output:    {
+            indent: '\t',
+            format: 'esm',
+            file:   null
+        }
+    },
+    'benchmarks-backend':  {
+        input:     `tests/benchmarks/${packageName}.benchs.js`,
+        plugins:   [],
+        treeshake: true,
+        output:    {
+            indent: '\t',
+            format: 'cjs',
+            name:   'Itee.Benchs',
+            file:   `tests/benchmarks/builds/${packageName}.benchs.cjs.js`
+        }
+    },
+    'benchmarks-frontend': {
+        input:     `tests/benchmarks/${packageName}.benchs.js`,
+        plugins:   [],
+        treeshake: true,
+        output:    {
+            indent: '\t',
+            format: 'iife',
+            name:   'Itee.Benchs',
+            file:   `tests/benchmarks/builds/${packageName}.benchs.iife.js`
+        }
+    },
+    'units-backend':       {
+        input:     `tests/units/${packageName}.units.js`,
+        external:  [ 'chai', 'mocha' ],
+        plugins:   [],
+        treeshake: true,
+        output:    {
+            indent: '\t',
+            format: 'cjs',
+            name:   'Itee.Units',
+            file:   `tests/units/builds/${packageName}.units.cjs.js`
+        }
+    },
+    'units-frontend':      {
+        input:     `tests/units/${packageName}.units.js`,
+        external:  [ 'chai', 'mocha' ],
+        plugins:   [],
+        treeshake: true,
+        output:    {
+            indent:  '\t',
+            format:  'iife',
+            name:    'Itee.Units',
+            globals: {
+                'chai':  'chai',
+                'mocha': 'mocha'
+            },
+            file: `tests/units/builds/${packageName}.units.iife.js`
+        }
+    },
 }
 
+function getRollupConfigurationFor( bundleName ) {
+
+    return configs[ bundleName ]
+
+}
+
+export {
+    getRollupConfigurationFor
+}
