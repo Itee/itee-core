@@ -12,26 +12,25 @@
  * @requires {@link module: [rollup-plugin-node-resolve]{@link https://github.com/rollup/rollup-plugin-node-resolve}}
  * @requires {@link module: [rollup-plugin-terser]{@link https://github.com/TrySound/rollup-plugin-terser}}
  */
-import alias from '@rollup/plugin-alias'
-import {
-    packageSourcesDirectory,
-    packageBuildsDirectory,
-    packageName,
-    packageJson,
-    packageDescription,
-    getPrettyPackageName,
-    getPrettyPackageVersion
-}            from '../_utils.mjs'
-import {
-    join,
-    basename
-}            from 'path'
+import alias       from '@rollup/plugin-alias'
 import commonjs    from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
-import { terser }  from 'rollup-plugin-terser'
+import figlet      from 'figlet'
+import {
+    basename,
+    join
+}                  from 'path'
 import cleanup     from 'rollup-plugin-cleanup'
 import replace     from 'rollup-plugin-re'
-import figlet      from 'figlet'
+import { terser }  from 'rollup-plugin-terser'
+import {
+    getPrettyPackageName,
+    getPrettyPackageVersion,
+    packageBuildsDirectory,
+    packageDescription,
+    packageName,
+    packageSourcesDirectory
+}                  from '../_utils.mjs'
 
 // Utils
 
@@ -128,7 +127,7 @@ function _createRollupConfigs( options ) {
               envs,
               treeshake
           }        = options
-    const name     = getPrettyPackageName('.')
+    const name     = getPrettyPackageName( '.' )
     const fileName = basename( input, '.js' )
 
     const configs = []
@@ -143,8 +142,8 @@ function _createRollupConfigs( options ) {
             const outputPath = ( isProd ) ? join( output, `${ fileName }.${ format }.min.js` ) : join( output, `${ fileName }.${ format }.js` )
 
             configs.push( {
-                input:    input,
-                external: ( format !== 'iife' ) ? [
+                input:     input,
+                external:  ( format !== 'iife' ) ? [
                     'itee-validators',
                     'itee-utils',
                     'three',
@@ -154,7 +153,7 @@ function _createRollupConfigs( options ) {
                     'itee-utils',
                     'three'
                 ],
-                plugins: [
+                plugins:   [
                     alias( {
                         entries: ( format === 'iife' ) ? [
                             {
@@ -182,7 +181,7 @@ function _createRollupConfigs( options ) {
                     } ),
                     isProd && terser()
                 ],
-                onwarn: ( {
+                onwarn:    ( {
                     loc,
                     frame,
                     message
@@ -375,30 +374,30 @@ const configs = {
             file:   null
         }
     },
-    'benchmarks-backend':  {
-        input:     `tests/benchmarks/${packageName}.benchs.js`,
+    'benchmarks-backend':                   {
+        input:     `tests/benchmarks/${ packageName }.benchs.js`,
         plugins:   [],
         treeshake: true,
         output:    {
             indent: '\t',
             format: 'cjs',
             name:   'Itee.Benchs',
-            file:   `tests/benchmarks/builds/${packageName}.benchs.cjs.js`
+            file:   `tests/benchmarks/builds/${ packageName }.benchs.cjs.js`
         }
     },
-    'benchmarks-frontend': {
-        input:     `tests/benchmarks/${packageName}.benchs.js`,
+    'benchmarks-frontend':                  {
+        input:     `tests/benchmarks/${ packageName }.benchs.js`,
         plugins:   [],
         treeshake: true,
         output:    {
             indent: '\t',
             format: 'iife',
             name:   'Itee.Benchs',
-            file:   `tests/benchmarks/builds/${packageName}.benchs.iife.js`
+            file:   `tests/benchmarks/builds/${ packageName }.benchs.iife.js`
         }
     },
-    'units-backend':       {
-        input:     `tests/units/${packageName}.units.js`,
+    'units-backend':                        {
+        input:     `tests/units/${ packageName }.units.js`,
         external:  [ 'chai', 'mocha' ],
         plugins:   [],
         treeshake: true,
@@ -406,11 +405,11 @@ const configs = {
             indent: '\t',
             format: 'cjs',
             name:   'Itee.Units',
-            file:   `tests/units/builds/${packageName}.units.cjs.js`
+            file:   `tests/units/builds/${ packageName }.units.cjs.js`
         }
     },
-    'units-frontend':      {
-        input:     `tests/units/${packageName}.units.js`,
+    'units-frontend':                       {
+        input:     `tests/units/${ packageName }.units.js`,
         external:  [ 'chai', 'mocha' ],
         plugins:   [],
         treeshake: true,
@@ -422,7 +421,7 @@ const configs = {
                 'chai':  'chai',
                 'mocha': 'mocha'
             },
-            file: `tests/units/builds/${packageName}.units.iife.js`
+            file:    `tests/units/builds/${ packageName }.units.iife.js`
         }
     },
 }
