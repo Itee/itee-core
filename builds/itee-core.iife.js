@@ -306,6 +306,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
 
+
 	const Colors = /*#__PURE__*/iteeUtils.toEnum( {
 	    Black:                /*#__PURE__*/new three.Color( '#000000' ),
 	    Navy:                 /*#__PURE__*/new three.Color( '#000080' ),
@@ -512,32 +513,32 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 
 	//[x:LEFT-RIGHT][y:DOWN-UP][z:BACK-FRONT]
 	const Left_Down_Back   = /*#__PURE__*/new three.Vector3( -1, -1, -1 ).normalize();
-	const Left_Down        = /*#__PURE__*/new three.Vector3( -1, -1, +0 ).normalize();
-	const Left_Down_Front  = /*#__PURE__*/new three.Vector3( -1, -1, +1 ).normalize();
-	const Left_Back        = /*#__PURE__*/new three.Vector3( -1, +0, -1 ).normalize();
-	const Left             = /*#__PURE__*/new three.Vector3( -1, +0, +0 ).normalize();
-	const Left_Front       = /*#__PURE__*/new three.Vector3( -1, +0, +1 ).normalize();
-	const Left_Up_Back     = /*#__PURE__*/new three.Vector3( -1, +1, -1 ).normalize();
-	const Left_Up          = /*#__PURE__*/new three.Vector3( -1, +1, +0 ).normalize();
-	const Left_Up_Front    = /*#__PURE__*/new three.Vector3( -1, +1, +1 ).normalize();
-	const Down_Back        = /*#__PURE__*/new three.Vector3( +0, -1, -1 ).normalize();
-	const Down             = /*#__PURE__*/new three.Vector3( +0, -1, +0 ).normalize();
-	const Down_Front       = /*#__PURE__*/new three.Vector3( +0, -1, +1 ).normalize();
-	const Back             = /*#__PURE__*/new three.Vector3( +0, +0, -1 ).normalize();
-	const Null             = /*#__PURE__*/new three.Vector3( +0, +0, +0 ).normalize();
-	const Front            = /*#__PURE__*/new three.Vector3( +0, +0, +1 ).normalize();
-	const Up_Back          = /*#__PURE__*/new three.Vector3( +0, +1, -1 ).normalize();
-	const Up               = /*#__PURE__*/new three.Vector3( +0, +1, +0 ).normalize();
-	const Up_Front         = /*#__PURE__*/new three.Vector3( +0, +1, +1 ).normalize();
-	const Right_Down_Back  = /*#__PURE__*/new three.Vector3( +1, -1, -1 ).normalize();
-	const Right_Down       = /*#__PURE__*/new three.Vector3( +1, -1, +0 ).normalize();
-	const Right_Down_Front = /*#__PURE__*/new three.Vector3( +1, -1, +1 ).normalize();
-	const Right_Back       = /*#__PURE__*/new three.Vector3( +1, +0, -1 ).normalize();
-	const Right            = /*#__PURE__*/new three.Vector3( +1, +0, +0 ).normalize();
-	const Right_Front      = /*#__PURE__*/new three.Vector3( +1, +0, +1 ).normalize();
-	const Right_Up_Back    = /*#__PURE__*/new three.Vector3( +1, +1, -1 ).normalize();
-	const Right_Up         = /*#__PURE__*/new three.Vector3( +1, +1, +0 ).normalize();
-	const Right_Up_Front   = /*#__PURE__*/new three.Vector3( +1, +1, +1 ).normalize();
+	const Left_Down        = /*#__PURE__*/new three.Vector3( -1, -1, 0 ).normalize();
+	const Left_Down_Front  = /*#__PURE__*/new three.Vector3( -1, -1, 1 ).normalize();
+	const Left_Back        = /*#__PURE__*/new three.Vector3( -1, 0, -1 ).normalize();
+	const Left             = /*#__PURE__*/new three.Vector3( -1, 0, 0 ).normalize();
+	const Left_Front       = /*#__PURE__*/new three.Vector3( -1, 0, 1 ).normalize();
+	const Left_Up_Back     = /*#__PURE__*/new three.Vector3( -1, 1, -1 ).normalize();
+	const Left_Up          = /*#__PURE__*/new three.Vector3( -1, 1, 0 ).normalize();
+	const Left_Up_Front    = /*#__PURE__*/new three.Vector3( -1, 1, 1 ).normalize();
+	const Down_Back        = /*#__PURE__*/new three.Vector3( 0, -1, -1 ).normalize();
+	const Down             = /*#__PURE__*/new three.Vector3( 0, -1, 0 ).normalize();
+	const Down_Front       = /*#__PURE__*/new three.Vector3( 0, -1, 1 ).normalize();
+	const Back             = /*#__PURE__*/new three.Vector3( 0, 0, -1 ).normalize();
+	const Null             = /*#__PURE__*/new three.Vector3( 0, 0, 0 ).normalize();
+	const Front            = /*#__PURE__*/new three.Vector3( 0, 0, 1 ).normalize();
+	const Up_Back          = /*#__PURE__*/new three.Vector3( 0, 1, -1 ).normalize();
+	const Up               = /*#__PURE__*/new three.Vector3( 0, 1, 0 ).normalize();
+	const Up_Front         = /*#__PURE__*/new three.Vector3( 0, 1, 1 ).normalize();
+	const Right_Down_Back  = /*#__PURE__*/new three.Vector3( 1, -1, -1 ).normalize();
+	const Right_Down       = /*#__PURE__*/new three.Vector3( 1, -1, 0 ).normalize();
+	const Right_Down_Front = /*#__PURE__*/new three.Vector3( 1, -1, 1 ).normalize();
+	const Right_Back       = /*#__PURE__*/new three.Vector3( 1, 0, -1 ).normalize();
+	const Right            = /*#__PURE__*/new three.Vector3( 1, 0, 0 ).normalize();
+	const Right_Front      = /*#__PURE__*/new three.Vector3( 1, 0, 1 ).normalize();
+	const Right_Up_Back    = /*#__PURE__*/new three.Vector3( 1, 1, -1 ).normalize();
+	const Right_Up         = /*#__PURE__*/new three.Vector3( 1, 1, 0 ).normalize();
+	const Right_Up_Front   = /*#__PURE__*/new three.Vector3( 1, 1, 1 ).normalize();
 
 	/*
 
@@ -560,13 +561,13 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	    North_East:       /*#__PURE__*/new three.Vector3( SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
 	    East_North_East:  /*#__PURE__*/new three.Vector3( SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
 	    East:             Right,
-	    East_South_East:  /*#__PURE__*/new three.Vector3( SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
+	    East_South_East:  /*#__PURE__*/new three.Vector3( SquareRootOfThreeOnTwo, 0, 0.5 ).normalize(),
 	    South_East:       /*#__PURE__*/new three.Vector3( SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
 	    South_South_East: /*#__PURE__*/new three.Vector3( OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
 	    South:            Front,
 	    South_South_West: /*#__PURE__*/new three.Vector3( -OneHalf, 0, -( -SquareRootOfThreeOnTwo ) ).normalize(),
 	    South_West:       /*#__PURE__*/new three.Vector3( -SquareRootOfTwoOnTwo, 0, -( -SquareRootOfTwoOnTwo ) ).normalize(),
-	    West_South_West:  /*#__PURE__*/new three.Vector3( -SquareRootOfThreeOnTwo, 0, -( -OneHalf ) ).normalize(),
+	    West_South_West:  /*#__PURE__*/new three.Vector3( -SquareRootOfThreeOnTwo, 0, 0.5 ).normalize(),
 	    West:             Left,
 	    West_North_West:  /*#__PURE__*/new three.Vector3( -SquareRootOfThreeOnTwo, 0, -( OneHalf ) ).normalize(),
 	    North_West:       /*#__PURE__*/new three.Vector3( -SquareRootOfTwoOnTwo, 0, -( SquareRootOfTwoOnTwo ) ).normalize(),
@@ -610,6 +611,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
 
+
 	/**
 	 * @typedef {Enum} FileFormat
 	 * @property {String} Asc="asc" - The ascii file format
@@ -642,6 +644,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @author [Tristan Valcke]{@link https://github.com/Itee}
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
+
 
 	/**
 	 * @typedef {Enum} HttpStatusCode
@@ -833,6 +836,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
 
+
 	/**
 	 * @typedef {Enum} HttpVerb
 	 * @property {String} Create="PUT" - Corresponding to the create http verb for an itee server, namely "PUT".
@@ -856,6 +860,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @author [Tristan Valcke]{@link https://github.com/Itee}
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
+
 
 	/**
 	 * @typedef {Enum} Keys
@@ -975,6 +980,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
 
+
 	/**
 	 * @typedef {Enum} MimeType
 	 * @property {Number} ...
@@ -989,6 +995,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @author [Tristan Valcke]{@link https://github.com/Itee}
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
+
 
 	/**
 	 * @typedef {Enum} Mouse
@@ -1012,6 +1019,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @author [Tristan Valcke]{@link https://github.com/Itee}
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
+
 
 	/**
 	 * @typedef {Enum} ResponseType
@@ -1037,6 +1045,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	} );
 
 	/* eslint-env browser */
+
 
 	/**
 	 * @typedef {Enum} Keys
@@ -1751,16 +1760,6 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	  rnds[6] = rnds[6] & 0x0f | 0x40;
 	  rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
 
-	  if (buf) {
-	    offset = offset || 0;
-
-	    for (var i = 0; i < 16; ++i) {
-	      buf[offset + i] = rnds[i];
-	    }
-
-	    return buf;
-	  }
-
 	  return stringify(rnds);
 	}
 
@@ -1776,6 +1775,7 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	 * @author [Tristan Valcke]{@link https://github.com/Itee}
 	 * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
 	 */
+
 
 	class TAbstractObject {
 
@@ -1984,8 +1984,6 @@ this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	exports.TwoPowTwo = TwoPowTwo;
 	exports.TwoThird = TwoThird;
 	exports.Zero = Zero;
-
-	Object.defineProperty(exports, '__esModule', { value: true });
 
 	return exports;
 
