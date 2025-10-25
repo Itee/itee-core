@@ -12,8 +12,7 @@ export default defineConfig( [
         '.github',
         '.idea',
         'builds',
-        'docs',
-        'sources/scripts/*.js'
+        'docs'
     ] ),
     {
         linterOptions: {
@@ -61,35 +60,11 @@ export default defineConfig( [
         }
     },
     {
-        name:  'sources/expected_rules',
-        files: [ 'sources/cores/strings.js' ],
-        rules: {
-            'no-control-regex': 'off'
-        }
-    },
-    {
         name:            'sources/frontend',
-        files:           [
-            'sources/times/*.js',
-            'sources/cores/objects.js',
-            'sources/testings/benchmarks.js',
-        ],
-        ignores:         [ 'sources/file-system/*' ],
+        files:           [ 'sources/loggers/*.js' ],
         plugins:         { js },
         extends:         [ 'js/recommended' ],
         languageOptions: { globals: globals.browser }
-    },
-    {
-        name:            'sources/backend',
-        files:           [ 'sources/file-system/*.js' ],
-        ignores:         [
-            'sources/times/*.js',
-            'sources/cores/objects.js',
-            'sources/testings/benchmarks.js',
-        ],
-        plugins:         { js },
-        extends:         [ 'js/recommended' ],
-        languageOptions: { globals: globals.node }
     },
     {
         name:    'tests/benchmarks',
@@ -115,13 +90,5 @@ export default defineConfig( [
         files:   [ 'tests/units/**/*.js' ],
         ignores: [ 'tests/units/builds/*' ],
         ...mocha.configs.all
-    },
-    // Todo: fix
-    {
-        name:  'to/fix',
-        files: [ 'tests/units/cores/strings.unit.js' ],
-        rules: {
-            'no-unused-vars': 'warn',
-        }
     },
 ] )
