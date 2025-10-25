@@ -12,8 +12,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var three = require('three');
 var iteeUtils = require('itee-utils');
+var three = require('three');
 var iteeValidators = require('itee-validators');
 var crypto = require('crypto');
 
@@ -548,14 +548,14 @@ const Right_Up_Front   = /*#__PURE__*/new three.Vector3( +1, +1, +1 ).normalize(
 
  -Z              nnw N nne
  /|\            NW   |   NE
-  |          wnw  \  |  /  ene
-  |          W ------x------ E
-  |          wsw  /  |  \  ese
-  |             SW   |   SE
-  |              ssw S sse
-  |
+ |          wnw  \  |  /  ene
+ |          W ------x------ E
+ |          wsw  /  |  \  ese
+ |             SW   |   SE
+ |              ssw S sse
+ |
  _|_________________________________\ +X
-  |                                 /
+ |                                 /
 
  */
 const Cardinales = {
@@ -1108,7 +1108,7 @@ class TLogger {
      * @param {string} level - String who represent the gravity level of message between "error | warn (for warning) | other (will display like info message)"
      * @param {string} message - the to display
      */
-    constructor ( parameters = {} ) {
+    constructor( parameters = {} ) {
 
         const _parameters = {
             ...{
@@ -1131,11 +1131,11 @@ class TLogger {
      *
      * @return {*}
      */
-    get outputLevel () {
+    get outputLevel() {
         return this._outputLevel
     }
 
-    set outputLevel ( value ) {
+    set outputLevel( value ) {
 
         const memberName = 'OutputLevel';
         const expect     = 'Expect a value from LogLevel enum.';
@@ -1152,11 +1152,11 @@ class TLogger {
      *
      * @return {*}
      */
-    get outputs () {
+    get outputs() {
         return this._outputs
     }
 
-    set outputs ( value ) {
+    set outputs( value ) {
 
         const memberName = 'Output';
         const expect     = 'Expect a value from LogOutput enum.';
@@ -1174,7 +1174,7 @@ class TLogger {
      * @return {string}
      * @private
      */
-    static _levelToString ( level ) {
+    static _levelToString( level ) {
 
         let levelString = '';
 
@@ -1209,7 +1209,7 @@ class TLogger {
      * @return {*}
      * @private
      */
-    _formatTrace ( level, datas ) {
+    _formatTrace( level, datas ) {
 
         const levelString = TLogger._levelToString( level );
         const tmpLevel    = `${ levelString }_${ this._counterTrace }`;
@@ -1250,7 +1250,7 @@ class TLogger {
      *
      * @param message
      */
-    dispatch ( message ) {
+    dispatch( message ) {
 
         const type = message.type;
         switch ( type ) {
@@ -1279,7 +1279,7 @@ class TLogger {
      * @param message
      * @private
      */
-    _dispatchMessage ( message ) {
+    _dispatchMessage( message ) {
 
         const level = message.level;
         const data  = message.message;
@@ -1324,7 +1324,7 @@ class TLogger {
      * @param errorMessage
      * @private
      */
-    _dispatchErrorMessage ( errorMessage ) {
+    _dispatchErrorMessage( errorMessage ) {
 
         if ( this.outputs & LogOutput.Console ) {
 
@@ -1355,7 +1355,7 @@ class TLogger {
      * @param warnMessage
      * @private
      */
-    _dispatchWarningMessage ( warnMessage ) {
+    _dispatchWarningMessage( warnMessage ) {
 
         if ( this.outputs & LogOutput.Console ) {
 
@@ -1386,7 +1386,7 @@ class TLogger {
      * @param infoMessage
      * @private
      */
-    _dispatchInfoMessage ( infoMessage ) {
+    _dispatchInfoMessage( infoMessage ) {
 
         if ( this.outputs & LogOutput.Console ) {
 
@@ -1417,7 +1417,7 @@ class TLogger {
      * @param debugMessage
      * @private
      */
-    _dispatchDebugMessage ( debugMessage ) {
+    _dispatchDebugMessage( debugMessage ) {
 
         if ( this.outputs & LogOutput.Console ) {
 
@@ -1448,7 +1448,7 @@ class TLogger {
      * @param progress
      * @private
      */
-    _dispatchProgress ( progress ) {
+    _dispatchProgress( progress ) {
 
         const level          = progress.level;
         let formattedMessage = progress.message;
@@ -1481,7 +1481,7 @@ class TLogger {
      * @param infoProgress
      * @private
      */
-    _dispatchInfoProgress ( infoProgress ) {
+    _dispatchInfoProgress( infoProgress ) {
 
         if ( this.outputs & LogOutput.Console ) {
 
@@ -1512,7 +1512,7 @@ class TLogger {
      * @param debugProgress
      * @private
      */
-    _dispatchDebugProgress ( debugProgress ) {
+    _dispatchDebugProgress( debugProgress ) {
 
         if ( this.outputs & LogOutput.Console ) {
 
@@ -1543,7 +1543,7 @@ class TLogger {
      * @param time
      * @private
      */
-    _dispatchTime ( time ) {
+    _dispatchTime( time ) {
 
         // eslint-disable-next-line no-console
         console.log( time.message );
@@ -1554,7 +1554,7 @@ class TLogger {
      *
      * @param debug
      */
-    debug ( debug ) {
+    debug( debug ) {
 
         this.dispatch( {
             type:    LogType.Message,
@@ -1568,7 +1568,7 @@ class TLogger {
      *
      * @param info
      */
-    log ( info ) {
+    log( info ) {
 
         this.dispatch( {
             type:    LogType.Message,
@@ -1582,7 +1582,7 @@ class TLogger {
      *
      * @param warning
      */
-    warn ( warning ) {
+    warn( warning ) {
 
         this.dispatch( {
             type:    LogType.Message,
@@ -1596,7 +1596,7 @@ class TLogger {
      *
      * @param error
      */
-    error ( error ) {
+    error( error ) {
 
         this.dispatch( {
             type:    LogType.Message,
@@ -1610,7 +1610,7 @@ class TLogger {
      *
      * @param progress
      */
-    progress ( progress ) {
+    progress( progress ) {
 
         progress.preventDefault();
         if ( progress.cancelable ) {
@@ -1639,7 +1639,7 @@ class TLogger {
      *
      * @param key
      */
-    startChronoFor ( key ) {
+    startChronoFor( key ) {
 
         this._timers[ key ] = new Date().getTime();
 
@@ -1649,7 +1649,7 @@ class TLogger {
      *
      * @param key
      */
-    stopChronoFor ( key ) {
+    stopChronoFor( key ) {
 
         const deltaTime = ( new Date().getTime() - this._timers[ key ] );
         const message   = `${ key } take ${ deltaTime }ms.`;
@@ -1667,7 +1667,7 @@ class TLogger {
      * @param value
      * @return {TLogger}
      */
-    setOutputLevel ( value ) {
+    setOutputLevel( value ) {
 
         this.outputLevel = value;
         return this
@@ -1679,7 +1679,7 @@ class TLogger {
      * @param value
      * @return {TLogger}
      */
-    setOutput ( value ) {
+    setOutput( value ) {
 
         this.outputs = value;
         return this
@@ -1774,7 +1774,7 @@ function version(uuid) {
 
 class TAbstractObject {
 
-    constructor ( parameters = {} ) {
+    constructor( parameters = {} ) {
 
         const _uuid       = v4();
         const _name       = `${ this.constructor.name }_${ _uuid }`;
@@ -1792,11 +1792,11 @@ class TAbstractObject {
         this.logger = _parameters.logger;
     }
 
-    get name () {
+    get name() {
         return this._name
     }
 
-    set name ( value ) {
+    set name( value ) {
         const memberName = 'name';
         const expect     = 'Expect a String';
 
@@ -1807,11 +1807,11 @@ class TAbstractObject {
         this._name = value;
     }
 
-    get uuid () {
+    get uuid() {
         return this._uuid
     }
 
-    set uuid ( value ) {
+    set uuid( value ) {
         const memberName = 'uuid';
         const expect     = 'Expect an uuid v4.';
 
@@ -1822,22 +1822,22 @@ class TAbstractObject {
         this._uuid = value;
     }
 
-    getName ( target ) {
+    getName( target ) {
         target.name = this.name;
         return this
     }
 
-    setName ( value ) {
+    setName( value ) {
         this.name = value;
         return this
     }
 
-    getUuid ( target ) {
+    getUuid( target ) {
         target.uuid = this.uuid;
         return this
     }
 
-    setUuid ( value ) {
+    setUuid( value ) {
         this.uuid = value;
         return this
     }

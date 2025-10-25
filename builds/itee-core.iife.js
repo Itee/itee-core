@@ -9,7 +9,7 @@
  * 
  */
 this.Itee = this.Itee || {};
-this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
+this.Itee.Core = (function (exports, iteeUtils, three, iteeValidators) {
 	'use strict';
 
 	if( iteeValidators === undefined ) { throw new Error('Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.') }
@@ -544,14 +544,14 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 
 	 -Z              nnw N nne
 	 /|\            NW   |   NE
-	  |          wnw  \  |  /  ene
-	  |          W ------x------ E
-	  |          wsw  /  |  \  ese
-	  |             SW   |   SE
-	  |              ssw S sse
-	  |
+	 |          wnw  \  |  /  ene
+	 |          W ------x------ E
+	 |          wsw  /  |  \  ese
+	 |             SW   |   SE
+	 |              ssw S sse
+	 |
 	 _|_________________________________\ +X
-	  |                                 /
+	 |                                 /
 
 	 */
 	const Cardinales = {
@@ -1104,7 +1104,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param {string} level - String who represent the gravity level of message between "error | warn (for warning) | other (will display like info message)"
 	     * @param {string} message - the to display
 	     */
-	    constructor ( parameters = {} ) {
+	    constructor( parameters = {} ) {
 
 	        const _parameters = {
 	            ...{
@@ -1127,11 +1127,11 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @return {*}
 	     */
-	    get outputLevel () {
+	    get outputLevel() {
 	        return this._outputLevel
 	    }
 
-	    set outputLevel ( value ) {
+	    set outputLevel( value ) {
 
 	        const memberName = 'OutputLevel';
 	        const expect     = 'Expect a value from LogLevel enum.';
@@ -1148,11 +1148,11 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @return {*}
 	     */
-	    get outputs () {
+	    get outputs() {
 	        return this._outputs
 	    }
 
-	    set outputs ( value ) {
+	    set outputs( value ) {
 
 	        const memberName = 'Output';
 	        const expect     = 'Expect a value from LogOutput enum.';
@@ -1170,7 +1170,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @return {string}
 	     * @private
 	     */
-	    static _levelToString ( level ) {
+	    static _levelToString( level ) {
 
 	        let levelString = '';
 
@@ -1205,7 +1205,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @return {*}
 	     * @private
 	     */
-	    _formatTrace ( level, datas ) {
+	    _formatTrace( level, datas ) {
 
 	        const levelString = TLogger._levelToString( level );
 	        const tmpLevel    = `${ levelString }_${ this._counterTrace }`;
@@ -1246,7 +1246,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param message
 	     */
-	    dispatch ( message ) {
+	    dispatch( message ) {
 
 	        const type = message.type;
 	        switch ( type ) {
@@ -1275,7 +1275,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param message
 	     * @private
 	     */
-	    _dispatchMessage ( message ) {
+	    _dispatchMessage( message ) {
 
 	        const level = message.level;
 	        const data  = message.message;
@@ -1320,7 +1320,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param errorMessage
 	     * @private
 	     */
-	    _dispatchErrorMessage ( errorMessage ) {
+	    _dispatchErrorMessage( errorMessage ) {
 
 	        if ( this.outputs & LogOutput.Console ) {
 
@@ -1351,7 +1351,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param warnMessage
 	     * @private
 	     */
-	    _dispatchWarningMessage ( warnMessage ) {
+	    _dispatchWarningMessage( warnMessage ) {
 
 	        if ( this.outputs & LogOutput.Console ) {
 
@@ -1382,7 +1382,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param infoMessage
 	     * @private
 	     */
-	    _dispatchInfoMessage ( infoMessage ) {
+	    _dispatchInfoMessage( infoMessage ) {
 
 	        if ( this.outputs & LogOutput.Console ) {
 
@@ -1413,7 +1413,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param debugMessage
 	     * @private
 	     */
-	    _dispatchDebugMessage ( debugMessage ) {
+	    _dispatchDebugMessage( debugMessage ) {
 
 	        if ( this.outputs & LogOutput.Console ) {
 
@@ -1444,7 +1444,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param progress
 	     * @private
 	     */
-	    _dispatchProgress ( progress ) {
+	    _dispatchProgress( progress ) {
 
 	        const level          = progress.level;
 	        let formattedMessage = progress.message;
@@ -1477,7 +1477,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param infoProgress
 	     * @private
 	     */
-	    _dispatchInfoProgress ( infoProgress ) {
+	    _dispatchInfoProgress( infoProgress ) {
 
 	        if ( this.outputs & LogOutput.Console ) {
 
@@ -1508,7 +1508,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param debugProgress
 	     * @private
 	     */
-	    _dispatchDebugProgress ( debugProgress ) {
+	    _dispatchDebugProgress( debugProgress ) {
 
 	        if ( this.outputs & LogOutput.Console ) {
 
@@ -1539,7 +1539,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param time
 	     * @private
 	     */
-	    _dispatchTime ( time ) {
+	    _dispatchTime( time ) {
 
 	        // eslint-disable-next-line no-console
 	        console.log( time.message );
@@ -1550,7 +1550,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param debug
 	     */
-	    debug ( debug ) {
+	    debug( debug ) {
 
 	        this.dispatch( {
 	            type:    LogType.Message,
@@ -1564,7 +1564,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param info
 	     */
-	    log ( info ) {
+	    log( info ) {
 
 	        this.dispatch( {
 	            type:    LogType.Message,
@@ -1578,7 +1578,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param warning
 	     */
-	    warn ( warning ) {
+	    warn( warning ) {
 
 	        this.dispatch( {
 	            type:    LogType.Message,
@@ -1592,7 +1592,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param error
 	     */
-	    error ( error ) {
+	    error( error ) {
 
 	        this.dispatch( {
 	            type:    LogType.Message,
@@ -1606,7 +1606,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param progress
 	     */
-	    progress ( progress ) {
+	    progress( progress ) {
 
 	        progress.preventDefault();
 	        if ( progress.cancelable ) {
@@ -1635,7 +1635,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param key
 	     */
-	    startChronoFor ( key ) {
+	    startChronoFor( key ) {
 
 	        this._timers[ key ] = new Date().getTime();
 
@@ -1645,7 +1645,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     *
 	     * @param key
 	     */
-	    stopChronoFor ( key ) {
+	    stopChronoFor( key ) {
 
 	        const deltaTime = ( new Date().getTime() - this._timers[ key ] );
 	        const message   = `${ key } take ${ deltaTime }ms.`;
@@ -1663,7 +1663,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param value
 	     * @return {TLogger}
 	     */
-	    setOutputLevel ( value ) {
+	    setOutputLevel( value ) {
 
 	        this.outputLevel = value;
 	        return this
@@ -1675,7 +1675,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	     * @param value
 	     * @return {TLogger}
 	     */
-	    setOutput ( value ) {
+	    setOutput( value ) {
 
 	        this.outputs = value;
 	        return this
@@ -1779,7 +1779,7 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 
 	class TAbstractObject {
 
-	    constructor ( parameters = {} ) {
+	    constructor( parameters = {} ) {
 
 	        const _uuid       = v4();
 	        const _name       = `${ this.constructor.name }_${ _uuid }`;
@@ -1797,11 +1797,11 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	        this.logger = _parameters.logger;
 	    }
 
-	    get name () {
+	    get name() {
 	        return this._name
 	    }
 
-	    set name ( value ) {
+	    set name( value ) {
 	        const memberName = 'name';
 	        const expect     = 'Expect a String';
 
@@ -1812,11 +1812,11 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	        this._name = value;
 	    }
 
-	    get uuid () {
+	    get uuid() {
 	        return this._uuid
 	    }
 
-	    set uuid ( value ) {
+	    set uuid( value ) {
 	        const memberName = 'uuid';
 	        const expect     = 'Expect an uuid v4.';
 
@@ -1827,22 +1827,22 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 	        this._uuid = value;
 	    }
 
-	    getName ( target ) {
+	    getName( target ) {
 	        target.name = this.name;
 	        return this
 	    }
 
-	    setName ( value ) {
+	    setName( value ) {
 	        this.name = value;
 	        return this
 	    }
 
-	    getUuid ( target ) {
+	    getUuid( target ) {
 	        target.uuid = this.uuid;
 	        return this
 	    }
 
-	    setUuid ( value ) {
+	    setUuid( value ) {
 	        this.uuid = value;
 	        return this
 	    }
@@ -1989,5 +1989,5 @@ this.Itee.Core = (function (exports, three, iteeUtils, iteeValidators) {
 
 	return exports;
 
-})({}, Three, Itee.Utils, Itee.Validators);
+})({}, Itee.Utils, Three, Itee.Validators);
 //# sourceMappingURL=itee-core.iife.js.map
