@@ -61,9 +61,6 @@
     "itee-validators": "^5.6.0",
     "uuid": "^13.0.0"
   },
-  "peerDependencies": {
-    "three": "^0.149.0"
-  },
   "devDependencies": {
     "@eslint/js": "^9.38.0",
     "@rollup/plugin-alias": "^5.1.1",
