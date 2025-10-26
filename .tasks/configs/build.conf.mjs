@@ -105,9 +105,7 @@ function _computeIntro() {
 
     return '' +
         'if( iteeValidators === undefined ) { throw new Error(\'Itee.Core need Itee.Validators to be defined first. Please check your scripts loading order.\') }' + '\n' +
-        'if( iteeUtils === undefined ) { throw new Error(\'Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.\') }' + '\n' +
-        'if( threeFull === undefined ) { throw new Error(\'Itee.Core need Three to be defined first. Please check your scripts loading order.\') }' + '\n'
-
+        'if( iteeUtils === undefined ) { throw new Error(\'Itee.Core need Itee.Utils to be defined first. Please check your scripts loading order.\') }'
 }
 
 /**
