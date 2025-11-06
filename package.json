@@ -11,9 +11,7 @@
     "name": "Itee (Tristan Valcke)",
     "url":  "https://github.com/Itee"
   },
-  "contributors":    [
-    {}
-  ],
+  "contributors":    [],
   "license":         "BSD-3-Clause",
   "private":         false,
   "repository":      {
