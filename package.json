@@ -16,16 +16,16 @@
   "private":         false,
   "repository":      {
     "type": "git",
-    "url":  "https://github.com/Itee/itee-core.git"
+    "url":  "https://github.com/Itee/core.git"
   },
   "type":            "module",
-  "main":            "builds/itee-core.cjs.js",
-  "module":          "builds/itee-core.esm.js",
-  "browser":         "builds/itee-core.iife.js",
-  "homepage":        "https://github.com/Itee/itee-core#readme",
+  "main":            "builds/core.cjs.js",
+  "module":          "builds/core.esm.js",
+  "browser":         "builds/core.iife.js",
+  "homepage":        "https://github.com/Itee/core#readme",
   "man":             "./docs/index.html",
   "bugs":            {
-    "url": "https://github.com/Itee/itee-core/issues"
+    "url": "https://github.com/Itee/core/issues"
   },
   "engines":         {
     "node": ">=20"
