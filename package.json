@@ -1,72 +1,72 @@
 {
-  "name":            "itee-core",
-  "version":         "1.4.0",
-  "description":     "The Itee Core package contains all base class and shared common stuff for the Itee environment.",
-  "keywords":        [
+  "name": "itee-core",
+  "version": "1.4.0",
+  "description": "The Itee Core package contains all base class and shared common stuff for the Itee environment.",
+  "keywords": [
     "itee",
     "core",
     "3d"
   ],
-  "author":          {
+  "author": {
     "name": "Itee (Tristan Valcke)",
-    "url":  "https://github.com/Itee"
+    "url": "https://github.com/Itee"
   },
-  "contributors":    [],
-  "license":         "BSD-3-Clause",
-  "private":         false,
-  "repository":      {
+  "contributors": [],
+  "license": "BSD-3-Clause",
+  "private": false,
+  "repository": {
     "type": "git",
-    "url":  "https://github.com/Itee/core.git"
+    "url": "https://github.com/Itee/core.git"
   },
-  "type":            "module",
-  "main":            "builds/core.cjs.js",
-  "module":          "builds/core.esm.js",
-  "browser":         "builds/core.iife.js",
-  "homepage":        "https://github.com/Itee/core#readme",
-  "man":             "./docs/index.html",
-  "bugs":            {
+  "type": "module",
+  "main": "builds/core.cjs.js",
+  "module": "builds/core.esm.js",
+  "browser": "builds/core.iife.js",
+  "homepage": "https://github.com/Itee/core#readme",
+  "man": "./docs/index.html",
+  "bugs": {
     "url": "https://github.com/Itee/core/issues"
   },
-  "engines":         {
+  "engines": {
     "node": ">=20"
   },
-  "os":              [
+  "os": [
     "win32",
     "linux"
   ],
-  "cpu":             [
+  "cpu": [
     "x64",
     "ia32"
   ],
-  "scripts":         {
-    "default":                     "gulp --tasks",
-    "refresh":                     "node ./node_modules/@itee/tasks/scripts/refresh.mjs",
-    "help":                        "gulp help",
-    "patch":                       "gulp patch",
-    "clean":                       "gulp clean",
-    "lint":                        "gulp lint",
-    "doc":                         "gulp doc",
-    "build":                       "gulp build",
-    "tests:run":                   "gulp run-tests",
-    "tests:bundling":              "gulp check-bundling",
+  "scripts": {
+    "default": "gulp --tasks",
+    "refresh": "node ./node_modules/@itee/tasks/scripts/refresh.mjs",
+    "help": "gulp help",
+    "patch": "gulp patch",
+    "clean": "gulp clean",
+    "lint": "gulp lint",
+    "doc": "gulp doc",
+    "build": "gulp build",
+    "tests:run": "gulp run-tests",
+    "tests:bundling": "gulp check-bundling",
     "tests:bundling:build-import": "gulp check-bundling-from-esm-build-import",
     "tests:bundling:files-import": "gulp check-bundling-from-esm-files-import",
     "tests:bundling:files-direct": "gulp check-bundling-from-esm-files-direct",
-    "tests:benches:compute":       "gulp compute-benchmarks",
-    "tests:benches:run":           "gulp run-benchmarks",
-    "tests:benches:run:back":      "gulp run-benchmarks-for-backend",
-    "tests:benches:run:front":     "gulp run-benchmarks-for-frontend",
-    "tests:units:compute":         "gulp compute-unit-tests",
-    "tests:units:run":             "gulp run-unit-tests",
-    "tests:units:run:back":        "gulp run-unit-tests-for-backend",
-    "tests:units:run:front":       "gulp run-unit-tests-for-frontend",
-    "release":                     "gulp release",
-    "semantic-release":            "semantic-release --dry-run --no-ci"
+    "tests:benches:compute": "gulp compute-benchmarks",
+    "tests:benches:run": "gulp run-benchmarks",
+    "tests:benches:run:back": "gulp run-benchmarks-for-backend",
+    "tests:benches:run:front": "gulp run-benchmarks-for-frontend",
+    "tests:units:compute": "gulp compute-unit-tests",
+    "tests:units:run": "gulp run-unit-tests",
+    "tests:units:run:back": "gulp run-unit-tests-for-backend",
+    "tests:units:run:front": "gulp run-unit-tests-for-frontend",
+    "release": "gulp release",
+    "semantic-release": "semantic-release --dry-run --no-ci"
   },
-  "dependencies":    {
-    "itee-utils":      "^5.6.0",
-    "itee-validators": "^5.6.0",
-    "uuid":            "^13.0.0"
+  "dependencies": {
+    "itee-utils": "^6.0.4",
+    "itee-validators": "^6.1.2",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@itee/tasks": "^1.4.1"
