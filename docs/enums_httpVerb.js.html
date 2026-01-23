@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Itee-Core Source: sources/enums/fileFormat.js</title>
+	<title>Itee Core v1.4.0 Source: enums/httpVerb.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,7 +20,7 @@
 <div class="navbar navbar-default navbar-fixed-top ">
 <div class="container">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Itee-Core</a>
+		<a class="navbar-brand" href="index.html">Itee Core v1.4.0</a>
 		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -79,7 +79,7 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: sources/enums/fileFormat.js</h1>
+		<h1 class="page-title">Source: enums/httpVerb.js</h1>
     
 <section>
     <article>
@@ -92,34 +92,25 @@
 import { toEnum } from 'itee-utils'
 
 /**
- * @typedef {Enum} FileFormat
- * @property {String} Asc="asc" - The ascii file format
- * @property {String} Dae="dae" - The dae file format
- * @property {String} Dbf="dbf" - The dbf file format
- * @property {String} Fbx="fbx" - The fbx file format
- * @property {String} Mtl="mtl" - The material file format
- * @property {String} Json="json" - The json file format
- * @property {String} Obj="obj" - The object file format
- * @property {String} Shp="shp" - The shape file format
- * @property {String} Stl="stl" - The stereolithographie file format
+ * @typedef {Enum} HttpVerb
+ * @property {String} Create="PUT" - Corresponding to the create http verb for an itee server, namely "PUT".
+ * @property {String} Read="POST" - Corresponding to the read http verb for an itee server, namely "POST".
+ * @property {String} Update="PATCH" - Corresponding to the update http verb for an itee server, namely "PATCH".
+ * @property {String} Delete="DELETE" - Corresponding to the delete http verb for an itee server, namely "DELETE".
  *
  * @constant
- * @type {FileFormat}
- * @description The FileFormat Enum give some commonly used file format in 3d context
+ * @type {HttpVerb}
+ * @description HttpVerb contains the CRUD actions with corresponding http verb to request an itee server.
+ * @see {@link https://en.wikipedia.org/wiki/Create,_read,_update_and_delete} for further information.
  */
-const FileFormat = /*#__PURE__*/toEnum( {
-    Asc:  { value: 'asc' },
-    Dae:  { value: 'dae' },
-    Dbf:  { value: 'dbf' },
-    Fbx:  { value: 'fbx' },
-    Mtl:  { value: 'mtl' },
-    Json: { value: 'json' },
-    Obj:  { value: 'obj' },
-    Shp:  { value: 'shp' },
-    Stl:  { value: 'stl' }
+const HttpVerb = /*#__PURE__*/toEnum( {
+    Create: { value: 'PUT' },
+    Read:   { value: 'POST' },
+    Update: { value: 'PATCH' },
+    Delete: { value: 'DELETE' }
 } )
 
-export { FileFormat }
+export { HttpVerb }
 </pre>
     </article>
 </section>
@@ -159,7 +150,7 @@ export { FileFormat }
 
 
 	<span class="copyright">
-	Copyright 2015-Present <a href="https://github.com/Itee">Itee</a> (Tristan Valcke)
+	Copyright 2015-Present <a href="https://github.com/Itee">Itee (Tristan Valcke)</a>
 	</span>
 
 <span class="jsdoc-message">
