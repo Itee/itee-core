@@ -1,8 +1,8 @@
 /**
- * ┳      ┏┓          ┓ ┏┓ ┏┓      ┏┓            ┏┳ 
- * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┃ ┃┃ ┃┫  ━━  ┃ ┏┓┏┳┓┏┳┓┏┓┏┓ ┃┏
- * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┻•┗╋•┗┛      ┗┛┗┛┛┗┗┛┗┗┗┛┛┗┗┛┛
- *                                                  
+ * ┳      ┏┓          ┏┓ ┏┓ ┏┓      ┏┓            ┏┳ 
+ * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┏┛ ┃┫ ┃┫  ━━  ┃ ┏┓┏┳┓┏┳┓┏┓┏┓ ┃┏
+ * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┗━•┗┛•┗┛      ┗┛┗┛┛┗┗┛┗┗┗┛┛┗┗┛┛
+ *                                                   
  * @desc    The Itee Core package contains all base class and shared common stuff for the Itee environment.
  * @author  [Itee (Tristan Valcke)]{@link https://github.com/Itee}
  * @license [BSD-3-Clause]{@link https://opensource.org/licenses}
@@ -10,8 +10,8 @@
  */
 'use strict';
 
-var iteeUtils = require('itee-utils');
-var iteeValidators = require('itee-validators');
+var utils = require('@itee/utils');
+var validators = require('@itee/validators');
 
 // Maths
 const Zero               = 0;
@@ -2251,7 +2251,7 @@ const Symbols = {
  * @type {FileFormat}
  * @description The FileFormat Enum give some commonly used file format in 3d context
  */
-const FileFormat = /*#__PURE__*/iteeUtils.toEnum( {
+const FileFormat = /*#__PURE__*/utils.toEnum( {
     Asc:  { value: 'asc' },
     Dae:  { value: 'dae' },
     Dbf:  { value: 'dbf' },
@@ -2361,7 +2361,7 @@ const FileFormat = /*#__PURE__*/iteeUtils.toEnum( {
  * @description HttpStatusCode contains all http status code available to check and process correctly server response.
  * @see {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes} for further information.
  */
-const HttpStatusCode = /*#__PURE__*/iteeUtils.toEnum( {
+const HttpStatusCode = /*#__PURE__*/utils.toEnum( {
 
     // 100
     Continue:           { value: 100 },
@@ -2472,7 +2472,7 @@ const HttpStatusCode = /*#__PURE__*/iteeUtils.toEnum( {
  * @description HttpVerb contains the CRUD actions with corresponding http verb to request an itee server.
  * @see {@link https://en.wikipedia.org/wiki/Create,_read,_update_and_delete} for further information.
  */
-const HttpVerb = /*#__PURE__*/iteeUtils.toEnum( {
+const HttpVerb = /*#__PURE__*/utils.toEnum( {
     Create: { value: 'PUT' },
     Read:   { value: 'POST' },
     Update: { value: 'PATCH' },
@@ -2496,7 +2496,7 @@ const HttpVerb = /*#__PURE__*/iteeUtils.toEnum( {
  * @type {Keys}
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const Keys = /*#__PURE__*/iteeUtils.toEnum( {
+const Keys = /*#__PURE__*/utils.toEnum( {
     BACKSPACE:            { value: 8 },
     TAB:                  { value: 9 },
     ENTER:                { value: 13 },
@@ -2612,7 +2612,7 @@ const Keys = /*#__PURE__*/iteeUtils.toEnum( {
  * @type {MimeType}
  * @description Todo...
  */
-const MimeType = /*#__PURE__*/iteeUtils.toEnum( {} );
+const MimeType = /*#__PURE__*/utils.toEnum( {} );
 
 /**
  * @author [Tristan Valcke]{@link https://github.com/Itee}
@@ -2631,7 +2631,7 @@ const MimeType = /*#__PURE__*/iteeUtils.toEnum( {} );
  * @type {Mouse}
  * @description This Mouse Enum expose 4 common state of mouse button values (Wheel, Left, Middle and Right), this allow to write semantic code instead of integer when dealing with mouse button codes.
  */
-const Mouse = /*#__PURE__*/iteeUtils.toEnum( {
+const Mouse = /*#__PURE__*/utils.toEnum( {
     Wheel:  { value: -1 },
     Left:   { value: 0 },
     Middle: { value: 1 },
@@ -2658,7 +2658,7 @@ const Mouse = /*#__PURE__*/iteeUtils.toEnum( {
  * @description ResponseType allow to filter wich type of response is recieved from the server.
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType} for further information.
  */
-const ResponseType = /*#__PURE__*/iteeUtils.toEnum( {
+const ResponseType = /*#__PURE__*/utils.toEnum( {
     ArrayBuffer: { value: 'arraybuffer' },
     Blob:        { value: 'blob' },
     Document:    { value: 'document' },
@@ -2679,7 +2679,7 @@ const ResponseType = /*#__PURE__*/iteeUtils.toEnum( {
  * @inner
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const LogOutput = /*#__PURE__*/iteeUtils.toEnum( {
+const LogOutput = /*#__PURE__*/utils.toEnum( {
     Console:  1,
     Html:     2,
     Toast:    4,
@@ -2696,7 +2696,7 @@ const LogOutput = /*#__PURE__*/iteeUtils.toEnum( {
  * @deprecated
  * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
  */
-const LogType = /*#__PURE__*/iteeUtils.toEnum( {
+const LogType = /*#__PURE__*/utils.toEnum( {
     Message:  0,
     Progress: 1,
     Time:     2
@@ -2715,7 +2715,7 @@ const LogType = /*#__PURE__*/iteeUtils.toEnum( {
  * @type {LogLevel}
  * @description LogLevel is a flag that allow to set which type of log is allowed
  */
-const LogLevel = /*#__PURE__*/iteeUtils.toEnum( {
+const LogLevel = /*#__PURE__*/utils.toEnum( {
     None:    0,
     Debug:   1,
     Info:    2,
@@ -2768,8 +2768,8 @@ class TLogger {
         const memberName = 'OutputLevel';
         const expect     = 'Expect a value from LogLevel enum.';
 
-        if ( iteeValidators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
-        if ( iteeValidators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
+        if ( validators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( validators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
         //        if ( !Object.keys( LogLevel ).includes( value ) ) { throw new Error( `${memberName} cannot be an instance of ${value.constructor.name}. ${expect}` ) }
 
         this._outputLevel = value;
@@ -2789,8 +2789,8 @@ class TLogger {
         const memberName = 'Output';
         const expect     = 'Expect a value from LogOutput enum.';
 
-        if ( iteeValidators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
-        if ( iteeValidators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
+        if ( validators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( validators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
         //        if ( !Object.keys( LogOutput ).includes( value ) ) { throw new Error( `${memberName} cannot be an instance of ${value.constructor.name}. ${expect}` ) }
 
         this._outputs = value;
@@ -2842,19 +2842,19 @@ class TLogger {
         const levelString = TLogger._levelToString( level );
         const tmpLevel    = `${ levelString }_${ this._counterTrace }`;
 
-        if ( iteeValidators.isString( datas ) ) {
+        if ( validators.isString( datas ) ) {
 
             this._logsArray[ tmpLevel ] = datas;
 
-        } else if ( iteeValidators.isObject( datas ) ) {
+        } else if ( validators.isObject( datas ) ) {
 
             this._logsArray[ tmpLevel ] = TLogger._formatObjectError( datas );
 
-        } else if ( iteeValidators.isArrayOfString( datas ) ) {
+        } else if ( validators.isArrayOfString( datas ) ) {
 
             this._logsArray[ tmpLevel ] = datas.toString();
 
-        } else if ( iteeValidators.isArrayOfObject( datas ) ) {
+        } else if ( validators.isArrayOfObject( datas ) ) {
 
             this._logsArray[ tmpLevel ] = '';
 
@@ -3428,9 +3428,9 @@ class TAbstractObject {
         const memberName = 'name';
         const expect     = 'Expect a String';
 
-        if ( iteeValidators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
-        if ( iteeValidators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
-        if ( iteeValidators.isNotString( value ) ) { throw new ReferenceError( 'TAbstractObject.name: Value cannot be null or undefined. Expect an  !' ) }
+        if ( validators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( validators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
+        if ( validators.isNotString( value ) ) { throw new ReferenceError( 'TAbstractObject.name: Value cannot be null or undefined. Expect an  !' ) }
 
         this._name = value;
     }
@@ -3443,8 +3443,8 @@ class TAbstractObject {
         const memberName = 'uuid';
         const expect     = 'Expect an uuid v4.';
 
-        if ( iteeValidators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
-        if ( iteeValidators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
+        if ( validators.isNull( value ) ) { throw new Error( `${ memberName } cannot be null ! ${ expect }` ) }
+        if ( validators.isUndefined( value ) ) { throw new Error( `${ memberName } cannot be undefined ! ${ expect }` ) }
         if ( !validate( value ) || version( value ) !== 4 ) { throw new Error( `Unable to set invalid uuid [${ value }] ! ${ expect }` ) }
 
         this._uuid = value;

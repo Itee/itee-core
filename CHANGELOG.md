@@ -1,3 +1,11 @@
+# [v3.0.0](https://github.com/Itee/core/compare/v2.0.0...v3.0.0) (2026-01-23)
+
+## 🐛 Bug Fixes
+- [`580b669`](https://github.com/Itee/core/commit/580b669)  (package) apply package override to fix trust publishing 
+
+## 💥 Breaking Changes
+- [`5e019ff`](https://github.com/Itee/core/commit/5e019ff)  (package) change package name itee-core to scoped version @itee/core
+
 # [v2.0.0](https://github.com/Itee/core/compare/v1.4.0...v2.0.0) (2026-01-23)
 
 ## ✨ New Features

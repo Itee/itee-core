@@ -1,15 +1,15 @@
 /**
- * ┳      ┏┓          ┓ ┏┓ ┏┓      ┏┓ ┳┳┓   ┓  ┓  
- * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┃ ┃┃ ┃┫  ━━  ┣ ┏┃┃┃┏┓┏┫┓┏┃┏┓
- * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┻•┗╋•┗┛      ┗┛┛┛ ┗┗┛┗┻┗┻┗┗ 
- *                                                
+ * ┳      ┏┓          ┏┓ ┏┓ ┏┓      ┏┓ ┳┳┓   ┓  ┓  
+ * ┃╋┏┓┏┓ ┃ ┏┓┏┓┏┓  ┓┏┏┛ ┃┫ ┃┫  ━━  ┣ ┏┃┃┃┏┓┏┫┓┏┃┏┓
+ * ┻┗┗ ┗ •┗┛┗┛┛ ┗   ┗┛┗━•┗┛•┗┛      ┗┛┛┛ ┗┗┛┗┻┗┻┗┗ 
+ *                                                 
  * @desc    The Itee Core package contains all base class and shared common stuff for the Itee environment.
  * @author  [Itee (Tristan Valcke)]{@link https://github.com/Itee}
  * @license [BSD-3-Clause]{@link https://opensource.org/licenses}
  * 
  */
-import { toEnum } from 'itee-utils';
-import { isNull, isUndefined, isString, isObject, isArrayOfString, isArrayOfObject, isNotString } from 'itee-validators';
+import { toEnum } from '@itee/utils';
+import { isNull, isUndefined, isString, isObject, isArrayOfString, isArrayOfObject, isNotString } from '@itee/validators';
 
 // Maths
 const Zero               = 0;
