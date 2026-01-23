@@ -7,4 +7,4 @@
  */
 /* eslint-env browser */
 
-export * from './TLogger'
+export * from './TLogger.js'

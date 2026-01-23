@@ -1,4 +1,90 @@
-/* eslint-env browser */
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Itee Core v1.4.0 Source: loggers/TLogger.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cyborg.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Itee Core v1.4.0</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="module-Loggers.html">Loggers</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="TLogger.html">TLogger</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu inline">
+					<li><a href="global.html#DefaultLogger">DefaultLogger</a></li><li><a href="global.html#FileFormat">FileFormat</a></li><li><a href="global.html#HttpStatusCode">HttpStatusCode</a></li><li><a href="global.html#HttpVerb">HttpVerb</a></li><li><a href="global.html">Keys</a></li><li><a href="global.html#LogLevel">LogLevel</a></li><li><a href="global.html#LogType">LogType</a></li><li><a href="global.html#MimeType">MimeType</a></li><li><a href="global.html#Mouse">Mouse</a></li><li><a href="global.html#ResponseType">ResponseType</a></li><li><a href="global.html#Symbols">Symbols</a></li><li><a href="global.html#TwoPowEight">TwoPowEight</a></li><li><a href="global.html#TwoPowEighteen">TwoPowEighteen</a></li><li><a href="global.html#TwoPowEleven">TwoPowEleven</a></li><li><a href="global.html#TwoPowFifteen">TwoPowFifteen</a></li><li><a href="global.html#TwoPowFive">TwoPowFive</a></li><li><a href="global.html#TwoPowFour">TwoPowFour</a></li><li><a href="global.html#TwoPowFourteen">TwoPowFourteen</a></li><li><a href="global.html#TwoPowNine">TwoPowNine</a></li><li><a href="global.html#TwoPowNineteen">TwoPowNineteen</a></li><li><a href="global.html#TwoPowSeven">TwoPowSeven</a></li><li><a href="global.html#TwoPowSeventeen">TwoPowSeventeen</a></li><li><a href="global.html#TwoPowSix">TwoPowSix</a></li><li><a href="global.html#TwoPowSixteen">TwoPowSixteen</a></li><li><a href="global.html#TwoPowTen">TwoPowTen</a></li><li><a href="global.html#TwoPowThirteen">TwoPowThirteen</a></li><li><a href="global.html#TwoPowThirty">TwoPowThirty</a></li><li><a href="global.html#TwoPowThirtyOne">TwoPowThirtyOne</a></li><li><a href="global.html#TwoPowThirtyTwo">TwoPowThirtyTwo</a></li><li><a href="global.html#TwoPowThree">TwoPowThree</a></li><li><a href="global.html#TwoPowTwelve">TwoPowTwelve</a></li><li><a href="global.html#TwoPowTwenty">TwoPowTwenty</a></li><li><a href="global.html#TwoPowTwentyEight">TwoPowTwentyEight</a></li><li><a href="global.html#TwoPowTwentyFive">TwoPowTwentyFive</a></li><li><a href="global.html#TwoPowTwentyFour">TwoPowTwentyFour</a></li><li><a href="global.html#TwoPowTwentyNine">TwoPowTwentyNine</a></li><li><a href="global.html#TwoPowTwentyOne">TwoPowTwentyOne</a></li><li><a href="global.html#TwoPowTwentySeven">TwoPowTwentySeven</a></li><li><a href="global.html#TwoPowTwentySix">TwoPowTwentySix</a></li><li><a href="global.html#TwoPowTwentyThree">TwoPowTwentyThree</a></li><li><a href="global.html#TwoPowTwentyTwo">TwoPowTwentyTwo</a></li><li><a href="global.html#TwoPowTwo">TwoPowTwo</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: loggers/TLogger.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/* eslint-env browser */
 
 import { toEnum } from 'itee-utils'
 import {
@@ -198,7 +284,7 @@ class TLogger {
 
             this._logsArray[ tmpLevel ] = ''
 
-            for ( let dataIndex = 0, numberOfDatas = datas.length ; dataIndex < numberOfDatas ; dataIndex++ ) {
+            for ( let dataIndex = 0, numberOfDatas = datas.length ; dataIndex &lt; numberOfDatas ; dataIndex++ ) {
                 this._formatTrace( level, datas[ dataIndex ] )
             }
 
@@ -256,25 +342,25 @@ class TLogger {
         switch ( level ) {
 
             case LogLevel.Error:
-                if ( this.outputLevel & LogLevel.Error ) {
+                if ( this.outputLevel &amp; LogLevel.Error ) {
                     this._dispatchErrorMessage( data )
                 }
                 break
 
             case LogLevel.Warning:
-                if ( this.outputLevel & LogLevel.Warning ) {
+                if ( this.outputLevel &amp; LogLevel.Warning ) {
                     this._dispatchWarningMessage( data )
                 }
                 break
 
             case LogLevel.Info:
-                if ( this.outputLevel & LogLevel.Info ) {
+                if ( this.outputLevel &amp; LogLevel.Info ) {
                     this._dispatchInfoMessage( data )
                 }
                 break
 
             case LogLevel.Debug:
-                if ( this.outputLevel & LogLevel.Debug ) {
+                if ( this.outputLevel &amp; LogLevel.Debug ) {
                     this._dispatchDebugMessage( data )
                 }
                 break
@@ -294,14 +380,14 @@ class TLogger {
      */
     _dispatchErrorMessage( errorMessage ) {
 
-        if ( this.outputs & LogOutput.Console ) {
+        if ( this.outputs &amp; LogOutput.Console ) {
 
             // eslint-disable-next-line no-console
             console.error( errorMessage )
 
         }
 
-        if ( this.outputs & LogOutput.Html ) {
+        if ( this.outputs &amp; LogOutput.Html ) {
 
             const span = document.createElement( 'span' )
             span.classList.add( 'log-error' )
@@ -310,19 +396,19 @@ class TLogger {
 
         }
 
-        if ( this.outputs & LogOutput.Toast ) {
+        if ( this.outputs &amp; LogOutput.Toast ) {
 
             // Todo: implement TToast
 
         }
 
-        if ( this.outputs & LogOutput.File ) {
+        if ( this.outputs &amp; LogOutput.File ) {
 
             // Todo: implement file
 
         }
 
-        if ( this.outputs & LogOutput.Database ) {
+        if ( this.outputs &amp; LogOutput.Database ) {
 
             // Todo: implement db
 
@@ -337,14 +423,14 @@ class TLogger {
      */
     _dispatchWarningMessage( warnMessage ) {
 
-        if ( this.outputs & LogOutput.Console ) {
+        if ( this.outputs &amp; LogOutput.Console ) {
 
             // eslint-disable-next-line no-console
             console.warn( warnMessage )
 
         }
 
-        if ( this.outputs & LogOutput.Html ) {
+        if ( this.outputs &amp; LogOutput.Html ) {
 
             const span = document.createElement( 'span' )
             span.classList.add( 'log-warning' )
@@ -353,19 +439,19 @@ class TLogger {
 
         }
 
-        if ( this.outputs & LogOutput.Toast ) {
+        if ( this.outputs &amp; LogOutput.Toast ) {
 
             // Todo: implement TToast
 
         }
 
-        if ( this.outputs & LogOutput.File ) {
+        if ( this.outputs &amp; LogOutput.File ) {
 
             // Todo: implement file
 
         }
 
-        if ( this.outputs & LogOutput.Database ) {
+        if ( this.outputs &amp; LogOutput.Database ) {
 
             // Todo: implement db
 
@@ -380,14 +466,14 @@ class TLogger {
      */
     _dispatchInfoMessage( infoMessage ) {
 
-        if ( this.outputs & LogOutput.Console ) {
+        if ( this.outputs &amp; LogOutput.Console ) {
 
             // eslint-disable-next-line no-console
             console.log( infoMessage )
 
         }
 
-        if ( this.outputs & LogOutput.Html ) {
+        if ( this.outputs &amp; LogOutput.Html ) {
 
             const span = document.createElement( 'span' )
             span.classList.add( 'log-info' )
@@ -396,19 +482,19 @@ class TLogger {
 
         }
 
-        if ( this.outputs & LogOutput.Toast ) {
+        if ( this.outputs &amp; LogOutput.Toast ) {
 
             // Todo: implement TToast
 
         }
 
-        if ( this.outputs & LogOutput.File ) {
+        if ( this.outputs &amp; LogOutput.File ) {
 
             // Todo: implement file
 
         }
 
-        if ( this.outputs & LogOutput.Database ) {
+        if ( this.outputs &amp; LogOutput.Database ) {
 
             // Todo: implement db
 
@@ -423,14 +509,14 @@ class TLogger {
      */
     _dispatchDebugMessage( debugMessage ) {
 
-        if ( this.outputs & LogOutput.Console ) {
+        if ( this.outputs &amp; LogOutput.Console ) {
 
             // eslint-disable-next-line no-console
             console.log( debugMessage )
 
         }
 
-        if ( this.outputs & LogOutput.Html ) {
+        if ( this.outputs &amp; LogOutput.Html ) {
 
             const span = document.createElement( 'span' )
             span.classList.add( 'log-info' )
@@ -439,19 +525,19 @@ class TLogger {
 
         }
 
-        if ( this.outputs & LogOutput.Toast ) {
+        if ( this.outputs &amp; LogOutput.Toast ) {
 
             // Todo: implement TToast
 
         }
 
-        if ( this.outputs & LogOutput.File ) {
+        if ( this.outputs &amp; LogOutput.File ) {
 
             // Todo: implement file
 
         }
 
-        if ( this.outputs & LogOutput.Database ) {
+        if ( this.outputs &amp; LogOutput.Database ) {
 
             // Todo: implement db
 
@@ -473,13 +559,13 @@ class TLogger {
         switch ( level ) {
 
             case LogLevel.Info:
-                if ( this.outputLevel & LogLevel.Info ) {
+                if ( this.outputLevel &amp; LogLevel.Info ) {
                     this._dispatchInfoProgress( formattedMessage )
                 }
                 break
 
             case LogLevel.Debug:
-                if ( this.outputLevel & LogLevel.Debug ) {
+                if ( this.outputLevel &amp; LogLevel.Debug ) {
                     this._dispatchDebugProgress( formattedMessage )
                 }
                 break
@@ -499,14 +585,14 @@ class TLogger {
      */
     _dispatchInfoProgress( infoProgress ) {
 
-        if ( this.outputs & LogOutput.Console ) {
+        if ( this.outputs &amp; LogOutput.Console ) {
 
             // eslint-disable-next-line no-console
             console.log( infoProgress )
 
         }
 
-        if ( this.outputs & LogOutput.Html ) {
+        if ( this.outputs &amp; LogOutput.Html ) {
 
             const span = document.createElement( 'span' )
             span.classList.add( 'log-info' )
@@ -515,19 +601,19 @@ class TLogger {
 
         }
 
-        if ( this.outputs & LogOutput.Toast ) {
+        if ( this.outputs &amp; LogOutput.Toast ) {
 
             // Todo: implement TToast
 
         }
 
-        if ( this.outputs & LogOutput.File ) {
+        if ( this.outputs &amp; LogOutput.File ) {
 
             // Todo: implement file
 
         }
 
-        if ( this.outputs & LogOutput.Database ) {
+        if ( this.outputs &amp; LogOutput.Database ) {
 
             // Todo: implement db
 
@@ -542,14 +628,14 @@ class TLogger {
      */
     _dispatchDebugProgress( debugProgress ) {
 
-        if ( this.outputs & LogOutput.Console ) {
+        if ( this.outputs &amp; LogOutput.Console ) {
 
             // eslint-disable-next-line no-console
             console.log( debugProgress )
 
         }
 
-        if ( this.outputs & LogOutput.Html ) {
+        if ( this.outputs &amp; LogOutput.Html ) {
 
             const span = document.createElement( 'span' )
             span.classList.add( 'log-info' )
@@ -558,19 +644,19 @@ class TLogger {
 
         }
 
-        if ( this.outputs & LogOutput.Toast ) {
+        if ( this.outputs &amp; LogOutput.Toast ) {
 
             // Todo: implement TToast
 
         }
 
-        if ( this.outputs & LogOutput.File ) {
+        if ( this.outputs &amp; LogOutput.File ) {
 
             // Todo: implement file
 
         }
 
-        if ( this.outputs & LogOutput.Database ) {
+        if ( this.outputs &amp; LogOutput.Database ) {
 
             // Todo: implement db
 
@@ -741,3 +827,138 @@ export {
     LogType,
     LogOutput
 }
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Copyright 2015-Present <a href="https://github.com/Itee">Itee (Tristan Valcke)</a>
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Itee Core v1.4.0 Index</title>
+	<title>Itee Core v1.4.0 Source: enums/keys.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,206 +74,141 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-
-
-
-
-
-    <section class="readme-section">
-        <article><h1 align="center">[Itee Core]</h1>
-<br>
-<p align="center">The itee core package contain all generic constants, enums, class and datamaps for itee packages.
-</p>
-<br>
-<p align="center">
-    <a href="https://www.npmjs.com/package/itee-core" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.shields.io/npm/v/itee-core" alt="Current package version">
-    </a>
-    <a href="https://github.com/Itee/itee-core" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/Itee/itee-core/actions/workflows/node.js.yml/badge.svg" alt="Itee-Core CI">
-    </a>
-    <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Build status">
-    </a>
-</p>
-<br>
-<h2>How to install</h2>
-<p>From npm:</p>
-<pre><code>npm install itee-core --save
-</code></pre>
-<p>If you want to build the repository from source follow these instructions:</p>
-<pre><code>git clone https://github.com/Itee/itee-core.git
-npm install
-npm run build
-</code></pre>
-<p>then you can copy/paste the module you need from builds folder.</p>
-<br>
-<h2>How to use</h2>
-<p align="center">At begin was <a href="https://itee.github.io/itee-core/">RTFM</a> !</p>
-<br>
-In case you have clone the repository you could also auto-generate the library documentation using: 
-<pre><code>npm run doc
-</code></pre>
-<p>then you will be able to use like this:</p>
-<pre><code>import { ... } from 'itee-core'
-</code></pre>
-<br>
-<h2>License (BSD-3-Clause)</h2>
-<p><strong>Copyright (c) 2015-Present, Itee, Valcke Tristan <a href="https://github.com/Itee">https://github.com/Itee</a>. All rights reserved.</strong></p>
-<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-<ul>
-<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
-<li>Neither the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
-</ul>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
-ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-<p>You should have received a copy of the <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a> along
-with this program.  If not, see <a href="https://opensource.org/licenses/BSD-3-Clause">https://opensource.org/licenses/BSD-3-Clause</a>.</p></article>
-    </section>
-
-
-
-
-
-
-
-	<h1 class="page-title">Index</h1>
+		<h1 class="page-title">Source: enums/keys.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * @author [Tristan Valcke]{@link https://github.com/Itee}
+ * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
+ */
 
-<header>
-    
-        <h2>
-        sources/core.js
-        </h2>
-        
-    
-</header>
+import { toEnum } from 'itee-utils'
 
+/**
+ * @typedef {Enum} Keys
+ * @property {Number} BACKSPACE=8 - The backspace key code
+ * @property {Number} TAB=9 - The tab key code
+ * @property {Number} ENTER=13 - The enter key code
+ * @property {Number} Etc...=* - All the rest
+ *
+ * @constant
+ * @type {Keys}
+ * @description Keys contains common keyboard key values, this allow to write semantic code instead of integer when dealing with key codes.
+ */
+const Keys = /*#__PURE__*/toEnum( {
+    BACKSPACE:            { value: 8 },
+    TAB:                  { value: 9 },
+    ENTER:                { value: 13 },
+    SHIFT:                { value: 16 },
+    CTRL:                 { value: 17 },
+    ALT:                  { value: 18 },
+    PAUSE:                { value: 19 },
+    CAPS_LOCK:            { value: 20 },
+    ESCAPE:               { value: 27 },
+    SPACE:                { value: 32 },
+    PAGE_UP:              { value: 33 },
+    PAGE_DOWN:            { value: 34 },
+    END:                  { value: 35 },
+    HOME:                 { value: 36 },
+    LEFT_ARROW:           { value: 37 },
+    UP_ARROW:             { value: 38 },
+    RIGHT_ARROW:          { value: 39 },
+    DOWN_ARROW:           { value: 40 },
+    INSERT:               { value: 45 },
+    DELETE:               { value: 46 },
+    ZERO:                 { value: 48 },
+    ONE:                  { value: 49 },
+    TWO:                  { value: 50 },
+    THREE:                { value: 51 },
+    FOUR:                 { value: 52 },
+    FIVE:                 { value: 53 },
+    SIX:                  { value: 54 },
+    SEVEN:                { value: 55 },
+    HEIGHT:               { value: 56 },
+    NINE:                 { value: 57 },
+    A:                    { value: 65 },
+    B:                    { value: 66 },
+    C:                    { value: 67 },
+    D:                    { value: 68 },
+    E:                    { value: 69 },
+    F:                    { value: 70 },
+    G:                    { value: 71 },
+    H:                    { value: 72 },
+    I:                    { value: 73 },
+    J:                    { value: 74 },
+    K:                    { value: 75 },
+    L:                    { value: 76 },
+    M:                    { value: 77 },
+    N:                    { value: 78 },
+    O:                    { value: 79 },
+    P:                    { value: 80 },
+    Q:                    { value: 81 },
+    R:                    { value: 82 },
+    S:                    { value: 83 },
+    T:                    { value: 84 },
+    U:                    { value: 85 },
+    V:                    { value: 86 },
+    W:                    { value: 87 },
+    X:                    { value: 88 },
+    Y:                    { value: 89 },
+    Z:                    { value: 90 },
+    LEFT_WINDOW_KEY:      { value: 91 },
+    RIGHT_WINDOW_KEY:     { value: 92 },
+    SELECT_KEY:           { value: 93 },
+    NUMPAD_0:             { value: 96 },
+    NUMPAD_1:             { value: 97 },
+    NUMPAD_2:             { value: 98 },
+    NUMPAD_3:             { value: 99 },
+    NUMPAD_4:             { value: 100 },
+    NUMPAD_5:             { value: 101 },
+    NUMPAD_6:             { value: 102 },
+    NUMPAD_7:             { value: 103 },
+    NUMPAD_8:             { value: 104 },
+    NUMPAD_9:             { value: 105 },
+    MULTIPLY:             { value: 106 },
+    ADD:                  { value: 107 },
+    SUBSTRACT:            { value: 109 },
+    DECIMAL_POINT:        { value: 110 },
+    DIVIDE:               { value: 111 },
+    F1:                   { value: 112 },
+    F2:                   { value: 113 },
+    F3:                   { value: 114 },
+    F4:                   { value: 115 },
+    F5:                   { value: 116 },
+    F6:                   { value: 117 },
+    F7:                   { value: 118 },
+    F8:                   { value: 119 },
+    F9:                   { value: 120 },
+    F10:                  { value: 121 },
+    F11:                  { value: 122 },
+    F12:                  { value: 123 },
+    NUM_LOCK:             { value: 144 },
+    SCROLL_LOCK:          { value: 145 },
+    SEMICOLON:            { value: 186 },
+    EQUAL:                { value: 187 },
+    COMMA:                { value: 188 },
+    DASH:                 { value: 189 },
+    PERIODE:              { value: 190 },
+    SLASH:                { value: 191 },
+    GRAVE_ACCENT:         { value: 192 },
+    OPEN_SQUARE_BRACKET:  { value: 219 },
+    BACKSLASH:            { value: 220 },
+    CLOSE_SQUARE_BRACKET: { value: 221 },
+    SINGLE_QUOTE:         { value: 222 }
+} )
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">The main entry point for Itee-Core, it contains all exports of the library</div>
-        
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
-	<dd class="tag-author">
-		<ul>
-			<li><a href="https://github.com/Itee">Tristan Valcke</a></li>
-			</ul>
-	</dd>
-	
-
-	
-
-	
-	<dt class="tag-license method-doc-label method-doc-details-label">License:</dt>
-	<dd class="tag-license">
-		<ul class="dummy">
-			<li><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></li>
-		</ul>
-	</dd>
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="core.js.html">core.js</a>,
-				 <a href="core.js.html#sunlight-1-line-1">line 1</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+export { Keys }
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -283,10 +218,6 @@ with this program.  If not, see <a href="https://opensource.org/licenses/BSD-3-C
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

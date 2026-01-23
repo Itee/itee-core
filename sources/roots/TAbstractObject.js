@@ -16,7 +16,7 @@ import {
 
 class TAbstractObject {
 
-    constructor ( parameters = {} ) {
+    constructor( parameters = {} ) {
 
         const _uuid       = uuidV4()
         const _name       = `${ this.constructor.name }_${ _uuid }`
@@ -34,11 +34,11 @@ class TAbstractObject {
         this.logger = _parameters.logger
     }
 
-    get name () {
+    get name() {
         return this._name
     }
 
-    set name ( value ) {
+    set name( value ) {
         const memberName = 'name'
         const expect     = 'Expect a String'
 
@@ -49,11 +49,11 @@ class TAbstractObject {
         this._name = value
     }
 
-    get uuid () {
+    get uuid() {
         return this._uuid
     }
 
-    set uuid ( value ) {
+    set uuid( value ) {
         const memberName = 'uuid'
         const expect     = 'Expect an uuid v4.'
 
@@ -64,22 +64,22 @@ class TAbstractObject {
         this._uuid = value
     }
 
-    getName ( target ) {
+    getName( target ) {
         target.name = this.name
         return this
     }
 
-    setName ( value ) {
+    setName( value ) {
         this.name = value
         return this
     }
 
-    getUuid ( target ) {
+    getUuid( target ) {
         target.uuid = this.uuid
         return this
     }
 
-    setUuid ( value ) {
+    setUuid( value ) {
         this.uuid = value
         return this
     }
