@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-import { toEnum } from 'itee-utils'
+import { toEnum } from '@itee/utils'
 import {
     isArrayOfObject,
     isArrayOfString,
@@ -8,7 +8,7 @@ import {
     isObject,
     isString,
     isUndefined
-}                 from 'itee-validators'
+}                 from '@itee/validators'
 
 /**
  * @typedef {Enum} Keys
