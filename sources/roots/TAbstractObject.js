@@ -7,7 +7,7 @@ import {
     isNotString,
     isNull,
     isUndefined
-} from 'itee-validators'
+} from '@itee/validators'
 import {
     v4 as uuidV4,
     validate,
